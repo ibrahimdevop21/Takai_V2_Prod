@@ -1,0 +1,264 @@
+---
+// Modern TAKAI Contact Form Component
+import { Icon } from 'astro-icon/components';
+
+const {
+  title = "Get in Touch with TAKAI",
+  subtitle = "Ready to protect your investment? Our experts are here to help you find the perfect solution.",
+  id = "takai-contact-form"
+} = Astro.props;
+---
+
+<section id={id} class="py-20 bg-gradient-to-br from-gray-50 to-white">
+  <div class="max-w-6xl mx-auto px-6">
+    
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">{title}</h2>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">{subtitle}</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      
+      <!-- Contact Form -->
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 lg:p-10">
+        <div class="mb-8">
+          <h3 class="text-xl md:text-2xl font-semibold text-[#01407a] mb-2">Send us a Message</h3>
+          <p class="text-gray-600">Fill out the form below and we'll get back to you within 24 hours.</p>
+        </div>
+
+        <form class="space-y-6">
+          <!-- Name and Email Row -->
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="firstName" class="block text-sm font-semibold text-[#01407a] mb-2">
+                First Name *
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                required
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 placeholder-gray-500"
+                placeholder="John"
+              />
+            </div>
+            <div>
+              <label for="lastName" class="block text-sm font-semibold text-[#01407a] mb-2">
+                Last Name *
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                required
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 placeholder-gray-500"
+                placeholder="Doe"
+              />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-semibold text-[#01407a] mb-2">
+              Email Address *
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 placeholder-gray-500"
+              placeholder="john.doe@example.com"
+            />
+          </div>
+
+          <!-- Company -->
+          <div>
+            <label for="company" class="block text-sm font-semibold text-[#01407a] mb-2">
+              Company (Optional)
+            </label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 placeholder-gray-500"
+              placeholder="Your Company"
+            />
+          </div>
+
+          <!-- Inquiry Type -->
+          <div>
+            <label for="inquiryType" class="block text-sm font-semibold text-[#01407a] mb-2">
+              Inquiry Type *
+            </label>
+            <select
+              id="inquiryType"
+              name="inquiryType"
+              required
+              class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 bg-white"
+            >
+              <option value="">Select an option</option>
+              <option value="product-authenticity">Product Authenticity Verification</option>
+              <option value="product-info">Product Information</option>
+              <option value="installation">Installation Services</option>
+              <option value="partnership">Partnership Opportunities</option>
+              <option value="technical-support">Technical Support</option>
+              <option value="warranty">Warranty Claims</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="message" class="block text-sm font-semibold text-[#01407a] mb-2">
+              Message *
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 placeholder-gray-500 resize-vertical"
+              placeholder="Tell us about your project, questions, or how we can help you... For authenticity verification, please include your TAKAI film serial number and installation details."
+            ></textarea>
+          </div>
+
+          <!-- Privacy Consent -->
+          <div class="flex items-start space-x-3">
+            <input
+              type="checkbox"
+              id="privacy"
+              name="privacy"
+              required
+              class="mt-1 w-4 h-4 text-[#01407a] border-2 border-gray-300 rounded focus:ring-[#01407a] focus:ring-2"
+            />
+            <label for="privacy" class="text-sm text-gray-600 leading-relaxed">
+              I agree to TAKAI's <a href="/legal/privacy" class="text-[#01407a] hover:text-[#bf1e2e] underline">Privacy Policy</a> and consent to being contacted regarding my inquiry.
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-[#01407a] to-[#0a5a9e] hover:from-[#bf1e2e] hover:to-[#c9a227] text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+          >
+            <Icon name="tabler:send" class="w-5 h-5" />
+            <span>Send Message</span>
+          </button>
+
+          <!-- Response Time -->
+          <div class="text-center pt-4">
+            <p class="text-sm text-gray-500 flex items-center justify-center space-x-2">
+              <Icon name="tabler:clock" class="w-4 h-4 text-[#c9a227]" />
+              <span>We typically respond within 24 hours</span>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Contact Information & Benefits -->
+      <div class="space-y-8">
+        
+        <!-- Direct Contact -->
+        <div class="bg-gradient-to-br from-[#01407a] to-[#0a5a9e] rounded-2xl p-8 text-white">
+          <h3 class="text-xl font-semibold mb-6 flex items-center space-x-2">
+            <Icon name="tabler:mail" class="w-6 h-6 text-[#c9a227]" />
+            <span>Get in Touch</span>
+          </h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-center space-x-3">
+              <Icon name="tabler:mail" class="w-5 h-5 text-[#c9a227] flex-shrink-0" />
+              <div>
+                <p class="font-medium">Email</p>
+                <p class="text-white/80">info@takaifilms.jp</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+              <Icon name="tabler:clock" class="w-5 h-5 text-[#c9a227] flex-shrink-0" />
+              <div>
+                <p class="font-medium">Response Time</p>
+                <p class="text-white/80">Within 24 hours</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Choose TAKAI -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-8">
+          <h3 class="text-xl font-semibold text-[#01407a] mb-6">Why Choose TAKAI?</h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <Icon name="tabler:shield-check" class="w-5 h-5 text-[#c9a227] mt-1 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-[#01407a]">Premium Quality</p>
+                <p class="text-sm text-gray-600">Japanese-engineered films with superior protection</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <Icon name="tabler:users" class="w-5 h-5 text-[#c9a227] mt-1 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-[#01407a]">Expert Support</p>
+                <p class="text-sm text-gray-600">Certified installers and technical expertise</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <Icon name="tabler:award" class="w-5 h-5 text-[#c9a227] mt-1 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-[#01407a]">15-Year Warranty</p>
+                <p class="text-sm text-gray-600">Long-term protection and peace of mind</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <Icon name="tabler:world" class="w-5 h-5 text-[#c9a227] mt-1 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-[#01407a]">Global Network</p>
+                <p class="text-sm text-gray-600">Certified distributors worldwide</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Priority Support -->
+        <div class="bg-gradient-to-r from-[#bf1e2e] to-[#c9a227] rounded-2xl p-6 text-white">
+          <div class="flex items-center space-x-3 mb-3">
+            <Icon name="tabler:urgent" class="w-6 h-6" />
+            <h4 class="font-semibold">Priority Support</h4>
+          </div>
+          <p class="text-sm text-white/90 mb-4">
+            For warranty claims or urgent technical issues, mark your inquiry as "urgent" in the form above.
+          </p>
+          <div class="inline-flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-lg">
+            <Icon name="tabler:mail-fast" class="w-4 h-4" />
+            <span class="font-medium">Priority Email Response</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Custom focus styles for better accessibility */
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+  }
+  
+  /* Smooth transitions for form elements */
+  input, textarea, select {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Custom checkbox styling */
+  input[type="checkbox"]:checked {
+    background-color: #01407a;
+    border-color: #01407a;
+  }
+</style>

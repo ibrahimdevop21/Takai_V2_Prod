@@ -1,0 +1,15 @@
+---
+export interface Props {
+  isDark?: boolean;
+}
+
+const { isDark = false } = Astro.props;
+---
+
+<div class:list={[
+  'absolute inset-0 pointer-events-none',
+  {
+    'bg-gray-50 dark:bg-slate-800': !isDark,
+    'bg-slate-800 dark:bg-gray-50': isDark,
+  }
+]} />

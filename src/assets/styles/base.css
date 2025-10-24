@@ -1,0 +1,165 @@
+/* TAKAI Global Styles - Light Theme Only */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Prevent horizontal scrolling globally */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure all containers respect viewport width */
+* {
+  box-sizing: border-box;
+}
+
+/* Base styles with TAKAI light theme */
+body {
+  @apply bg-takai-bg text-takai-text;
+  font-family: theme('fontFamily.sans');
+  letter-spacing: 0.025em; /* Wide letter spacing for Japanese precision */
+}
+
+/* Typography Styles - Japanese Precision Aesthetics - Light Theme */
+h1, h2, h3, h4, h5, h6 {
+  @apply text-takai-blue font-bold tracking-widest uppercase;
+}
+
+h1 {
+  @apply text-5xl md:text-6xl;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl text-takai-blue;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl text-takai-blue;
+}
+
+/* Sub-headers and accents in gold */
+.text-accent, .subheader {
+  @apply text-takai-gold tracking-widest;
+}
+
+/* Enhanced Japanese precision typography */
+.japanese-precision {
+  @apply tracking-widest font-medium;
+  letter-spacing: 0.15em;
+}
+
+.takai-headline {
+  @apply text-takai-blue font-bold tracking-widest uppercase leading-tight;
+}
+
+.takai-subheadline {
+  @apply text-takai-gold font-semibold tracking-wider uppercase;
+}
+
+.takai-body {
+  @apply text-gray-700 tracking-wide leading-relaxed;
+}
+
+/* Navigation Active States */
+.aw-link-active {
+  @apply text-takai-gold relative;
+}
+
+.aw-link-active::after {
+  content: '';
+  @apply absolute bottom-0 left-0 right-0 h-0.5 bg-takai-gold;
+}
+
+/* Links */
+a {
+  @apply text-[color:var(--color-secondary)] hover:opacity-90 transition-opacity duration-200;
+}
+
+/* Buttons */
+button, .btn {
+  @apply bg-[color:var(--color-secondary)] text-[color:var(--color-bg)] font-semibold rounded-md px-6 py-3 tracking-wide transition-all duration-200;
+}
+
+button:hover, .btn:hover {
+  @apply opacity-90 transform scale-105;
+}
+
+/* Primary button variant */
+.btn-primary {
+  @apply bg-takai-gold text-takai-text hover:opacity-90;
+}
+
+/* Secondary button variant */
+.btn-secondary {
+  @apply bg-takai-blue text-white border border-takai-gold hover:bg-takai-gold hover:text-takai-text;
+}
+
+/* Sections */
+section {
+  @apply bg-takai-bg text-takai-text;
+}
+
+/* Header styles */
+header {
+  @apply bg-takai-blue text-white;
+}
+
+/* Navigation */
+nav a {
+  @apply text-white hover:text-takai-gold transition-colors duration-200;
+}
+
+/* Cards and containers */
+.card, .feature-card {
+  @apply bg-white border border-takai-border rounded-lg p-6 shadow-sm;
+}
+
+/* Form elements */
+input, textarea, select {
+  @apply bg-white border border-takai-border text-takai-text rounded-md px-4 py-2;
+  @apply focus:border-takai-gold focus:outline-none focus:ring-2 focus:ring-takai-gold/20;
+}
+
+input::placeholder, textarea::placeholder {
+  @apply text-gray-500;
+}
+
+/* Japanese precision - clean lines and spacing */
+.precision-spacing {
+  @apply space-y-8 md:space-y-12;
+}
+
+.precision-grid {
+  @apply grid gap-8 md:gap-12;
+}
+
+/* Premium feel - subtle shadows and borders */
+.premium-shadow {
+  box-shadow: 0 4px 20px rgba(207, 176, 99, 0.1);
+}
+
+.premium-border {
+  @apply border border-takai-gold/30;
+}
+
+/* Text selection */
+::selection {
+  background-color: var(--color-secondary);
+  color: var(--color-bg);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-takai-gold/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-takai-gold/70;
+}

@@ -1,0 +1,69 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { findImage } from '~/utils/images';
+import {
+  getImagesOptimized,
+  astroAssetsOptimizer,
+  unpicOptimizer,
+  isUnpicCompatible,
+  type ImageProps,
+} from '~/utils/images-optimization';
+
+type Props = ImageProps;
+type ImageType = {
+  src: string;
+  attributes: HTMLAttributes<'img'>;
+};
+
+const props = Astro.props;
+
+if (props.alt === undefined || props.alt === null) {
+  throw new Error();
+}
+
+if (typeof props.width === 'string') {
+  props.width = parseInt(props.width);
+}
+
+if (typeof props.height === 'string') {
+  props.height = parseInt(props.height);
+}
+
+// Ensure width and height are provided for images in public folder
+if (!props.width || !props.height) {
+  console.warn('Image missing dimensions:', props.src, 'width:', props.width, 'height:', props.height);
+  // Set default dimensions if missing
+  if (!props.width) props.width = 800;
+  if (!props.height) props.height = 600;
+}
+
+if (!props.loading) {
+  props.loading = 'lazy';
+}
+
+if (!props.decoding) {
+  props.decoding = 'async';
+}
+
+const _image = await findImage(props.src);
+
+let image: ImageType | undefined = undefined;
+
+if (
+  typeof _image === 'string' &&
+  (_image.startsWith('http://') || _image.startsWith('https://')) &&
+  isUnpicCompatible(_image)
+) {
+  image = await getImagesOptimized(_image, props, unpicOptimizer);
+} else if (_image) {
+  image = await getImagesOptimized(_image, props, astroAssetsOptimizer);
+}
+---
+
+{
+  !image ? (
+    <Fragment />
+  ) : (
+    <img src={image.src} crossorigin="anonymous" referrerpolicy="no-referrer" {...image.attributes} />
+  )
+}

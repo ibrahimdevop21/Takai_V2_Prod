@@ -1,0 +1,424 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features3.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Distributors - TAKAI Paint Protection Films',
+  description: 'Find authorized TAKAI distributors and installers near you. Join our network of certified professionals.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <Hero
+    tagline="Find a Professional"
+    title="TAKAI Distributors & Installers"
+    subtitle="Locate certified TAKAI distributors and installers in your area for professional paint protection film installation."
+    actions={[
+      { text: 'View Partners', href: '#certified-partners', variant: 'primary' },
+      { text: 'Become a Partner', href: '#become-partner', variant: 'secondary' },
+    ]}
+    image={{
+      src: '/images/hero-car-5.jpg',
+      alt: 'Premium vehicle with professional TAKAI installation by certified distributors',
+      width: 1920,
+      height: 1080
+    }}
+  />
+
+  <!-- Certified Partners Worldwide -->
+  <section id="certified-partners" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Our Certified Partners Worldwide</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+          TAKAI has established certified partnerships across key markets, ensuring professional installation and support globally.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        
+        <!-- Middle East Partners -->
+        <div class="bg-gradient-to-br from-[#c9a227]/10 to-[#01407a]/5 rounded-xl shadow-xl border-2 border-[#c9a227]/30 p-6 text-center hover:shadow-2xl transition-all duration-300 relative">
+          <div class="absolute -top-2 -right-2 bg-[#c9a227] text-white text-xs font-bold px-2 py-1 rounded-full">
+            HUB
+          </div>
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+            🇦🇪
+          </div>
+          <h3 class="text-lg font-semibold text-[#01407a] mb-2">United Arab Emirates</h3>
+          <p class="text-sm text-gray-600 mb-3">Authorized Distributor Hub for Middle East & Asia</p>
+          <div class="inline-flex items-center text-xs text-[#c9a227] font-bold">
+            <Icon name="tabler:award" class="w-4 h-4 mr-1" />
+            Authorized Distributor Hub
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-[#c9a227]/10 to-[#01407a]/5 rounded-xl shadow-xl border-2 border-[#c9a227]/30 p-6 text-center hover:shadow-2xl transition-all duration-300 relative">
+          <div class="absolute -top-2 -right-2 bg-[#c9a227] text-white text-xs font-bold px-2 py-1 rounded-full">
+            HUB
+          </div>
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+            🇪🇬
+          </div>
+          <h3 class="text-lg font-semibold text-[#01407a] mb-2">Egypt</h3>
+          <p class="text-sm text-gray-600 mb-3">Authorized Distributor Hub for Middle East & Africa</p>
+          <div class="inline-flex items-center text-xs text-[#c9a227] font-bold">
+            <Icon name="tabler:award" class="w-4 h-4 mr-1" />
+            Authorized Distributor Hub
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 text-center hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+            🇶🇦
+          </div>
+          <h3 class="text-lg font-semibold text-[#01407a] mb-2">Qatar</h3>
+          <p class="text-sm text-gray-600 mb-3">Certified Installer Network</p>
+          <div class="inline-flex items-center text-xs text-[#c9a227] font-medium">
+            <Icon name="tabler:shield-check" class="w-4 h-4 mr-1" />
+            Certified Partner
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 text-center hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+            🇮🇶
+          </div>
+          <h3 class="text-lg font-semibold text-[#01407a] mb-2">Iraq</h3>
+          <p class="text-sm text-gray-600 mb-3">Certified installation specialists</p>
+          <div class="inline-flex items-center text-xs text-[#c9a227] font-medium">
+            <Icon name="tabler:shield-check" class="w-4 h-4 mr-1" />
+            Certified Partner
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 text-center hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+            🇧🇭
+          </div>
+          <h3 class="text-lg font-semibold text-[#01407a] mb-2">Bahrain</h3>
+          <p class="text-sm text-gray-600 mb-3">Professional installation services</p>
+          <div class="inline-flex items-center text-xs text-[#c9a227] font-medium">
+            <Icon name="tabler:shield-check" class="w-4 h-4 mr-1" />
+            Certified Partner
+          </div>
+        </div>
+
+        <!-- Americas -->
+        <div class="bg-gradient-to-br from-[#c9a227]/10 to-[#01407a]/5 rounded-xl shadow-xl border-2 border-[#c9a227]/30 p-6 text-center hover:shadow-2xl transition-all duration-300 relative">
+          <div class="absolute -top-2 -right-2 bg-[#c9a227] text-white text-xs font-bold px-2 py-1 rounded-full">
+            HUB
+          </div>
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+            🇨🇴
+          </div>
+          <h3 class="text-lg font-semibold text-[#01407a] mb-2">Colombia</h3>
+          <p class="text-sm text-gray-600 mb-3">Authorized Distributor Hub for South America</p>
+          <div class="inline-flex items-center text-xs text-[#c9a227] font-bold">
+            <Icon name="tabler:award" class="w-4 h-4 mr-1" />
+            Authorized Distributor Hub
+          </div>
+        </div>
+
+        <!-- Europe -->
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 text-center hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+            🇭🇷
+          </div>
+          <h3 class="text-lg font-semibold text-[#01407a] mb-2">Croatia</h3>
+          <p class="text-sm text-gray-600 mb-3">European market specialist</p>
+          <div class="inline-flex items-center text-xs text-[#c9a227] font-medium">
+            <Icon name="tabler:shield-check" class="w-4 h-4 mr-1" />
+            Certified Partner
+          </div>
+        </div>
+
+        <!-- Oceania -->
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 text-center hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+            🇳🇿
+          </div>
+          <h3 class="text-lg font-semibold text-[#01407a] mb-2">New Zealand</h3>
+          <p class="text-sm text-gray-600 mb-3">Pacific region coverage</p>
+          <div class="inline-flex items-center text-xs text-[#c9a227] font-medium">
+            <Icon name="tabler:shield-check" class="w-4 h-4 mr-1" />
+            Certified Partner
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Partnership Benefits -->
+      <div class="mt-16 bg-gradient-to-r from-[#01407a] to-[#0a5a9e] rounded-2xl p-8 md:p-12 text-white text-center">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-white">Looking for TAKAI in Your Area?</h3>
+        <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+          Our certified partners provide professional installation, technical support, and warranty services. 
+          Contact us to connect with your nearest certified installer.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/contact" 
+            class="inline-flex items-center justify-center bg-gradient-to-r from-[#c9a227] to-[#d6ba66] hover:from-[#d6ba66] hover:to-[#c9a227] text-[#01407a] font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] space-x-2"
+          >
+            <Icon name="tabler:search" class="w-5 h-5" />
+            <span>Find Local Partner</span>
+          </a>
+          <a 
+            href="#become-partner" 
+            class="inline-flex items-center justify-center bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 border-2 border-white/50 hover:border-white space-x-2"
+          >
+            <Icon name="tabler:user-plus" class="w-5 h-5" />
+            <span>Become a Partner</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Certified -->
+  <Features
+    id="certified-benefits"
+    title="Why Choose Certified Installers"
+    subtitle="Professional installation ensures optimal performance"
+    columns={3}
+    items={[
+      {
+        title: 'Expert Training',
+        description: 'Certified installers receive comprehensive training on TAKAI products and installation techniques.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Quality Guarantee',
+        description: 'Professional installation backed by TAKAI warranty and quality assurance.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Proper Tools',
+        description: 'Certified shops have the specialized tools and environment for perfect installation.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Ongoing Support',
+        description: 'Access to technical support and continued education on new products and techniques.',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Warranty Coverage',
+        description: 'Full manufacturer warranty protection when installed by certified professionals.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Latest Products',
+        description: 'First access to new TAKAI products and technology innovations.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- Become a Partner -->
+  <Steps
+    id="become-partner"
+    title="Become a TAKAI Partner"
+    subtitle="Join our network of certified distributors and installers"
+    items={[
+      {
+        title: 'Step 1: Application',
+        description: 'Submit your application with business information and experience details.',
+        icon: 'tabler:forms',
+      },
+      {
+        title: 'Step 2: Evaluation',
+        description: 'Our team reviews your application and conducts a facility assessment.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Step 3: Training',
+        description: 'Complete comprehensive training on TAKAI products and installation techniques.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Step 4: Certification',
+        description: 'Receive official TAKAI certification and access to distributor resources.',
+        icon: 'tabler:award',
+      },
+    ]}
+  />
+
+  <!-- Partner Benefits -->
+  <Features
+    id="partner-benefits"
+    title="Partner Benefits"
+    subtitle="Advantages of joining the TAKAI network"
+    columns={3}
+    items={[
+      {
+        title: 'Exclusive Territory',
+        description: 'Protected territory rights for authorized distributors in designated markets.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Marketing Support',
+        description: 'Co-op advertising, marketing materials, and promotional support.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Technical Training',
+        description: 'Ongoing education and certification programs for you and your staff.',
+        icon: 'tabler:certificate-2',
+      },
+      {
+        title: 'Product Support',
+        description: 'Dedicated technical support and product development updates.',
+        icon: 'tabler:lifebuoy',
+      },
+      {
+        title: 'Business Development',
+        description: 'Sales training, business planning assistance, and growth strategies.',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Quality Assurance',
+        description: 'Regular quality audits and performance feedback to maintain standards.',
+        icon: 'tabler:shield-star',
+      },
+    ]}
+  />
+
+  <!-- Partnership Requirements -->
+  <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Partnership Requirements</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+          Qualifications and standards for TAKAI certification ensure the highest level of professional service
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Business Experience -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-[#01407a] to-[#0a5a9e] rounded-full flex items-center justify-center flex-shrink-0">
+              <Icon name="tabler:briefcase" class="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-[#01407a] mb-3">Business Experience</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Minimum 2 years experience in automotive aftermarket or related industry.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>Automotive service background</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>Proven track record</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>Customer service excellence</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facility Standards -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-[#01407a] to-[#0a5a9e] rounded-full flex items-center justify-center flex-shrink-0">
+              <Icon name="tabler:building" class="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-[#01407a] mb-3">Facility Standards</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Clean, climate-controlled installation environment with proper lighting.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>Climate-controlled environment</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>Professional lighting</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>Dust-free installation bay</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Equipment Requirements -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-[#01407a] to-[#0a5a9e] rounded-full flex items-center justify-center flex-shrink-0">
+              <Icon name="tabler:tools" class="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-[#01407a] mb-3">Equipment Requirements</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Professional installation tools and equipment as specified by TAKAI.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>TAKAI-approved tools</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>Precision cutting equipment</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>Quality control instruments</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Insurance Coverage -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-[#01407a] to-[#0a5a9e] rounded-full flex items-center justify-center flex-shrink-0">
+              <Icon name="tabler:shield-check" class="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-[#01407a] mb-3">Insurance Coverage</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Appropriate business insurance including liability and garage keeper coverage.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>General liability insurance</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>Garage keeper's coverage</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <Icon name="tabler:check" class="w-4 h-4 text-[#c9a227] flex-shrink-0" />
+                  <span>Professional indemnity</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</Layout>

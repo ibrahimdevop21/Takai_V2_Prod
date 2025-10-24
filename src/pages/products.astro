@@ -1,0 +1,213 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<PageLayout metadata={{ title: "Products", description: "Explore TAKAI's complete range of protection films - Paint Protection, Solar Control, and Safety Window Films." }}>
+  <!-- Hero Section -->
+  <Hero
+    tagline="Our Products"
+    title="TAKAI Product Range"
+    subtitle="Comprehensive protection solutions engineered in Japan. From paint protection to solar control and safety films, TAKAI delivers precision-crafted films for every protection need."
+    actions={[
+      { text: 'Find Installer', href: '/distributors', variant: 'primary' },
+      { text: 'Contact Us', href: '/contact', variant: 'secondary' },
+    ]}
+    image={{
+      src: '/images/hero-car-3.jpg',
+      alt: 'High-performance vehicle showcasing TAKAI product range and film clarity',
+      width: 1920,
+      height: 1080
+    }}
+  />
+
+  <section class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- Paint Protection Films Section -->
+    <div class="mb-24">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Paint Protection Films (PPF)</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+          Five levels of premium paint protection, from essential coverage to ultimate luxury protection.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- TAKAI 5 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+          <div class="text-center mb-4">
+            <h3 class="text-xl font-bold text-[#01407a] mb-2">TAKAI 5</h3>
+            <div class="w-16 h-1 bg-[#cfb063] mx-auto mb-3"></div>
+            <p class="text-sm text-gray-600">Essential Protection</p>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><Icon name="tabler:shield" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> 5-Year Warranty</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:droplet" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Hydrophobic Surface</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:sun" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> UV Protection</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:car" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Entry-Level PPF</li>
+          </ul>
+        </div>
+
+        <!-- TAKAI Gold -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+          <div class="text-center mb-4">
+            <h3 class="text-xl font-bold text-[#01407a] mb-2">TAKAI Gold</h3>
+            <div class="w-16 h-1 bg-[#cfb063] mx-auto mb-3"></div>
+            <p class="text-sm text-gray-600">Premium Protection</p>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><Icon name="tabler:shield-check" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> 8-Year Warranty</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:sparkles" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Enhanced Clarity</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:refresh" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Self-Healing Technology</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:diamond" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Premium Grade</li>
+          </ul>
+        </div>
+
+        <!-- TAKAI Gold+ -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+          <div class="text-center mb-4">
+            <h3 class="text-xl font-bold text-[#01407a] mb-2">TAKAI Gold+</h3>
+            <div class="w-16 h-1 bg-[#cfb063] mx-auto mb-3"></div>
+            <p class="text-sm text-gray-600">Advanced Protection</p>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><Icon name="tabler:shield-check" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> 10-Year Warranty</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:bolt" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Advanced Self-Healing</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:flame" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Superior Heat Resistance</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:star" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Professional Grade</li>
+          </ul>
+        </div>
+
+        <!-- TAKAI Steel -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+          <div class="text-center mb-4">
+            <h3 class="text-xl font-bold text-[#01407a] mb-2">TAKAI Steel</h3>
+            <div class="w-16 h-1 bg-[#cfb063] mx-auto mb-3"></div>
+            <p class="text-sm text-gray-600">Ultimate Protection</p>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><Icon name="tabler:shield-check" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> 12-Year Warranty</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:bolt" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Maximum Durability</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:shield" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Impact Resistance</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:crown" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Luxury Vehicles</li>
+          </ul>
+        </div>
+
+        <!-- TAKAI Steel+ -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 md:col-span-2 lg:col-span-1">
+          <div class="text-center mb-4">
+            <h3 class="text-xl font-bold text-[#01407a] mb-2">TAKAI Steel+</h3>
+            <div class="w-16 h-1 bg-[#cfb063] mx-auto mb-3"></div>
+            <p class="text-sm text-gray-600">Flagship Protection</p>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><Icon name="tabler:shield-check" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> 15-Year Warranty</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:circle-dot" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Nanotechnology</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:car" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Electric Vehicle Optimized</li>
+            <li class="flex items-center gap-2"><Icon name="tabler:award" class="text-[#0A2540] w-4 h-4 stroke-[1.5]" /> Flagship Model</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solar Control Films Section -->
+    <div class="mb-24">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Solar Control Films</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+          Advanced UV and heat resistance films for automotive and architectural applications.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <img src="/images/takai-solar-control.jpg" alt="TAKAI Solar Control Films" class="rounded-xl shadow-lg" width="600" height="400" />
+        </div>
+        <div>
+          <h3 class="text-xl md:text-2xl font-semibold text-[#01407a] mb-4">Superior Heat & UV Protection</h3>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            TAKAI Solar Control Films provide exceptional heat rejection and UV protection while maintaining optical clarity. 
+            Perfect for reducing interior temperatures and protecting against harmful UV radiation.
+          </p>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-center gap-3"><Icon name="tabler:sun" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Up to 99% UV Rejection</li>
+            <li class="flex items-center gap-3"><Icon name="tabler:temperature" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Superior Heat Reduction</li>
+            <li class="flex items-center gap-3"><Icon name="tabler:eye" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Crystal Clear Visibility</li>
+            <li class="flex items-center gap-3"><Icon name="tabler:leaf" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Energy Efficiency</li>
+            <li class="flex items-center gap-3"><Icon name="tabler:palette" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Fade Protection</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Safety Window Films Section -->
+    <div class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Safety Window Films</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+          Glass Guard protection films for enhanced safety and security applications.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <h3 class="text-xl md:text-2xl font-semibold text-[#01407a] mb-4">Glass Guard Technology</h3>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Advanced safety window films designed to hold glass fragments together upon impact, providing enhanced protection 
+            against break-ins, accidents, and natural disasters while maintaining transparency.
+          </p>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-center gap-3"><Icon name="tabler:shield" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Shatter Resistance</li>
+            <li class="flex items-center gap-3"><Icon name="tabler:shield-check" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Security Enhancement</li>
+            <li class="flex items-center gap-3"><Icon name="tabler:shield" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Impact Protection</li>
+            <li class="flex items-center gap-3"><Icon name="tabler:square" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Fragment Retention</li>
+            <li class="flex items-center gap-3"><Icon name="tabler:building" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Architectural Grade</li>
+          </ul>
+        </div>
+        <div class="order-1 md:order-2">
+          <img src="/images/takai-safety-films.jpg" alt="TAKAI Safety Window Films" class="rounded-xl shadow-lg" width="600" height="400" />
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center bg-gradient-to-r from-[#01407a] to-blue-800 rounded-2xl p-12 text-white">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Protect Your Investment?</h2>
+      <p class="text-lg mb-8 opacity-90">Contact our certified installers to find the perfect TAKAI solution for your needs.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-block bg-[#cfb063] text-[#01407a] px-8 py-3 rounded-full font-semibold hover:bg-[#d6ba66] transition-all duration-300 shadow-md hover:shadow-lg"
+        >
+          Get a Quote
+        </a>
+        <a
+          href="/distributors"
+          class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#01407a] transition-all duration-300"
+        >
+          Find Installer
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smooth Scroll Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Enable smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</PageLayout>

@@ -1,0 +1,186 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Technology - TAKAI Paint Protection Films',
+  description: 'Discover the advanced technology behind TAKAI paint protection films, featuring self-healing properties and superior durability.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <Hero
+    tagline="Innovation Driven"
+    title="Advanced Film Technology"
+    subtitle="Cutting-edge materials science and engineering deliver unmatched paint protection performance."
+    actions={[
+      { text: 'View Products', href: '/products', variant: 'primary' },
+      { text: 'Find Installer', href: '/distributors', variant: 'secondary' },
+    ]}
+    image={{
+      src: '/images/hero-car-4.jpg',
+      alt: 'Luxury SUV showcasing TAKAI advanced film technology',
+      width: 1920,
+      height: 1080
+    }}
+  />
+
+  <!-- Core Technologies -->
+  <Features
+    id="core-tech"
+    title="Core Technologies"
+    subtitle="Innovation at the molecular level"
+    columns={3}
+    items={[
+      {
+        title: 'Self-Healing Polymer',
+        description: 'Thermoplastic urethane with memory properties that allows micro-scratches to disappear with heat.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Optical Clarity',
+        description: 'Advanced polymer formulation maintains crystal-clear transparency without yellowing.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Hydrophobic Coating',
+        description: 'Nano-structured surface treatment repels water and contaminants for easier maintenance.',
+        icon: 'tabler:droplet-off',
+      },
+      {
+        title: 'Impact Absorption',
+        description: 'Multi-layer construction disperses impact energy to prevent paint damage.',
+        icon: 'tabler:shield',
+      },
+      {
+        title: 'UV Stabilization',
+        description: 'Advanced UV inhibitors prevent degradation and maintain long-term performance.',
+        icon: 'tabler:sun',
+      },
+      {
+        title: 'Chemical Resistance',
+        description: 'Engineered to resist staining and etching from environmental contaminants.',
+        icon: 'tabler:flask',
+      },
+    ]}
+  />
+
+  <!-- Manufacturing Process -->
+  <Steps
+    title="Manufacturing Excellence"
+    subtitle="Precision engineering from raw materials to finished product"
+    items={[
+      {
+        title: 'Step 1: Material Selection',
+        description: 'Premium thermoplastic urethane polymers are carefully selected for optimal properties.',
+        icon: 'tabler:atom',
+      },
+      {
+        title: 'Step 2: Polymer Processing',
+        description: 'Advanced extrusion and casting processes create uniform film thickness and properties.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Step 3: Surface Treatment',
+        description: 'Specialized coating application adds hydrophobic and self-healing properties.',
+        icon: 'tabler:brush',
+      },
+      {
+        title: 'Step 4: Quality Control',
+        description: 'Rigorous testing ensures every roll meets our strict performance standards.',
+        icon: 'tabler:check',
+      },
+    ]}
+  />
+
+  <!-- Technical Specifications -->
+  <Content
+    isReversed
+    title="Technical Performance"
+    subtitle="Engineered for Excellence"
+    items={[
+      {
+        title: 'Material Properties',
+        description: 'Thermoplastic urethane with Shore A hardness of 85-90 for optimal flexibility and durability.',
+      },
+      {
+        title: 'Optical Performance',
+        description: 'Light transmission >99% with haze <1% for invisible protection.',
+      },
+      {
+        title: 'Thermal Properties',
+        description: 'Operating range from -40°C to 93°C with self-healing activation at 60-80°C.',
+      },
+      {
+        title: 'Adhesive System',
+        description: 'Pressure-sensitive acrylic adhesive with repositionable properties during installation.',
+      },
+    ]}
+  />
+
+  <!-- Research & Development -->
+  <Features
+    id="rd"
+    title="Research & Development"
+    subtitle="Continuous innovation for superior protection"
+    items={[
+      {
+        title: 'Material Science',
+        description: 'Advanced polymer chemistry research drives continuous product improvement.',
+        icon: 'tabler:flask-2',
+      },
+      {
+        title: 'Testing Protocols',
+        description: 'Comprehensive testing including weathering, impact, and durability assessments.',
+        icon: 'tabler:test-pipe',
+      },
+      {
+        title: 'Application Engineering',
+        description: 'Installation technique development ensures optimal performance and appearance.',
+        icon: 'tabler:tools',
+      },
+    ]}
+  />
+
+  <!-- Environmental Considerations -->
+  <Content
+    title="Environmental Responsibility"
+    subtitle="Sustainable protection solutions"
+    items={[
+      {
+        title: 'Eco-Friendly Materials',
+        description: 'Non-toxic, recyclable materials that meet environmental standards.',
+      },
+      {
+        title: 'Efficient Manufacturing',
+        description: 'Optimized production processes minimize waste and energy consumption.',
+      },
+      {
+        title: 'Long Service Life',
+        description: 'Durable protection reduces the need for frequent repainting and refinishing.',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    title="Experience Advanced Protection"
+    subtitle="See how TAKAI technology protects your investment"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'View Products',
+        href: '/products',
+      },
+      {
+        text: 'Contact Us',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout>

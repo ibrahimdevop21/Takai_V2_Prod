@@ -1,0 +1,408 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features3.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'TAKAI - Invisible Armor for Your Most Precious Investment | Premium Paint Protection Film',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Find Installer',
+        href: '/distributors',
+        icon: 'tabler:map-pin',
+        class: 'bg-gradient-to-r from-takai-red to-takai-gold text-black font-medium text-sm md:text-base px-5 py-2 md:px-6 md:py-3 rounded-full shadow-md hover:brightness-110 transition-all duration-300 whitespace-nowrap',
+      },
+      { 
+        text: 'Products →', 
+        href: '/products',
+        class: 'bg-takai-blue hover:bg-blue-900 text-white font-medium text-sm md:text-base px-5 py-2 md:px-6 md:py-3 rounded-full shadow-md transition-all duration-300 whitespace-nowrap'
+      },
+    ]}
+    image={{
+      src: '/images/hero-car-1.jpg',
+      alt: 'Luxury sports car with pristine paint finish protected by TAKAI film',
+      width: 1920,
+      height: 1080
+    }}
+  >
+    <Fragment slot="title">
+      和の心、世界を守る
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      The Spirit of Japan, Protecting the World.
+    </Fragment>
+
+    <Fragment slot="content">
+      <div class="mt-8 flex flex-wrap justify-center gap-8 text-sm text-gray-300">
+        <div class="flex items-center gap-2">
+          <Icon name="tabler:refresh" class="w-4 h-4 text-[#C9A227] stroke-[1.5]" />
+          <span>Self-Healing Technology</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Icon name="tabler:shield-check" class="w-4 h-4 text-[#C9A227] stroke-[1.5]" />
+          <span>5-15 Years Warranty</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Icon name="tabler:tools" class="w-4 h-4 text-[#C9A227] stroke-[1.5]" />
+          <span>Professional Installation</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Icon name="tabler:users" class="w-4 h-4 text-[#C9A227] stroke-[1.5]" />
+          <span>Certified Network</span>
+        </div>
+      </div>
+    </Fragment>
+  </Hero>
+
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Protection"
+    title="Why Choose TAKAI Paint Protection Film"
+    subtitle="Industry-leading technology and superior materials engineered for the most demanding conditions and premium vehicles."
+    columns={3}
+    classes={{
+      title: 'text-[#01407a]',
+      subtitle: 'text-gray-800 font-medium'
+    }}
+    items={[
+      {
+        title: 'Self-Healing Technology',
+        description:
+          'Advanced polymer technology automatically repairs minor scratches and swirl marks when exposed to heat, maintaining a flawless finish.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'UV Protection',
+        description:
+          'Superior UV resistance prevents paint fading and oxidation, preserving your vehicle\'s color and value for years to come.',
+        icon: 'tabler:sun',
+      },
+      {
+        title: 'Impact Resistance',
+        description:
+          'Military-grade materials provide exceptional protection against rock chips, road debris, and environmental hazards.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Hydrophobic Surface',
+        description:
+          'Water-repelling properties make cleaning easier while reducing water spots and contamination adhesion.',
+        icon: 'tabler:droplet',
+      },
+      {
+        title: 'Optical Clarity',
+        description:
+          'Crystal-clear film maintains your vehicle\'s original paint appearance while providing invisible protection.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Professional Installation',
+        description:
+          'Certified installers ensure perfect fit and finish using precision cutting and expert application techniques.',
+        icon: 'tabler:certificate',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Technology"
+    title="TAKAI Premium: Advanced Protection Technology"
+    classes={{
+      title: 'text-[#01407a]',
+      tagline: 'text-[#cfb063]'
+    }}
+    items={[
+      {
+        title: 'Multi-Layer Construction',
+        description:
+          'Engineered with multiple protective layers including polyurethane top coat, adhesive layer, and release liner for maximum durability.',
+      },
+      {
+        title: 'Precision Pre-Cut Patterns',
+        description:
+          'Computer-generated templates ensure perfect fit for over 10,000 vehicle models with millimeter accuracy.',
+      },
+      {
+        title: '5-15 Years Warranty',
+        description:
+          'Comprehensive warranty coverage against yellowing, cracking, peeling, and hazing backed by rigorous testing standards.',
+      },
+    ]}
+    classes={{
+      items: {
+        title: 'text-[#01407a] font-semibold',
+        description: 'text-gray-800'
+      }
+    }}
+    image={{
+      src: '/images/takai-installation.jpg',
+      alt: 'Paint protection film installation',
+      width: 800,
+      height: 600,
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[#01407a] mb-4">Engineered for Excellence</h2>
+      <p class="text-gray-800 font-medium">
+        Advanced materials and precision manufacturing deliver uncompromising protection for your most valuable assets.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gray-50"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    tagline="Products"
+    title="TAKAI Product Range"
+    classes={{
+      title: 'text-[#01407a]',
+      tagline: 'text-[#cfb063]'
+    }}
+    items={[
+      {
+        title: 'TAKAI Premium',
+        description: 'Our flagship paint protection film offering superior clarity, self-healing properties, and comprehensive coverage for luxury vehicles.',
+      },
+      {
+        title: 'TAKAI Premium Plus',
+        description:
+          'Enhanced formula with advanced hydrophobic coating and improved stain resistance for the ultimate protection experience.',
+      },
+      {
+        title: 'Custom Solutions',
+        description:
+          'Specialized applications for commercial fleets, motorcycles, and unique vehicle configurations with tailored protection packages.',
+      },
+      {
+        title: 'Professional Tools',
+        description:
+          'Complete installer toolkit including squeegees, heat guns, and cutting tools designed specifically for TAKAI film application.',
+      },
+    ]}
+    classes={{
+      items: {
+        title: 'text-[#01407a] font-semibold',
+        description: 'text-gray-800'
+      }
+    }}
+    image={{
+      src: '/images/takai-luxury-car.jpg',
+      alt: 'Luxury sports car with paint protection',
+      width: 800,
+      height: 600,
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[#01407a] mb-4">Complete Protection Solutions</h2>
+      <p class="text-gray-800 font-medium">
+        From premium passenger vehicles to commercial fleets, TAKAI offers comprehensive protection for every application.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gray-50"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Uncompromising Protection',
+        description:
+          'TAKAI films provide invisible armor against road debris, UV rays, and environmental contaminants while maintaining your car\'s original beauty.',
+      },
+      {
+        title: 'Japanese Precision Standards',
+        description:
+          'Every installation follows meticulous Japanese craftsmanship principles, ensuring flawless application and long-lasting performance.',
+      },
+      {
+        title: 'Investment in Excellence',
+        description:
+          'Preserve your vehicle\'s resale value and pristine appearance with premium protection that pays for itself over time.',
+      },
+      {
+        title: 'Certified Network Support',
+        description: `Join the TAKAI family with access to certified installers, comprehensive warranties, and ongoing support for your protection investment.`,
+      },
+    ]}
+    classes={{
+      items: {
+        title: 'text-[#01407a] font-semibold',
+        description: 'text-gray-800'
+      }
+    }}
+    image={{
+      src: '/images/takai-protected-vehicle.jpg',
+      alt: 'Luxury Car with TAKAI Protection',
+      width: 800,
+      height: 600,
+    }}
+  >
+    <Fragment slot="content">
+      <p class="text-gray-800 font-medium text-lg">
+        Engineered for automotive excellence and lasting protection.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Experience TAKAI Precision in Every Step"
+    classes={{
+      title: 'text-[#01407a]'
+    }}
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Download</span>',
+        description:
+          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Add content</span>',
+        description:
+          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        description:
+          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Ready!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '/images/takai-process-steps.jpg',
+      alt: 'Steps image',
+      width: 800,
+      height: 600,
+    }}
+  />
+
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Common questions about TAKAI paint protection films and our installation process."
+    tagline="FAQs"
+    classes={{ 
+      container: 'max-w-6xl',
+      title: 'text-[#01407a]',
+      subtitle: 'text-gray-800 font-medium',
+      tagline: 'text-[#cfb063]'
+    }}
+    items={[
+      {
+        title: 'What makes TAKAI different from other paint protection films?',
+        description:
+          "TAKAI films are engineered in Japan with advanced self-healing technology and superior optical clarity. Our multi-layer construction provides exceptional durability while maintaining your vehicle's original appearance. Unlike other films, TAKAI offers both Premium (10-year) and Premium Plus (15-year) warranty options.",
+      },
+      {
+        title: 'How long does TAKAI installation take?',
+        description:
+          'Professional TAKAI installation typically takes 1-3 days depending on coverage area and vehicle complexity. Our certified installers use precision-cut templates and advanced techniques to ensure perfect fit without removing vehicle parts or affecting manufacturer warranties.',
+      },
+      {
+        title: 'Will TAKAI film affect my vehicle\'s paint or sensors?',
+        description:
+          "No. TAKAI films are designed for precision fit without disassembly. Our advanced templates and edge-wrapping techniques keep factory sensors, trims, and seals intact. The film is completely removable without damage to your original paint.",
+      },
+      {
+        title: 'What does the TAKAI warranty cover?',
+        description:
+          "TAKAI warranties cover yellowing, cracking, bubbling, peeling, and hazing. Premium films include 10-year coverage while Premium Plus offers 15-year protection. Our comprehensive warranty ensures your investment remains visually flawless throughout the coverage period.",
+      },
+      {
+        title: 'Can TAKAI film be applied to any vehicle?',
+        description:
+          "Yes! TAKAI offers precision-cut patterns for over 10,000 vehicle models including luxury cars, SUVs, motorcycles, and electric vehicles. Our Premium Plus line is specifically engineered for high-performance and electric vehicles requiring superior thermal protection.",
+      },
+      {
+        title: 'How do I maintain TAKAI protected surfaces?',
+        description:
+          "TAKAI films require minimal maintenance. Simply wash with regular car soap and water. The hydrophobic surface repels water and contaminants, making cleaning easier. Minor scratches self-heal with heat exposure, and the film maintains its clarity for years without special treatments.",
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Vehicles Protected', amount: '1M+' },
+      { title: 'Certified Installers', amount: '5K+' },
+      { title: 'Countries Served', amount: '25+' },
+      { title: 'Years Experience', amount: '40+' },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Find a Distributor',
+        href: '/distributors',
+        icon: 'tabler:map-pin',
+        class: 'bg-takai-gold hover:bg-takai-gold/90 text-takai-blue font-semibold px-8 py-3 text-lg',
+      },
+      {
+        text: 'Contact Us',
+        href: '/contact',
+        icon: 'tabler:phone',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to Protect Your Investment?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Join thousands of satisfied customers who trust TAKAI for superior paint protection. <br class="hidden md:inline" />Get started with a certified installer near you.
+    </Fragment>
+  </CallToAction>
+</Layout>

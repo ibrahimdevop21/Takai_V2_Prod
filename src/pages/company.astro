@@ -1,0 +1,201 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Company - About TAKAI Paint Protection Films',
+  description: 'Learn about TAKAI, a leading manufacturer of premium paint protection films with a commitment to innovation and quality.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <Hero
+    tagline="About TAKAI"
+    title="Protecting What Matters Most"
+    subtitle="Since our founding, TAKAI has been dedicated to developing the world's finest paint protection films through innovation, quality, and unwavering commitment to excellence."
+    actions={[
+      { text: 'Our Products', href: '/products', variant: 'primary' },
+      { text: 'Our Technology', href: '/technology', variant: 'secondary' },
+    ]}
+    image={{
+      src: '/images/hero-car-2.jpg',
+      alt: 'Premium luxury sedan with TAKAI protection showcasing company excellence',
+      width: 1920,
+      height: 1080
+    }}
+  />
+
+  <!-- Company Values -->
+  <Features
+    id="values"
+    title="Our Values"
+    subtitle="The principles that guide everything we do"
+    columns={3}
+    items={[
+      {
+        title: 'Innovation',
+        description: 'Continuously pushing the boundaries of paint protection technology through research and development.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Quality',
+        description: 'Uncompromising commitment to manufacturing excellence and product performance.',
+        icon: 'tabler:award',
+      },
+      {
+        title: 'Partnership',
+        description: 'Building strong relationships with distributors and installers worldwide.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Sustainability',
+        description: 'Responsible manufacturing practices and environmentally conscious product development.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Customer Focus',
+        description: 'Delivering solutions that exceed customer expectations and protect their investments.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Excellence',
+        description: 'Striving for perfection in every aspect of our business operations.',
+        icon: 'tabler:star',
+      },
+    ]}
+  />
+
+  <!-- Company Story -->
+  <Content
+    isReversed
+    title="Our Story"
+    subtitle="A legacy of protection and innovation"
+    items={[
+      {
+        title: 'Founded on Excellence',
+        description: 'TAKAI was established with a vision to create the world\'s most advanced paint protection films.',
+      },
+      {
+        title: 'Technology Leadership',
+        description: 'Our research and development team continuously innovates to stay ahead of industry trends.',
+      },
+      {
+        title: 'Global Reach',
+        description: 'Today, TAKAI products protect vehicles in markets around the world through our distributor network.',
+      },
+    ]}
+  />
+
+  <!-- Manufacturing Excellence -->
+  <Features
+    id="manufacturing"
+    title="Manufacturing Excellence"
+    subtitle="State-of-the-art facilities and processes"
+    items={[
+      {
+        title: 'Advanced Facilities',
+        description: 'Modern manufacturing facilities equipped with the latest technology and quality control systems.',
+        icon: 'tabler:building-factory',
+      },
+      {
+        title: 'Quality Assurance',
+        description: 'Rigorous testing and quality control at every stage of the manufacturing process.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Continuous Improvement',
+        description: 'Ongoing investment in process optimization and technology advancement.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+  />
+
+  <!-- Team & Expertise -->
+  <Content
+    title="Our Team"
+    subtitle="Expertise you can trust"
+    items={[
+      {
+        title: 'Materials Scientists',
+        description: 'PhD-level researchers developing next-generation polymer technologies.',
+      },
+      {
+        title: 'Manufacturing Engineers',
+        description: 'Process experts ensuring consistent quality and efficient production.',
+      },
+      {
+        title: 'Technical Support',
+        description: 'Experienced professionals providing installation training and customer support.',
+      },
+    ]}
+  />
+
+  <!-- Certifications & Standards -->
+  <Features
+    id="certifications"
+    title="Certifications & Standards"
+    subtitle="Meeting the highest industry standards"
+    items={[
+      {
+        title: 'ISO 9001',
+        description: 'Quality management system certification ensuring consistent product quality.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Automotive Standards',
+        description: 'Products meet or exceed automotive industry specifications and requirements.',
+        icon: 'tabler:car',
+      },
+      {
+        title: 'Environmental Compliance',
+        description: 'Manufacturing processes comply with environmental regulations and standards.',
+        icon: 'tabler:leaf',
+      },
+    ]}
+  />
+
+  <!-- Customer Testimonials -->
+  <Testimonials
+    title="What Our Partners Say"
+    subtitle="Trusted by professionals worldwide"
+    testimonials={[
+      {
+        testimonial: `TAKAI films consistently deliver exceptional results. The clarity and self-healing properties are unmatched in the industry.`,
+        name: 'Professional Installer',
+        job: 'Certified TAKAI Dealer',
+      },
+      {
+        testimonial: `The technical support and training provided by TAKAI has been invaluable to our business success.`,
+        name: 'Regional Distributor',
+        job: 'TAKAI Partner',
+      },
+      {
+        testimonial: `Our customers love the performance and appearance of TAKAI Premium Plus. It's our go-to product for high-end vehicles.`,
+        name: 'Installation Shop Owner',
+        job: 'TAKAI Certified Installer',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    title="Partner With TAKAI"
+    subtitle="Join our network of distributors and installers worldwide"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Become a Distributor',
+        href: '/distributors',
+      },
+      {
+        text: 'Contact Us',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout>

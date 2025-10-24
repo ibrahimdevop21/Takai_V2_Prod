@@ -1,0 +1,278 @@
+---
+import { Icon } from 'astro-icon/components';
+import LogoLight from '~/components/common/LogoLight.astro';
+import { getHomePermalink } from '~/utils/permalinks';
+import { trimSlash } from '~/utils/permalinks';
+import type { CallToAction } from '~/types';
+
+interface Link {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+  links?: Array<{
+    text?: string;
+    href?: string;
+    ariaLabel?: string;
+    icon?: string;
+  }>;
+}
+
+interface ActionLink extends CallToAction {}
+
+interface MenuLink extends Link {
+  links?: Array<Link>;
+}
+
+export interface Props {
+  id?: string;
+  links?: Array<MenuLink>;
+  actions?: Array<ActionLink>;
+  isSticky?: boolean;
+  isDark?: boolean;
+  isFullWidth?: boolean;
+  showToggleTheme?: boolean;
+  showRssFeed?: boolean;
+  position?: string;
+}
+
+const {
+  id,
+  links = [],
+  actions = [],
+  isSticky = false,
+  isDark = false,
+  isFullWidth = false,
+  showToggleTheme = false,
+  showRssFeed = false,
+  position = 'center',
+} = Astro.props;
+
+const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#0a1930]/95 to-[#0e2345]/95 backdrop-blur-md border-b border-[#bf1e2e] shadow-[0_2px_10px_#bf1e2e33] transition-all duration-300"
+  id="main-header"
+>
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3 md:py-4">
+    
+    <!-- Logo -->
+    <a href={getHomePermalink()} class="flex items-center gap-2 flex-shrink-0">
+      <div id="logo-container" class="transition-all duration-300">
+        <LogoLight />
+      </div>
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex items-center gap-8 text-white/85 text-sm font-medium">
+      {
+        links.map(({ text, href }) => {
+          const isActive = currentPath === href;
+          return (
+            <li>
+              <a 
+                href={href} 
+                class={`nav-link text-white/85 hover:text-white transition-all duration-300 relative pb-1 ${isActive ? 'text-white border-b-2 border-[#bf1e2e]' : ''}`}
+              >
+                {text}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+
+    <!-- Desktop CTA -->
+    <div class="hidden md:block flex-shrink-0">
+      {
+        actions?.length ? (
+          actions.map((btnProps) => (
+            <a
+              href={btnProps.href}
+              class="bg-gradient-to-r from-[#bf1e2e] to-[#c9a227] text-black px-6 py-2.5 rounded-full font-semibold hover:brightness-110 transition-all duration-300 shadow-md hover:shadow-lg text-sm"
+            >
+              {btnProps.text}
+            </a>
+          ))
+        ) : null
+      }
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button 
+      id="mobile-menu-button" 
+      class="md:hidden text-white/90 focus:outline-none hover:text-white transition-colors duration-200"
+      aria-label="Toggle mobile menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div 
+    id="mobile-menu" 
+    class="hidden md:hidden bg-gradient-to-r from-[#0a1930] to-[#0e2345] border-t border-[#bf1e2e]/50 transform transition-transform duration-300 ease-in-out"
+  >
+    <div class="flex flex-col items-center py-4 space-y-3">
+      {
+        links.map(({ text, href }) => {
+          const isActive = currentPath === href;
+          return (
+            <a 
+              href={href} 
+              class={`mobile-nav-link text-white/85 hover:text-[#bf1e2e] transition-colors duration-200 py-2 ${isActive ? 'text-[#bf1e2e]' : ''}`}
+            >
+              {text}
+            </a>
+          );
+        })
+      }
+      {
+        actions?.length ? (
+          <div class="pt-2">
+            {actions.map((btnProps) => (
+              <a
+                href={btnProps.href}
+                class="bg-gradient-to-r from-[#bf1e2e] to-[#c9a227] text-black px-6 py-2.5 rounded-full font-semibold hover:brightness-110 transition-all duration-300 shadow-md text-sm"
+              >
+                {btnProps.text}
+              </a>
+            ))}
+          </div>
+        ) : null
+      }
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Enhanced navbar with stable background and logo scaling */
+  header {
+    background: linear-gradient(to right, rgba(10, 25, 48, 0.95), rgba(14, 35, 69, 0.95));
+  }
+  
+  header.scrolled {
+    background: linear-gradient(to right, rgba(10, 25, 48, 0.98), rgba(14, 35, 69, 0.98));
+    box-shadow: 0 4px 20px rgba(191, 30, 46, 0.4);
+  }
+  
+  #logo-container {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  header.scrolled #logo-container {
+    transform: scale(0.85);
+  }
+
+  /* Navigation link hover effects */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #bf1e2e;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Mobile menu animations */
+  #mobile-menu.show {
+    @apply block;
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  #mobile-menu.hide {
+    animation: slideUp 0.3s ease-out forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Hamburger menu animation */
+  #mobile-menu-button.active svg {
+    transform: rotate(90deg);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('main-header');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
+
+    // Shrink navbar on scroll
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 100;
+      if (header) {
+        header.classList.toggle('scrolled', scrolled);
+      }
+    });
+
+    // Mobile menu toggle
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+          mobileMenu.classList.remove('hidden', 'hide');
+          mobileMenu.classList.add('show');
+          mobileMenuButton.classList.add('active');
+        } else {
+          mobileMenu.classList.remove('show');
+          mobileMenu.classList.add('hide');
+          mobileMenuButton.classList.remove('active');
+          
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('hide');
+          }, 300);
+        }
+      });
+
+      // Close mobile menu when clicking on links
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          isMenuOpen = false;
+          mobileMenu.classList.remove('show');
+          mobileMenu.classList.add('hide');
+          mobileMenuButton.classList.remove('active');
+          
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('hide');
+          }, 300);
+        });
+      });
+    }
+  });
+</script>

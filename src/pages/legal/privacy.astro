@@ -1,0 +1,162 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Privacy Policy - TAKAI Paint Protection Films',
+  description: 'TAKAI Privacy Policy - Learn how we collect, use, and protect your personal information.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <Hero
+    tagline="Privacy Policy"
+    title="Your Privacy Matters"
+    subtitle="We are committed to protecting your privacy and personal information. This policy explains how we collect, use, and safeguard your data."
+    image={{
+      src: '/images/hero-car-2.jpg',
+      alt: 'Premium vehicle with TAKAI protection - your privacy and data security matter to us',
+      width: 1920,
+      height: 1080
+    }}
+  />
+
+  <!-- Privacy Policy Content -->
+  <Content
+    title="Information We Collect"
+    subtitle="Types of data we may collect"
+    items={[
+      {
+        title: 'Personal Information',
+        description: 'Name, email address, phone number, and company information when you contact us or request information.',
+      },
+      {
+        title: 'Technical Information',
+        description: 'IP address, browser type, device information, and website usage data through cookies and analytics.',
+      },
+      {
+        title: 'Business Information',
+        description: 'Information provided by distributors and installers for partnership and certification purposes.',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    title="How We Use Your Information"
+    subtitle="Purposes for data collection"
+    items={[
+      {
+        title: 'Customer Service',
+        description: 'To respond to inquiries, provide technical support, and communicate about our products and services.',
+      },
+      {
+        title: 'Business Operations',
+        description: 'To process applications, manage partnerships, and conduct business transactions.',
+      },
+      {
+        title: 'Website Improvement',
+        description: 'To analyze website usage, improve user experience, and optimize our digital presence.',
+      },
+    ]}
+  />
+
+  <Content
+    title="Information Sharing"
+    subtitle="How we protect and share your data"
+    items={[
+      {
+        title: 'No Sale of Personal Data',
+        description: 'We do not sell, rent, or trade your personal information to third parties.',
+      },
+      {
+        title: 'Service Providers',
+        description: 'We may share information with trusted service providers who assist in our business operations.',
+      },
+      {
+        title: 'Legal Requirements',
+        description: 'We may disclose information when required by law or to protect our rights and safety.',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    title="Data Security"
+    subtitle="Protecting your information"
+    items={[
+      {
+        title: 'Security Measures',
+        description: 'We implement appropriate technical and organizational measures to protect your personal information.',
+      },
+      {
+        title: 'Access Controls',
+        description: 'Access to personal information is limited to authorized personnel who need it for business purposes.',
+      },
+      {
+        title: 'Data Retention',
+        description: 'We retain personal information only as long as necessary for the purposes outlined in this policy.',
+      },
+    ]}
+  />
+
+  <Content
+    title="Your Rights"
+    subtitle="Control over your personal information"
+    items={[
+      {
+        title: 'Access and Correction',
+        description: 'You have the right to access and correct your personal information in our records.',
+      },
+      {
+        title: 'Data Portability',
+        description: 'You may request a copy of your personal information in a structured, machine-readable format.',
+      },
+      {
+        title: 'Deletion',
+        description: 'You may request deletion of your personal information, subject to legal and business requirements.',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    title="Cookies and Tracking"
+    subtitle="Website analytics and functionality"
+    items={[
+      {
+        title: 'Essential Cookies',
+        description: 'Necessary for website functionality and security. These cannot be disabled.',
+      },
+      {
+        title: 'Analytics Cookies',
+        description: 'Help us understand how visitors use our website to improve user experience.',
+      },
+      {
+        title: 'Cookie Management',
+        description: 'You can control cookie preferences through your browser settings.',
+      },
+    ]}
+  />
+
+  <Content
+    title="Contact Information"
+    subtitle="Questions about this privacy policy"
+    items={[
+      {
+        title: 'Privacy Officer',
+        description: 'Contact our privacy officer at privacy@takai-ppf.com for questions or concerns.',
+      },
+      {
+        title: 'Mailing Address',
+        description: 'TAKAI Paint Protection Films, 123 Innovation Drive, Technology Park, CA 90210',
+      },
+      {
+        title: 'Policy Updates',
+        description: 'This policy may be updated periodically. Check this page for the latest version.',
+      },
+    ]}
+  />
+</Layout>
