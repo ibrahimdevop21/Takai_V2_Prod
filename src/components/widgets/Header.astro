@@ -102,10 +102,13 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     <!-- Mobile Menu Button -->
     <button 
       id="mobile-menu-button" 
-      class="md:hidden text-white/90 focus:outline-none hover:text-white transition-colors duration-200"
+      class="md:hidden text-white/90 focus:outline-none hover:text-white transition-colors duration-200 p-2 -mr-2"
       aria-label="Toggle mobile menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      type="button"
     >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-6 h-6 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
@@ -114,29 +117,38 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   <!-- Mobile Menu -->
   <div 
     id="mobile-menu" 
-    class="hidden md:hidden bg-gradient-to-r from-[#0a1930] to-[#0e2345] border-t border-[#bf1e2e]/50 transform transition-transform duration-300 ease-in-out"
+    class="hidden md:hidden bg-gradient-to-r from-[#0a1930] to-[#0e2345] border-t border-[#bf1e2e]/50 transform transition-all duration-300 ease-in-out"
+    role="navigation"
+    aria-labelledby="mobile-menu-button"
   >
-    <div class="flex flex-col items-center py-4 space-y-3">
+    <div class="flex flex-col items-center py-6 space-y-1">
       {
         links.map(({ text, href }) => {
           const isActive = currentPath === href;
           return (
             <a 
               href={href} 
-              class={`mobile-nav-link text-white/85 hover:text-[#bf1e2e] transition-colors duration-200 py-2 ${isActive ? 'text-[#bf1e2e]' : ''}`}
+              class={`mobile-nav-link relative w-full max-w-xs text-center px-6 py-3 mx-4 rounded-lg font-medium transition-all duration-300 ${
+                isActive 
+                  ? 'text-white bg-gradient-to-r from-takai-red/20 to-takai-gold/20 border border-takai-red/30' 
+                  : 'text-white/85 hover:text-white hover:bg-white/10 border border-transparent hover:border-white/20'
+              }`}
             >
               {text}
+              {isActive && (
+                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-takai-gold to-takai-red rounded-full"></div>
+              )}
             </a>
           );
         })
       }
       {
         actions?.length ? (
-          <div class="pt-2">
+          <div class="pt-4 w-full max-w-xs mx-4">
             {actions.map((btnProps) => (
               <a
                 href={btnProps.href}
-                class="bg-gradient-to-r from-[#bf1e2e] to-[#c9a227] text-black px-6 py-2.5 rounded-full font-semibold hover:brightness-110 transition-all duration-300 shadow-md text-sm"
+                class="block w-full text-center bg-gradient-to-r from-takai-red to-takai-gold text-white px-6 py-3 rounded-lg font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-takai-gold/30"
               >
                 {btnProps.text}
               </a>
@@ -186,12 +198,18 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
   /* Mobile menu animations */
   #mobile-menu.show {
-    @apply block;
+    display: block !important;
     animation: slideDown 0.3s ease-out forwards;
   }
 
   #mobile-menu.hide {
+    display: block !important;
     animation: slideUp 0.3s ease-out forwards;
+  }
+
+  /* Ensure mobile menu is properly hidden by default */
+  #mobile-menu.hidden {
+    display: none !important;
   }
 
   @keyframes slideDown {
@@ -222,34 +240,56 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const header = document.getElementById('main-header');
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+<script is:inline>
+  // Mobile menu functionality - using is:inline to avoid hydration issues
+  (function() {
     let isMenuOpen = false;
+    let initialized = false;
 
-    // Shrink navbar on scroll
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY > 100;
-      if (header) {
-        header.classList.toggle('scrolled', scrolled);
+    function initMobileMenu() {
+      if (initialized) return;
+      
+      const header = document.getElementById('main-header');
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      console.log('Initializing mobile menu...', { header, mobileMenuButton, mobileMenu });
+
+      if (!mobileMenuButton || !mobileMenu) {
+        console.log('Mobile menu elements not found, retrying...');
+        return false;
       }
-    });
 
-    // Mobile menu toggle
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', () => {
+      initialized = true;
+
+      // Shrink navbar on scroll
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY > 100;
+        if (header) {
+          header.classList.toggle('scrolled', scrolled);
+        }
+      });
+
+      // Mobile menu toggle
+      mobileMenuButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Mobile menu button clicked, current state:', isMenuOpen);
+        
         isMenuOpen = !isMenuOpen;
         
         if (isMenuOpen) {
+          console.log('Opening mobile menu...');
           mobileMenu.classList.remove('hidden', 'hide');
           mobileMenu.classList.add('show');
           mobileMenuButton.classList.add('active');
+          mobileMenuButton.setAttribute('aria-expanded', 'true');
         } else {
+          console.log('Closing mobile menu...');
           mobileMenu.classList.remove('show');
           mobileMenu.classList.add('hide');
           mobileMenuButton.classList.remove('active');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
           
           setTimeout(() => {
             mobileMenu.classList.add('hidden');
@@ -262,10 +302,12 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       const mobileLinks = mobileMenu.querySelectorAll('a');
       mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
+          console.log('Mobile menu link clicked, closing menu...');
           isMenuOpen = false;
           mobileMenu.classList.remove('show');
           mobileMenu.classList.add('hide');
           mobileMenuButton.classList.remove('active');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
           
           setTimeout(() => {
             mobileMenu.classList.add('hidden');
@@ -273,6 +315,55 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           }, 300);
         });
       });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (isMenuOpen && !header?.contains(e.target)) {
+          console.log('Clicked outside menu, closing...');
+          isMenuOpen = false;
+          mobileMenu.classList.remove('show');
+          mobileMenu.classList.add('hide');
+          mobileMenuButton.classList.remove('active');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+          
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('hide');
+          }, 300);
+        }
+      });
+
+      console.log('Mobile menu initialized successfully!');
+      return true;
     }
-  });
+
+    // Multiple initialization attempts to handle hydration issues
+    function tryInit() {
+      if (initMobileMenu()) {
+        return; // Success, stop trying
+      }
+      
+      // Retry after short delays
+      setTimeout(() => {
+        if (initMobileMenu()) return;
+        
+        setTimeout(() => {
+          if (initMobileMenu()) return;
+          
+          // Final attempt after longer delay
+          setTimeout(initMobileMenu, 1000);
+        }, 500);
+      }, 100);
+    }
+
+    // Start initialization attempts
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', tryInit);
+    } else {
+      tryInit();
+    }
+
+    // Also try when window loads (after all resources)
+    window.addEventListener('load', tryInit);
+  })();
 </script>

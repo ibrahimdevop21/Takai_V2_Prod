@@ -5,6 +5,7 @@ import Features from '~/components/widgets/Features3.astro';
 import Content from '~/components/widgets/Content.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Company - About TAKAI Paint Protection Films',
@@ -23,7 +24,7 @@ const metadata = {
       { text: 'Our Technology', href: '/technology', variant: 'secondary' },
     ]}
     image={{
-      src: '/images/hero-car-2.jpg',
+      src: '/images/hero-car-2.webp',
       alt: 'Premium luxury sedan with TAKAI protection showcasing company excellence',
       width: 1920,
       height: 1080
@@ -70,7 +71,8 @@ const metadata = {
     ]}
   />
 
-  <!-- Company Story -->
+  <!-- Company Story - COMMENTED OUT FOR FUTURE USE -->
+  <!--
   <Content
     isReversed
     title="Our Story"
@@ -90,32 +92,105 @@ const metadata = {
       },
     ]}
   />
+  -->
 
   <!-- Manufacturing Excellence -->
-  <Features
-    id="manufacturing"
-    title="Manufacturing Excellence"
-    subtitle="State-of-the-art facilities and processes"
-    items={[
-      {
-        title: 'Advanced Facilities',
-        description: 'Modern manufacturing facilities equipped with the latest technology and quality control systems.',
-        icon: 'tabler:building-factory',
-      },
-      {
-        title: 'Quality Assurance',
-        description: 'Rigorous testing and quality control at every stage of the manufacturing process.',
-        icon: 'tabler:shield-check',
-      },
-      {
-        title: 'Continuous Improvement',
-        description: 'Ongoing investment in process optimization and technology advancement.',
-        icon: 'tabler:trending-up',
-      },
-    ]}
-  />
+  <section class="py-20 bg-gradient-to-br from-takai-blue/5 to-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-takai-blue mb-6">Manufacturing Excellence</h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+          State-of-the-art facilities and processes delivering uncompromising quality in every TAKAI film
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Advanced Facilities -->
+        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-takai-blue/10 hover:border-takai-blue/30">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-takai-blue to-blue-700 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Icon name="tabler:building-factory" class="w-8 h-8 text-white stroke-[1.5]" />
+            </div>
+            <h3 class="text-2xl font-bold text-takai-blue mb-3">Advanced Facilities</h3>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Modern manufacturing facilities equipped with the latest technology and quality control systems.
+          </p>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 text-sm text-gray-600">
+              <div class="w-2 h-2 bg-takai-gold rounded-full"></div>
+              <span>Clean room environments</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-600">
+              <div class="w-2 h-2 bg-takai-gold rounded-full"></div>
+              <span>Automated production lines</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-600">
+              <div class="w-2 h-2 bg-takai-gold rounded-full"></div>
+              <span>Real-time monitoring systems</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- Team & Expertise -->
+        <!-- Quality Assurance -->
+        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-takai-gold/20 hover:border-takai-gold/40">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-takai-gold to-yellow-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Icon name="tabler:shield-check" class="w-8 h-8 text-white stroke-[1.5]" />
+            </div>
+            <h3 class="text-2xl font-bold text-takai-blue mb-3">Quality Assurance</h3>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Rigorous testing and quality control at every stage of the manufacturing process.
+          </p>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 text-sm text-gray-600">
+              <div class="w-2 h-2 bg-takai-red rounded-full"></div>
+              <span>Multi-point inspection</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-600">
+              <div class="w-2 h-2 bg-takai-red rounded-full"></div>
+              <span>Performance testing</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-600">
+              <div class="w-2 h-2 bg-takai-red rounded-full"></div>
+              <span>Batch traceability</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Continuous Improvement -->
+        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-takai-red/20 hover:border-takai-red/40">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-takai-red to-red-700 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Icon name="tabler:trending-up" class="w-8 h-8 text-white stroke-[1.5]" />
+            </div>
+            <h3 class="text-2xl font-bold text-takai-blue mb-3">Continuous Improvement</h3>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Ongoing investment in process optimization and technology advancement.
+          </p>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 text-sm text-gray-600">
+              <div class="w-2 h-2 bg-takai-blue rounded-full"></div>
+              <span>R&D investment</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-600">
+              <div class="w-2 h-2 bg-takai-blue rounded-full"></div>
+              <span>Process optimization</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-600">
+              <div class="w-2 h-2 bg-takai-blue rounded-full"></div>
+              <span>Technology upgrades</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team & Expertise - COMMENTED OUT FOR FUTURE USE -->
+  <!--
   <Content
     title="Our Team"
     subtitle="Expertise you can trust"
@@ -134,30 +209,116 @@ const metadata = {
       },
     ]}
   />
+  -->
 
   <!-- Certifications & Standards -->
-  <Features
-    id="certifications"
-    title="Certifications & Standards"
-    subtitle="Meeting the highest industry standards"
-    items={[
-      {
-        title: 'ISO 9001',
-        description: 'Quality management system certification ensuring consistent product quality.',
-        icon: 'tabler:certificate',
-      },
-      {
-        title: 'Automotive Standards',
-        description: 'Products meet or exceed automotive industry specifications and requirements.',
-        icon: 'tabler:car',
-      },
-      {
-        title: 'Environmental Compliance',
-        description: 'Manufacturing processes comply with environmental regulations and standards.',
-        icon: 'tabler:leaf',
-      },
-    ]}
-  />
+  <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-takai-blue mb-6">Certifications & Standards</h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+          Meeting and exceeding the highest industry standards for quality, safety, and environmental responsibility
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <!-- ISO 9001 -->
+        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-takai-blue/10 hover:border-takai-blue/30 text-center flex flex-col h-full">
+          <div class="mb-6">
+            <div class="w-20 h-20 bg-gradient-to-br from-takai-blue to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Icon name="tabler:certificate" class="w-10 h-10 text-white stroke-[1.5]" />
+            </div>
+            <h3 class="text-2xl font-bold text-takai-blue mb-3">ISO 9001</h3>
+            <div class="w-16 h-1 bg-gradient-to-r from-takai-gold to-takai-red mx-auto mb-4 rounded-full"></div>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-6 flex-grow">
+            Quality management system certification ensuring consistent product quality and customer satisfaction.
+          </p>
+          <div class="bg-takai-blue/5 rounded-lg p-4 mt-auto">
+            <p class="text-sm font-medium text-takai-blue">Certified Since 2018</p>
+          </div>
+        </div>
+
+        <!-- Automotive Standards -->
+        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-takai-gold/20 hover:border-takai-gold/40 text-center flex flex-col h-full">
+          <div class="mb-6">
+            <div class="w-20 h-20 bg-gradient-to-br from-takai-gold to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Icon name="tabler:car" class="w-10 h-10 text-white stroke-[1.5]" />
+            </div>
+            <h3 class="text-2xl font-bold text-takai-blue mb-3">Automotive Standards</h3>
+            <div class="w-16 h-1 bg-gradient-to-r from-takai-gold to-takai-red mx-auto mb-4 rounded-full"></div>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-6 flex-grow">
+            Products meet or exceed automotive industry specifications and OEM requirements worldwide.
+          </p>
+          <div class="bg-takai-gold/10 rounded-lg p-4 mt-auto">
+            <p class="text-sm font-medium text-takai-blue">OEM Approved</p>
+          </div>
+        </div>
+
+        <!-- Environmental Compliance -->
+        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-green-500/20 hover:border-green-500/40 text-center md:col-span-2 lg:col-span-1 flex flex-col h-full">
+          <div class="mb-6">
+            <div class="w-20 h-20 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Icon name="tabler:leaf" class="w-10 h-10 text-white stroke-[1.5]" />
+            </div>
+            <h3 class="text-2xl font-bold text-takai-blue mb-3">Environmental Compliance</h3>
+            <div class="w-16 h-1 bg-gradient-to-r from-takai-gold to-takai-red mx-auto mb-4 rounded-full"></div>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-6 flex-grow">
+            Manufacturing processes comply with environmental regulations and sustainability standards.
+          </p>
+          <div class="bg-green-500/10 rounded-lg p-4 mt-auto">
+            <p class="text-sm font-medium text-takai-blue">Eco-Certified</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Standards Grid -->
+      <div class="bg-gradient-to-r from-takai-blue to-blue-800 rounded-2xl p-8 md:p-12 text-white">
+        <div class="text-center mb-8">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">Additional Standards & Certifications</h3>
+          <p class="text-white/90 max-w-2xl mx-auto">
+            Our commitment to excellence extends across multiple industry standards and certifications
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <Icon name="tabler:shield-check" class="w-6 h-6 text-white" />
+            </div>
+            <h4 class="font-semibold mb-1">ASTM Standards</h4>
+            <p class="text-sm text-white/80">Material testing compliance</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <Icon name="tabler:world" class="w-6 h-6 text-white" />
+            </div>
+            <h4 class="font-semibold mb-1">Global Compliance</h4>
+            <p class="text-sm text-white/80">International regulations</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <Icon name="tabler:recycle" class="w-6 h-6 text-white" />
+            </div>
+            <h4 class="font-semibold mb-1">RoHS Compliant</h4>
+            <p class="text-sm text-white/80">Hazardous substance free</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <Icon name="tabler:award" class="w-6 h-6 text-white" />
+            </div>
+            <h4 class="font-semibold mb-1">Industry Awards</h4>
+            <p class="text-sm text-white/80">Excellence recognition</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Customer Testimonials -->
   <Testimonials
