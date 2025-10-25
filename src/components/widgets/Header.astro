@@ -90,7 +90,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           actions.map((btnProps) => (
             <a
               href={btnProps.href}
-              class="bg-gradient-to-r from-[#bf1e2e] to-[#c9a227] text-black px-6 py-2.5 rounded-full font-semibold hover:brightness-110 transition-all duration-300 shadow-md hover:shadow-lg text-sm"
+              class="bg-takai-gold hover:bg-takai-gold/90 text-black px-6 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg text-sm"
             >
               {btnProps.text}
             </a>
@@ -148,7 +148,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             {actions.map((btnProps) => (
               <a
                 href={btnProps.href}
-                class="block w-full text-center bg-gradient-to-r from-takai-red to-takai-gold text-white px-6 py-3 rounded-lg font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-takai-gold/30"
+                class="block w-full text-center bg-takai-gold hover:bg-takai-gold/90 text-black px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-takai-gold/30"
               >
                 {btnProps.text}
               </a>

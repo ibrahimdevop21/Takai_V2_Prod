@@ -4,14 +4,14 @@ import Hero from '~/components/widgets/Hero.astro';
 import { Icon } from 'astro-icon/components';
 ---
 
-<PageLayout metadata={{ title: "Products", description: "Explore TAKAI's complete range of protection films - Paint Protection, Solar Control, and Safety Window Films." }}>
+<PageLayout metadata={{ title: "Products", description: "Explore TAKAI's complete range of protection films - Paint Protection Films, UV Nano Ceramic Films, and Windshield Protection Films." }}>
   <!-- Hero Section -->
   <Hero
     tagline="Our Products"
     title="TAKAI Product Range"
-    subtitle="Comprehensive protection solutions engineered in Japan. From paint protection to solar control and safety films, TAKAI delivers precision-crafted films for every protection need."
+    subtitle="Premium Japanese-engineered protection films. From paint protection to UV ceramic films and windshield protection, TAKAI delivers world-class quality with superior performance."
     actions={[
-      { text: 'Find Installer', href: '/distributors', variant: 'primary' },
+      { text: 'Find Distributor', href: '/distributors', variant: 'primary' },
       { text: 'Contact Us', href: '/contact', variant: 'secondary' },
     ]}
     image={{
@@ -28,157 +28,506 @@ import { Icon } from 'astro-icon/components';
     <div class="mb-24">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Paint Protection Films (PPF)</h2>
-        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-          Five levels of premium paint protection, from essential coverage to ultimate luxury protection.
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          Complete range of premium paint protection films featuring advanced TPU technology, self-healing coatings, and superior durability. Available in gloss and matte finishes with over 60 color options.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- TAKAI 5 -->
-        <div class="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border-2 border-takai-blue/10 hover:border-takai-blue/30">
-          <div class="text-center mb-4">
-            <h3 class="text-xl font-bold text-takai-blue mb-2">TAKAI 5</h3>
-            <div class="w-16 h-1 bg-gradient-to-r from-takai-gold to-takai-red mx-auto mb-3 rounded-full"></div>
-            <p class="text-sm text-gray-600 font-medium">Essential Protection</p>
-          </div>
-          <ul class="space-y-3 text-sm text-gray-700">
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-blue/5"><Icon name="tabler:shield" class="text-takai-blue w-4 h-4 stroke-[1.5]" /> <span class="font-medium">5 Year Warranty</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-blue/5"><Icon name="tabler:droplet" class="text-takai-blue w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Hydrophobic Surface</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-blue/5"><Icon name="tabler:sun" class="text-takai-blue w-4 h-4 stroke-[1.5]" /> <span class="font-medium">UV Protection</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-blue/5"><Icon name="tabler:car" class="text-takai-blue w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Entry-Level PPF</span></li>
-          </ul>
-        </div>
+      <!-- PPF Specifications Table -->
+      <div class="mb-12 overflow-x-auto">
+        <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+          <thead class="bg-gradient-to-r from-[#01407a] to-blue-800 text-white">
+            <tr>
+              <th class="px-4 py-3 text-left font-semibold">Product</th>
+              <th class="px-4 py-3 text-center font-semibold">Thickness</th>
+              <th class="px-4 py-3 text-center font-semibold">TPU Film</th>
+              <th class="px-4 py-3 text-center font-semibold">Gloss</th>
+              <th class="px-4 py-3 text-center font-semibold">Tensile Strength</th>
+              <th class="px-4 py-3 text-center font-semibold">Durability</th>
+              <th class="px-4 py-3 text-center font-semibold">Size</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-semibold text-[#01407a]">TAKAI PREMIUM</td>
+              <td class="px-4 py-3 text-center">6.5MIL/165μm</td>
+              <td class="px-4 py-3 text-center">6MIL</td>
+              <td class="px-4 py-3 text-center">92</td>
+              <td class="px-4 py-3 text-center">30Mpa</td>
+              <td class="px-4 py-3 text-center font-semibold text-green-600">5 YEARS</td>
+              <td class="px-4 py-3 text-center">1.52 x 15M</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-semibold text-[#01407a]">TAKAI COLOURS</td>
+              <td class="px-4 py-3 text-center">7.6MIL/190μm</td>
+              <td class="px-4 py-3 text-center">6MIL</td>
+              <td class="px-4 py-3 text-center">No Gloss</td>
+              <td class="px-4 py-3 text-center">35Mpa</td>
+              <td class="px-4 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+              <td class="px-4 py-3 text-center">1.52 x 15M</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-semibold text-[#01407a]">TAKAI PLUS</td>
+              <td class="px-4 py-3 text-center">9.6MIL/240μm</td>
+              <td class="px-4 py-3 text-center">8MIL</td>
+              <td class="px-4 py-3 text-center">No Gloss</td>
+              <td class="px-4 py-3 text-center">38Mpa</td>
+              <td class="px-4 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+              <td class="px-4 py-3 text-center">1.52 x 15M</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-semibold text-[#01407a]">TAKAI 5</td>
+              <td class="px-4 py-3 text-center">7.6MIL/190μm</td>
+              <td class="px-4 py-3 text-center">8MIL</td>
+              <td class="px-4 py-3 text-center">93.8</td>
+              <td class="px-4 py-3 text-center">35Mpa</td>
+              <td class="px-4 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+              <td class="px-4 py-3 text-center">1.52 x 15M</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-semibold text-[#01407a]">TAKAI MATT</td>
+              <td class="px-4 py-3 text-center">9.6MIL/240μm</td>
+              <td class="px-4 py-3 text-center">8MIL</td>
+              <td class="px-4 py-3 text-center">93.8</td>
+              <td class="px-4 py-3 text-center">38Mpa</td>
+              <td class="px-4 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+              <td class="px-4 py-3 text-center">1.52 x 15M</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-semibold text-[#01407a]">TAKAI MATT PLUS</td>
+              <td class="px-4 py-3 text-center">9.6MIL/240μm</td>
+              <td class="px-4 py-3 text-center">8MIL</td>
+              <td class="px-4 py-3 text-center">94.5</td>
+              <td class="px-4 py-3 text-center">38Mpa</td>
+              <td class="px-4 py-3 text-center font-semibold text-purple-600">15 YEARS</td>
+              <td class="px-4 py-3 text-center">1.52 x 15M</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-semibold text-[#01407a]">ULTIMATE</td>
+              <td class="px-4 py-3 text-center">9.6MIL/240μm</td>
+              <td class="px-4 py-3 text-center">8MIL</td>
+              <td class="px-4 py-3 text-center">95.4</td>
+              <td class="px-4 py-3 text-center">38Mpa</td>
+              <td class="px-4 py-3 text-center font-semibold text-purple-600">15 YEARS</td>
+              <td class="px-4 py-3 text-center">1.52 x 15M</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gradient-to-r from-yellow-50 to-orange-50">
+              <td class="px-4 py-3 font-bold text-[#bf1e2e]">TAKAI STEELPLUS</td>
+              <td class="px-4 py-3 text-center font-semibold">9.6MIL/240μm</td>
+              <td class="px-4 py-3 text-center font-semibold">8MIL</td>
+              <td class="px-4 py-3 text-center font-semibold">95.4</td>
+              <td class="px-4 py-3 text-center font-semibold">40Mpa</td>
+              <td class="px-4 py-3 text-center font-bold text-red-600">INDEFINITE</td>
+              <td class="px-4 py-3 text-center font-semibold">1.52 x 15M</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <!-- TAKAI Gold -->
-        <div class="bg-gradient-to-br from-white to-takai-gold/5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border-2 border-takai-gold/20 hover:border-takai-gold/40">
-          <div class="text-center mb-4">
-            <h3 class="text-xl font-bold text-takai-blue mb-2">TAKAI Gold</h3>
-            <div class="w-16 h-1 bg-gradient-to-r from-takai-gold to-takai-red mx-auto mb-3 rounded-full"></div>
-            <p class="text-sm text-gray-600 font-medium">Premium Protection</p>
-          </div>
-          <ul class="space-y-3 text-sm text-gray-700">
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-gold/10"><Icon name="tabler:shield-check" class="text-takai-gold w-4 h-4 stroke-[1.5]" /> <span class="font-medium">10 Year Warranty</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-gold/10"><Icon name="tabler:sparkles" class="text-takai-gold w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Enhanced Clarity</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-gold/10"><Icon name="tabler:refresh" class="text-takai-gold w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Self-Healing Technology</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-gold/10"><Icon name="tabler:diamond" class="text-takai-gold w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Premium Grade</span></li>
-          </ul>
+      <!-- PPF Key Features -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <Icon name="tabler:palette" class="w-12 h-12 text-[#c9a227] mx-auto mb-4" />
+          <h4 class="font-bold text-[#01407a] mb-2">60+ Colors</h4>
+          <p class="text-sm text-gray-600">Wide range of colors and finishes available</p>
         </div>
-
-        <!-- TAKAI Gold+ -->
-        <div class="bg-gradient-to-br from-white to-takai-gold/8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border-2 border-takai-gold/30 hover:border-takai-gold/50">
-          <div class="text-center mb-4">
-            <h3 class="text-xl font-bold text-takai-blue mb-2">TAKAI Gold+</h3>
-            <div class="w-16 h-1 bg-gradient-to-r from-takai-gold to-takai-red mx-auto mb-3 rounded-full"></div>
-            <p class="text-sm text-gray-600 font-medium">Advanced Protection</p>
-          </div>
-          <ul class="space-y-3 text-sm text-gray-700">
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-gold/15"><Icon name="tabler:shield-check" class="text-takai-gold w-4 h-4 stroke-[1.5]" /> <span class="font-medium">10 Year Warranty</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-gold/15"><Icon name="tabler:bolt" class="text-takai-gold w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Advanced Self-Healing</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-gold/15"><Icon name="tabler:flame" class="text-takai-gold w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Superior Heat Resistance</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-gold/15"><Icon name="tabler:star" class="text-takai-gold w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Professional Grade</span></li>
-          </ul>
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <Icon name="tabler:droplet" class="w-12 h-12 text-[#c9a227] mx-auto mb-4" />
+          <h4 class="font-bold text-[#01407a] mb-2">Hydrophobic</h4>
+          <p class="text-sm text-gray-600">R9-R10 water repellent properties</p>
         </div>
-
-        <!-- TAKAI Steel -->
-        <div class="bg-gradient-to-br from-white to-takai-red/5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border-2 border-takai-red/20 hover:border-takai-red/40">
-          <div class="text-center mb-4">
-            <h3 class="text-xl font-bold text-takai-blue mb-2">TAKAI Steel</h3>
-            <div class="w-16 h-1 bg-gradient-to-r from-takai-gold to-takai-red mx-auto mb-3 rounded-full"></div>
-            <p class="text-sm text-gray-600 font-medium">Ultimate Protection</p>
-          </div>
-          <ul class="space-y-3 text-sm text-gray-700">
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-red/10"><Icon name="tabler:shield-check" class="text-takai-red w-4 h-4 stroke-[1.5]" /> <span class="font-medium">15 Year Warranty</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-red/10"><Icon name="tabler:bolt" class="text-takai-red w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Maximum Durability</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-red/10"><Icon name="tabler:shield" class="text-takai-red w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Impact Resistance</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-red/10"><Icon name="tabler:crown" class="text-takai-red w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Luxury Vehicles</span></li>
-          </ul>
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <Icon name="tabler:refresh" class="w-12 h-12 text-[#c9a227] mx-auto mb-4" />
+          <h4 class="font-bold text-[#01407a] mb-2">Self-Healing</h4>
+          <p class="text-sm text-gray-600">15μm self-healing coating layer</p>
         </div>
-
-        <!-- TAKAI Steel+ -->
-        <div class="bg-gradient-to-br from-white to-takai-red/8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border-2 border-takai-red/30 hover:border-takai-red/50 md:col-span-2 lg:col-span-1">
-          <div class="text-center mb-4">
-            <h3 class="text-xl font-bold text-takai-blue mb-2">TAKAI Steel+</h3>
-            <div class="w-16 h-1 bg-gradient-to-r from-takai-gold to-takai-red mx-auto mb-3 rounded-full"></div>
-            <p class="text-sm text-gray-600 font-medium">Flagship Protection</p>
-          </div>
-          <ul class="space-y-3 text-sm text-gray-700">
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-red/15"><Icon name="tabler:shield-check" class="text-takai-red w-4 h-4 stroke-[1.5]" /> <span class="font-medium">15 Year Warranty</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-red/15"><Icon name="tabler:circle-dot" class="text-takai-red w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Nanotechnology</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-red/15"><Icon name="tabler:car" class="text-takai-red w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Electric Vehicle Optimized</span></li>
-            <li class="flex items-center gap-3 p-2 rounded-lg bg-takai-red/15"><Icon name="tabler:award" class="text-takai-red w-4 h-4 stroke-[1.5]" /> <span class="font-medium">Flagship Model</span></li>
-          </ul>
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <Icon name="tabler:sun" class="w-12 h-12 text-[#c9a227] mx-auto mb-4" />
+          <h4 class="font-bold text-[#01407a] mb-2">Anti-Yellowing</h4>
+          <p class="text-sm text-gray-600">ΔE &lt; 1 color stability guarantee</p>
         </div>
       </div>
+
     </div>
 
-    <!-- Solar Control Films Section -->
+    <!-- UV Nano Ceramic Films Section -->
     <div class="mb-24">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Solar Control Films</h2>
-        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-          Advanced UV and heat resistance films for automotive and architectural applications.
+        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">TAKAI UV Nano Ceramic Films</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          Advanced nano-ceramic technology providing superior UV protection, infrared rejection, and total solar energy rejection for automotive and architectural applications.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <img src="/images/takai-solar-control.webp" alt="TAKAI Solar Control Films" class="rounded-xl shadow-lg" width="600" height="400" />
+      <!-- UV Films Specifications Table -->
+      <div class="mb-12 overflow-x-auto">
+        <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+          <thead class="bg-gradient-to-r from-[#01407a] to-blue-800 text-white">
+            <tr>
+              <th class="px-3 py-3 text-left font-semibold">Model</th>
+              <th class="px-3 py-3 text-center font-semibold">Thickness</th>
+              <th class="px-3 py-3 text-center font-semibold">VLT (%)</th>
+              <th class="px-3 py-3 text-center font-semibold">IRR 950nm (%)</th>
+              <th class="px-3 py-3 text-center font-semibold">IRR 1400nm (%)</th>
+              <th class="px-3 py-3 text-center font-semibold">UVR (%)</th>
+              <th class="px-3 py-3 text-center font-semibold">TSER (%)</th>
+              <th class="px-3 py-3 text-center font-semibold">Durability</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 text-sm">
+            <tr class="hover:bg-gray-50">
+              <td class="px-3 py-3 font-semibold text-[#01407a]">TK-05-UV</td>
+              <td class="px-3 py-3 text-center">2 mil</td>
+              <td class="px-3 py-3 text-center">5</td>
+              <td class="px-3 py-3 text-center">91</td>
+              <td class="px-3 py-3 text-center">93</td>
+              <td class="px-3 py-3 text-center font-semibold text-green-600">100</td>
+              <td class="px-3 py-3 text-center">72</td>
+              <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-3 py-3 font-semibold text-[#01407a]">TK-18-UV</td>
+              <td class="px-3 py-3 text-center">2 mil</td>
+              <td class="px-3 py-3 text-center">18</td>
+              <td class="px-3 py-3 text-center">93</td>
+              <td class="px-3 py-3 text-center">95</td>
+              <td class="px-3 py-3 text-center font-semibold text-green-600">100</td>
+              <td class="px-3 py-3 text-center">68</td>
+              <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-3 py-3 font-semibold text-[#01407a]">TK-35-UV</td>
+              <td class="px-3 py-3 text-center">2 mil</td>
+              <td class="px-3 py-3 text-center">35</td>
+              <td class="px-3 py-3 text-center">92</td>
+              <td class="px-3 py-3 text-center">98</td>
+              <td class="px-3 py-3 text-center font-semibold text-green-600">100</td>
+              <td class="px-3 py-3 text-center">58</td>
+              <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-3 py-3 font-semibold text-[#01407a]">TK-70-UV</td>
+              <td class="px-3 py-3 text-center">2 mil</td>
+              <td class="px-3 py-3 text-center">70</td>
+              <td class="px-3 py-3 text-center">90</td>
+              <td class="px-3 py-3 text-center">98</td>
+              <td class="px-3 py-3 text-center font-semibold text-green-600">100</td>
+              <td class="px-3 py-3 text-center">50</td>
+              <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-3 py-3 font-semibold text-[#01407a]">TK-70-UV-GB</td>
+              <td class="px-3 py-3 text-center">2 mil</td>
+              <td class="px-3 py-3 text-center">70</td>
+              <td class="px-3 py-3 text-center">85</td>
+              <td class="px-3 py-3 text-center">97</td>
+              <td class="px-3 py-3 text-center font-semibold text-green-600">100</td>
+              <td class="px-3 py-3 text-center">48</td>
+              <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-3 py-3 font-semibold text-[#01407a]">TK-18-UV-3M</td>
+              <td class="px-3 py-3 text-center">3 mil</td>
+              <td class="px-3 py-3 text-center">18</td>
+              <td class="px-3 py-3 text-center">88</td>
+              <td class="px-3 py-3 text-center">92</td>
+              <td class="px-3 py-3 text-center font-semibold text-green-600">100</td>
+              <td class="px-3 py-3 text-center">71</td>
+              <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-3 py-3 font-semibold text-[#01407a]">TK-35-UV-3M</td>
+              <td class="px-3 py-3 text-center">3 mil</td>
+              <td class="px-3 py-3 text-center">35</td>
+              <td class="px-3 py-3 text-center">88</td>
+              <td class="px-3 py-3 text-center">92</td>
+              <td class="px-3 py-3 text-center font-semibold text-green-600">100</td>
+              <td class="px-3 py-3 text-center">63</td>
+              <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-3 py-3 font-semibold text-[#01407a]">TK-70-UV-SM</td>
+              <td class="px-3 py-3 text-center">5 mil</td>
+              <td class="px-3 py-3 text-center">70</td>
+              <td class="px-3 py-3 text-center">90</td>
+              <td class="px-3 py-3 text-center">95</td>
+              <td class="px-3 py-3 text-center font-semibold text-green-600">100</td>
+              <td class="px-3 py-3 text-center">46</td>
+              <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Premium IR Series -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold text-[#01407a] text-center mb-8">Premium IR Series - 99% Infrared Rejection</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+            <thead class="bg-gradient-to-r from-[#bf1e2e] to-[#c9a227] text-white">
+              <tr>
+                <th class="px-3 py-3 text-left font-semibold">Model</th>
+                <th class="px-3 py-3 text-center font-semibold">Thickness</th>
+                <th class="px-3 py-3 text-center font-semibold">VLT (%)</th>
+                <th class="px-3 py-3 text-center font-semibold">IRR 950nm (%)</th>
+                <th class="px-3 py-3 text-center font-semibold">IRR 1400nm (%)</th>
+                <th class="px-3 py-3 text-center font-semibold">UVR (%)</th>
+                <th class="px-3 py-3 text-center font-semibold">TSER (%)</th>
+                <th class="px-3 py-3 text-center font-semibold">Durability</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 text-sm">
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#bf1e2e]">TK-999-IR</td>
+                <td class="px-3 py-3 text-center">2.2 mil</td>
+                <td class="px-3 py-3 text-center">55</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99.5</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99.5</td>
+                <td class="px-3 py-3 text-center font-bold text-green-600">99.5</td>
+                <td class="px-3 py-3 text-center">62</td>
+                <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#bf1e2e]">TK-0899-IR</td>
+                <td class="px-3 py-3 text-center">2.2 mil</td>
+                <td class="px-3 py-3 text-center">8</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99</td>
+                <td class="px-3 py-3 text-center font-bold text-green-600">99.5</td>
+                <td class="px-3 py-3 text-center">75</td>
+                <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#bf1e2e]">TK-1899-IR</td>
+                <td class="px-3 py-3 text-center">2.2 mil</td>
+                <td class="px-3 py-3 text-center">18</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99</td>
+                <td class="px-3 py-3 text-center font-bold text-green-600">99.5</td>
+                <td class="px-3 py-3 text-center">71</td>
+                <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#bf1e2e]">TK-3599-IR</td>
+                <td class="px-3 py-3 text-center">2.2 mil</td>
+                <td class="px-3 py-3 text-center">35</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99</td>
+                <td class="px-3 py-3 text-center font-bold text-green-600">99.5</td>
+                <td class="px-3 py-3 text-center">65</td>
+                <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#bf1e2e]">TK-5099-IR</td>
+                <td class="px-3 py-3 text-center">2.2 mil</td>
+                <td class="px-3 py-3 text-center">50</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99</td>
+                <td class="px-3 py-3 text-center font-bold text-green-600">99.5</td>
+                <td class="px-3 py-3 text-center">60</td>
+                <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#bf1e2e]">TK-7099-IR</td>
+                <td class="px-3 py-3 text-center">3.5 mil</td>
+                <td class="px-3 py-3 text-center">70</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99</td>
+                <td class="px-3 py-3 text-center font-bold text-red-600">99</td>
+                <td class="px-3 py-3 text-center font-bold text-green-600">99.5</td>
+                <td class="px-3 py-3 text-center">54</td>
+                <td class="px-3 py-3 text-center font-semibold text-blue-600">10 YEARS</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div>
-          <h3 class="text-xl md:text-2xl font-semibold text-[#01407a] mb-4">Superior Heat & UV Protection</h3>
-          <p class="text-gray-700 leading-relaxed mb-6">
-            TAKAI Solar Control Films provide exceptional heat rejection and UV protection while maintaining optical clarity. 
-            Perfect for reducing interior temperatures and protecting against harmful UV radiation.
-          </p>
-          <ul class="space-y-3 text-gray-700">
-            <li class="flex items-center gap-3"><Icon name="tabler:sun" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Up to 99% UV Rejection</li>
-            <li class="flex items-center gap-3"><Icon name="tabler:temperature" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Superior Heat Reduction</li>
-            <li class="flex items-center gap-3"><Icon name="tabler:eye" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Crystal Clear Visibility</li>
-            <li class="flex items-center gap-3"><Icon name="tabler:leaf" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Energy Efficiency</li>
-            <li class="flex items-center gap-3"><Icon name="tabler:palette" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Fade Protection</li>
-          </ul>
+      </div>
+
+      <!-- UV Films Key Features -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <Icon name="tabler:sun" class="w-12 h-12 text-[#c9a227] mx-auto mb-4" />
+          <h4 class="font-bold text-[#01407a] mb-2">100% UV Protection</h4>
+          <p class="text-sm text-gray-600">Complete ultraviolet radiation blocking</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <Icon name="tabler:temperature" class="w-12 h-12 text-[#c9a227] mx-auto mb-4" />
+          <h4 class="font-bold text-[#01407a] mb-2">99% IR Rejection</h4>
+          <p class="text-sm text-gray-600">Superior infrared heat rejection</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <Icon name="tabler:eye" class="w-12 h-12 text-[#c9a227] mx-auto mb-4" />
+          <h4 class="font-bold text-[#01407a] mb-2">Crystal Clarity</h4>
+          <p class="text-sm text-gray-600">Excellent optical clarity maintained</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <Icon name="tabler:shield-check" class="w-12 h-12 text-[#c9a227] mx-auto mb-4" />
+          <h4 class="font-bold text-[#01407a] mb-2">10 Year Warranty</h4>
+          <p class="text-sm text-gray-600">Long-term performance guarantee</p>
         </div>
       </div>
     </div>
 
-    <!-- Safety Window Films Section -->
-    <div class="mb-16">
+    <!-- Windshield Protection Film Section -->
+    <div class="mb-24">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Safety Window Films</h2>
-        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-          Glass Guard protection films for enhanced safety and security applications.
+        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">🇯🇵 TAKAI TPU Windshield Protection Film</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          Advanced TPU windshield protection film providing comprehensive protection against scratches, breaks, UV damage, and sand damage while preventing glass breakage.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="order-2 md:order-1">
-          <h3 class="text-xl md:text-2xl font-semibold text-[#01407a] mb-4">Glass Guard Technology</h3>
-          <p class="text-gray-700 leading-relaxed mb-6">
-            Advanced safety window films designed to hold glass fragments together upon impact, providing enhanced protection 
-            against break-ins, accidents, and natural disasters while maintaining transparency.
+      <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="text-2xl font-bold text-[#01407a] mb-6">Premium Windshield Protection</h3>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <Icon name="tabler:ruler" class="text-[#c9a227] w-6 h-6" />
+                <div>
+                  <span class="font-semibold text-[#01407a]">Thickness:</span>
+                  <span class="text-gray-700 ml-2">6.5 mil – 7.5 mil</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <Icon name="tabler:package" class="text-[#c9a227] w-6 h-6" />
+                <div>
+                  <span class="font-semibold text-[#01407a]">Size:</span>
+                  <span class="text-gray-700 ml-2">1.52 x 15M</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <Icon name="tabler:shield-check" class="text-[#c9a227] w-6 h-6" />
+                <div>
+                  <span class="font-semibold text-[#01407a]">Durability:</span>
+                  <span class="text-gray-700 ml-2">2 Years Warranty</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-[#01407a] mb-4">Key Functions</h4>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3">
+                <Icon name="tabler:shield" class="text-[#01407a] w-5 h-5" />
+                <span>Anti-Scratch Protection</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="tabler:shield-x" class="text-[#01407a] w-5 h-5" />
+                <span>Anti-Break Technology</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="tabler:sun" class="text-[#01407a] w-5 h-5" />
+                <span>UV Proof Protection</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="tabler:grain" class="text-[#01407a] w-5 h-5" />
+                <span>Sand Proof Barrier</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <Icon name="tabler:glass" class="text-[#01407a] w-5 h-5" />
+                <span>Prevents Glass Breakage</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Distributor Information & Offers Section -->
+    <div class="mb-24">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Distribution & Partnership</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          Your Gateway to the Middle East: UAE Distribution & Direct Japan Shipping for Large-Scale Partnerships
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <!-- Distributor Offer -->
+        <div class="bg-gradient-to-br from-[#01407a] to-blue-800 rounded-2xl p-8 text-white">
+          <div class="text-center mb-6">
+            <Icon name="tabler:gift" class="w-12 h-12 text-[#c9a227] mx-auto mb-4" />
+            <h3 class="text-xl font-bold mb-2">Distributor Offer</h3>
+          </div>
+          <p class="text-white/90 mb-4 text-center">
+            For every 100 rolls purchased, distributors receive <strong>3 additional rolls free</strong> from our most popular product category.
           </p>
+        </div>
+
+        <!-- Premium Plus Series -->
+        <div class="bg-gradient-to-br from-[#bf1e2e] to-[#c9a227] rounded-2xl p-8 text-white">
+          <div class="text-center mb-6">
+            <Icon name="tabler:star" class="w-12 h-12 text-white mx-auto mb-4" />
+            <h3 class="text-xl font-bold mb-2">Premium Plus Series</h3>
+          </div>
+          <p class="text-white/90 text-center">
+            New release featuring <strong>no adhesive</strong> with advanced self-adhesive technology and <strong>thermal insulation</strong> for paint heat - highly recommended for electric vehicles.
+          </p>
+        </div>
+
+        <!-- Bulk Order Promotion -->
+        <div class="bg-gradient-to-br from-[#c9a227] to-orange-500 rounded-2xl p-8 text-white">
+          <div class="text-center mb-6">
+            <Icon name="tabler:percentage" class="w-12 h-12 text-white mx-auto mb-4" />
+            <h3 class="text-xl font-bold mb-2">Bulk Order Promotion</h3>
+          </div>
+          <p class="text-white/90 text-center">
+            For every 100 rolls purchased, we offer <strong>5 additional rolls free</strong> as part of our value-added program to support bulk orders.
+          </p>
+        </div>
+      </div>
+
+      <!-- Support Services -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <h3 class="text-xl font-bold text-[#01407a] mb-6 flex items-center gap-3">
+            <Icon name="tabler:school" class="w-6 h-6 text-[#c9a227]" />
+            Technical & Training Support
+          </h3>
           <ul class="space-y-3 text-gray-700">
-            <li class="flex items-center gap-3"><Icon name="tabler:shield" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Shatter Resistance</li>
-            <li class="flex items-center gap-3"><Icon name="tabler:shield-check" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Security Enhancement</li>
-            <li class="flex items-center gap-3"><Icon name="tabler:shield" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Impact Protection</li>
-            <li class="flex items-center gap-3"><Icon name="tabler:square" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Fragment Retention</li>
-            <li class="flex items-center gap-3"><Icon name="tabler:building" class="text-[#0A2540] w-5 h-5 stroke-[1.5]" /> Architectural Grade</li>
+            <li class="flex items-center gap-3">
+              <Icon name="tabler:check" class="w-5 h-5 text-green-600" />
+              <span>Full technical support for all partners</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <Icon name="tabler:check" class="w-5 h-5 text-green-600" />
+              <span>Managerial and professional training</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <Icon name="tabler:check" class="w-5 h-5 text-green-600" />
+              <span>Official distributor certification</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <Icon name="tabler:check" class="w-5 h-5 text-green-600" />
+              <span>Free A4-size samples provided</span>
+            </li>
           </ul>
         </div>
-        <div class="order-1 md:order-2">
-          <img src="/images/takai-safety-films.webp" alt="TAKAI Safety Window Films" class="rounded-xl shadow-lg" width="600" height="400" />
+
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <h3 class="text-xl font-bold text-[#01407a] mb-6 flex items-center gap-3">
+            <Icon name="tabler:building-store" class="w-6 h-6 text-[#c9a227]" />
+            Franchise Opportunities
+          </h3>
+          <p class="text-gray-700 mb-4">
+            Interested in obtaining a TAKAI franchise or opening training centers worldwide under the TAKAI brand?
+          </p>
+          <div class="bg-gradient-to-r from-[#01407a] to-blue-800 rounded-lg p-4 text-white text-center">
+            <p class="font-semibold mb-2">Contact us for franchise opportunities:</p>
+            <p class="text-[#c9a227] font-bold">info@takaifilms.jp</p>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- CTA Section -->
     <div class="text-center bg-gradient-to-r from-[#01407a] to-blue-800 rounded-2xl p-12 text-white">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Protect Your Investment?</h2>
-      <p class="text-lg mb-8 opacity-90">Contact our certified installers to find the perfect TAKAI solution for your needs.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Protect Your Investment?</h2>
+      <p class="text-lg mb-8 text-white/90">Contact TAKAI directly for product information, distributor partnerships, or technical support.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
         <a
           href="/contact"
-          class="inline-block bg-[#cfb063] text-[#01407a] px-8 py-3 rounded-full font-semibold hover:bg-[#d6ba66] transition-all duration-300 shadow-md hover:shadow-lg"
+          class="inline-block bg-[#c9a227] text-[#01407a] px-8 py-3 rounded-full font-semibold hover:bg-[#d6ba66] transition-all duration-300 shadow-md hover:shadow-lg"
         >
           Get a Quote
         </a>
@@ -186,8 +535,14 @@ import { Icon } from 'astro-icon/components';
           href="/distributors"
           class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#01407a] transition-all duration-300"
         >
-          Find Installer
+          Find Distributor
         </a>
+      </div>
+      <div class="text-center">
+        <p class="text-white/80 mb-2">Direct Contact:</p>
+        <p class="text-[#c9a227] font-bold text-lg">info@takaifilms.jp</p>
+        <p class="text-white/80 text-sm">Nippon Takai Trading & Innovation Co., Ltd.</p>
+        <p class="text-white/70 text-sm">3-1-6 Motoazabu, Minato-ku, Tokyo 106-0046, Japan</p>
       </div>
     </div>
   </section>
