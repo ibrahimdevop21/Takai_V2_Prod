@@ -3,9 +3,9 @@ import { SITE, METADATA } from '~/config';
 
 // Simple metadata that bypasses image processing
 const SIMPLE_OG_IMAGE = {
-  url: '/takai-logo-white-1.png',
-  width: 1103,
-  height: 249,
+  url: '/images/takai-og-image.webp',
+  width: 1200,
+  height: 630,
 };
 
 export interface PageMetadata {
@@ -22,13 +22,13 @@ export function createMetadata(pageData: PageMetadata = {}): MetaData {
     title,
     description,
     canonical,
-    image = '/takai-logo-white-1.png',
+    image = '/images/takai-og-image.webp',
     type = 'website',
     noindex = false
   } = pageData;
 
   const fullTitle = title 
-    ? `${title} | TAKAI Films Japan`
+    ? `${title} | TAKAI Paint Protection Films`
     : METADATA.title.default;
 
   const fullDescription = description || METADATA.description;
@@ -38,9 +38,9 @@ export function createMetadata(pageData: PageMetadata = {}): MetaData {
     : SITE.site;
 
   // Use simple image object to avoid processing issues
-  const imageObj = image === '/takai-logo-dark.png' 
-    ? { url: '/takai-logo-dark.png', width: 1103, height: 250 }
-    : SIMPLE_OG_IMAGE;
+  const imageObj = image === '/images/takai-og-image.webp' 
+    ? SIMPLE_OG_IMAGE
+    : { url: image, width: 1200, height: 630 };
 
   return {
     title: fullTitle,
@@ -67,8 +67,8 @@ export function createMetadata(pageData: PageMetadata = {}): MetaData {
 // Predefined metadata for common pages
 export const PAGE_METADATA = {
   home: createMetadata({
-    title: 'Invisible Armor for Your Most Precious Investment',
-    description: 'Premium Paint Protection and Nano Ceramic Films from Nippon TAKAI Trading & Innovation Co., Ltd. Tokyo – Japanese Craftsmanship and Global Precision.',
+    title: 'Premium Japanese Automotive Protection',
+    description: 'World-class paint protection films engineered in Japan. Self-healing technology, superior clarity, and professional installation for luxury vehicles worldwide.',
     canonical: '/',
   }),
   

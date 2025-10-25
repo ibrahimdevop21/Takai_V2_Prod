@@ -1,5 +1,5 @@
 export const SITE = {
-  name: 'TAKAI Films Japan',
+  name: 'TAKAI Paint Protection Films',
   site: 'https://www.takaifilms.jp',
   base: '/',
   trailingSlash: false,
@@ -8,33 +8,34 @@ export const SITE = {
 
 export const METADATA = {
   title: {
-    default: 'TAKAI Films Japan – Invisible Armor for Your Most Precious Investment',
-    template: '%s | TAKAI Films Japan',
+    default: 'TAKAI Paint Protection Films – Premium Japanese Automotive Protection',
+    template: '%s | TAKAI Paint Protection Films',
   },
-  description: 'Premium Paint Protection and Nano Ceramic Films from Nippon TAKAI Trading & Innovation Co., Ltd. Tokyo – Japanese Craftsmanship and Global Precision.',
+  description: 'World-class paint protection films engineered in Japan. Self-healing technology, superior clarity, and professional installation for luxury vehicles worldwide.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    site_name: 'TAKAI Films Japan',
+    site_name: 'TAKAI Paint Protection Films',
     images: [
       {
-        url: '/takai-logo-white-1.png',
-        width: 1103,
-        height: 249,
+        url: '/images/takai-og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'TAKAI Paint Protection Films - Premium Japanese Automotive Protection',
       },
     ],
     type: 'website',
-    title: 'TAKAI Films Japan – Invisible Armor for Your Most Precious Investment',
-    description: 'Premium Paint Protection and Nano Ceramic Films from Nippon TAKAI Trading & Innovation Co., Ltd. Tokyo – Japanese Craftsmanship and Global Precision.',
+    title: 'TAKAI Paint Protection Films – Premium Japanese Automotive Protection',
+    description: 'World-class paint protection films engineered in Japan. Self-healing technology, superior clarity, and professional installation for luxury vehicles worldwide.',
   },
   twitter: {
     handle: '@takaifilms',
     site: '@takaifilms',
     cardType: 'summary_large_image',
-    title: 'TAKAI Films Japan – Invisible Armor for Your Most Precious Investment',
-    description: 'Premium Paint Protection & Nano Ceramic Films by TAKAI Japan.',
+    title: 'TAKAI Paint Protection Films – Premium Japanese Automotive Protection',
+    description: 'World-class paint protection films engineered in Japan. Self-healing technology and professional installation for luxury vehicles.',
   },
 };
 
