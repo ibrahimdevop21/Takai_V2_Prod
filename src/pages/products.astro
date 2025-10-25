@@ -2,17 +2,28 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import { Icon } from 'astro-icon/components';
+import { PAGE_METADATA } from '~/utils/metadata';
 ---
 
-<PageLayout metadata={{ title: "Products", description: "Explore TAKAI's complete range of protection films - Paint Protection Films, UV Nano Ceramic Films, and Windshield Protection Films." }}>
+<PageLayout metadata={PAGE_METADATA.products}>
   <!-- Hero Section -->
   <Hero
     tagline="Our Products"
     title="TAKAI Product Range"
     subtitle="Premium Japanese-engineered protection films. From paint protection to UV ceramic films and windshield protection, TAKAI delivers world-class quality with superior performance."
     actions={[
-      { text: 'Find Distributor', href: '/distributors', variant: 'primary' },
-      { text: 'Contact Us', href: '/contact', variant: 'secondary' },
+      {
+        text: 'Find Distributor',
+        href: '/distributors',
+        icon: 'tabler:map-pin',
+        class: 'group relative bg-gradient-to-r from-[#C9A227] to-[#D4B332] hover:from-[#D4B332] hover:to-[#C9A227] text-black font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap overflow-hidden',
+      },
+      { 
+        text: 'Contact Us', 
+        href: '/contact',
+        icon: 'tabler:phone',
+        class: 'group relative bg-transparent border-2 border-white/30 hover:border-[#C9A227] text-white hover:text-[#C9A227] font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full backdrop-blur-sm hover:backdrop-blur-md shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap'
+      },
     ]}
     image={{
       src: '/images/hero-car-3.webp',

@@ -4,11 +4,11 @@ import { AstroSeo } from '@astrolib/seo';
 
 import type { Props as AstroSeoProps } from '@astrolib/seo';
 
-import { SITE, METADATA, I18N } from '~/config';
+import { SITE, METADATA } from '~/config';
 import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
 
-import { adaptOpenGraphImages } from '~/utils/images';
+// adaptOpenGraphImages removed - bypassed image processing to fix hydration issues
 
 export interface Props extends MetaData {
   dontUseTitleTemplate?: boolean;
@@ -36,7 +36,7 @@ const seoProps: AstroSeoProps = merge(
       url: canonical,
       site_name: SITE?.name,
       images: [],
-      locale: I18N?.language || 'en',
+      locale: 'en',
       type: 'website',
     },
     twitter: {
@@ -65,4 +65,4 @@ const seoProps: AstroSeoProps = merge(
 );
 ---
 
-<AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site || new URL(SITE.site)) }} />
+<AstroSeo {...seoProps} />

@@ -1,30 +1,32 @@
-import { getPermalink } from './utils/permalinks';
-
 export const headerData = {
   links: [
     {
       text: 'Home',
-      href: getPermalink('/'),
+      href: '/',
     },
     {
       text: 'Why TAKAI',
-      href: getPermalink('/company'),
+      href: '/company',
     },
     {
       text: 'Products',
-      href: getPermalink('/products'),
+      href: '/products',
     },
     {
       text: 'Technology',
-      href: getPermalink('/technology'),
+      href: '/technology',
     },
     {
       text: 'Partners',
-      href: getPermalink('/distributors'),
+      href: '/distributors',
+    },
+    {
+      text: 'Press',
+      href: '/press',
     },
     {
       text: 'Contact',
-      href: getPermalink('/contact'),
+      href: '/contact',
     },
   ],
   actions: [{ text: 'Find Installer', href: '/distributors', variant: 'primary' as const }],
@@ -35,33 +37,33 @@ export const footerData = {
     {
       title: 'Products',
       links: [
-        { text: 'All Products', href: getPermalink('/products') },
-        { text: 'TAKAI Premium', href: getPermalink('/products#premium') },
-        { text: 'TAKAI Premium Plus', href: getPermalink('/products#premium-plus') },
-        { text: 'Technology', href: getPermalink('/technology') },
+        { text: 'All Products', href: '/products' },
+        { text: 'TAKAI Premium', href: '/products#premium' },
+        { text: 'TAKAI Premium Plus', href: '/products#premium-plus' },
+        { text: 'Technology', href: '/technology' },
       ],
     },
     {
       title: 'Company',
       links: [
-        { text: 'About TAKAI', href: getPermalink('/company') },
-        { text: 'Contact Us', href: getPermalink('/contact') },
-        { text: 'Find Distributors', href: getPermalink('/distributors') },
+        { text: 'About TAKAI', href: '/company' },
+        { text: 'Contact Us', href: '/contact' },
+        { text: 'Find Distributors', href: '/distributors' },
       ],
     },
     {
       title: 'Support',
       links: [
-        { text: 'Technical Support', href: getPermalink('/contact') },
-        { text: 'Installation Training', href: getPermalink('/distributors') },
-        { text: 'Warranty Information', href: getPermalink('/contact') },
+        { text: 'Technical Support', href: '/contact' },
+        { text: 'Installation Training', href: '/distributors' },
+        { text: 'Warranty Information', href: '/contact' },
       ],
     },
     {
       title: 'Legal',
       links: [
-        { text: 'Privacy Policy', href: getPermalink('/legal/privacy') },
-        { text: 'Terms of Service', href: getPermalink('/legal/terms') },
+        { text: 'Privacy Policy', href: '/legal/privacy' },
+        { text: 'Terms of Service', href: '/legal/terms' },
       ],
     },
   ],

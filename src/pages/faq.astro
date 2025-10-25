@@ -1,13 +1,10 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-const metadata = {
-  title: 'FAQs - TAKAI Paint Protection Films',
-  description: 'Common questions about TAKAI Japanese Paint Protection Films.',
-};
+import { PAGE_METADATA } from '~/utils/metadata';
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={PAGE_METADATA.faq}>
   <section class="py-12">
     <div class="mx-auto max-w-3xl space-y-6">
       <h1 class="text-4xl font-bold text-center text-takai-blue">Frequently Asked Questions</h1>

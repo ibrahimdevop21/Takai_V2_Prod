@@ -1,0 +1,333 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+import { createMetadata } from '~/utils/metadata';
+
+const metadata = createMetadata({
+  title: 'Press & News – TAKAI Paint Protection Films',
+  description: 'Latest news, press releases, and announcements from TAKAI. Stay updated on our exhibitions, product launches, and industry partnerships.',
+  canonical: '/press',
+});
+---
+
+<Layout metadata={metadata}>
+  <!-- Press Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#0A0A1A] via-[#1a1a2e] to-[#0A0A1A] text-white py-20 md:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-8">
+        <!-- Header -->
+        <div class="space-y-4">
+          <h1 class="text-4xl md:text-6xl font-bold text-[#C9A227] uppercase tracking-wider leading-tight">
+            Press & News
+          </h1>
+          <p class="text-xl md:text-2xl text-[#E5E7EB] font-light tracking-wide max-w-3xl mx-auto">
+            Latest updates from TAKAI's world of premium paint protection
+          </p>
+        </div>
+        
+        <!-- Gold Divider -->
+        <div class="flex items-center justify-center py-6">
+          <div class="h-px bg-gradient-to-r from-transparent via-[#C9A227] to-transparent w-48 md:w-64"></div>
+          <div class="w-3 h-3 bg-[#BF1E2E] rounded-full mx-6"></div>
+          <div class="h-px bg-gradient-to-r from-transparent via-[#C9A227] to-transparent w-48 md:w-64"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured News Section -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Featured News</h2>
+        <div class="h-1 w-24 bg-gradient-to-r from-[#C9A227] to-[#BF1E2E] mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Featured Article -->
+      <article class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl overflow-hidden mb-12">
+        <div class="grid md:grid-cols-2 gap-0">
+          <div class="flex items-center justify-center bg-gray-100 p-8">
+            <img 
+              src="/jap-show-25/ti_01.png" 
+              alt="TAKAI at Japan Mobility Show 2025" 
+              class="w-full max-w-sm h-auto object-contain rounded-lg shadow-md"
+            />
+          </div>
+          <div class="p-8 md:p-12 flex flex-col justify-center">
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 text-sm text-gray-600">
+                <time datetime="2025-09-15">September 15, 2025</time>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>Exhibition</span>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-[#01407a] leading-tight">
+                TAKAI at Japan Mobility Show 2025
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                Join us at Tokyo Big Sight for Japan's premier automotive exhibition. Experience our latest innovations in paint protection technology and meet our expert team at Booth W3003.
+              </p>
+              <div class="space-y-3">
+                <div class="flex items-center gap-2 text-gray-600">
+                  <Icon name="tabler:calendar" class="w-4 h-4 text-[#C9A227]" />
+                  <span>October 30 - November 9, 2025</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-600">
+                  <Icon name="tabler:map-pin" class="w-4 h-4 text-[#C9A227]" />
+                  <span>Tokyo Big Sight, West Hall 3, Booth W3003</span>
+                </div>
+              </div>
+              <div class="pt-4">
+                <a 
+                  href="/news/japan-mobility-show-2025"
+                  class="inline-flex items-center gap-2 bg-[#C9A227] hover:bg-[#C9A227]/90 text-black px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
+                >
+                  Read More
+                  <Icon name="tabler:arrow-right" class="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- News Grid Section -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Latest Updates</h2>
+        <p class="text-gray-700 text-lg max-w-2xl mx-auto">
+          Stay informed about TAKAI's latest developments, partnerships, and industry insights.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- News Article 1 -->
+        <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="relative">
+            <img 
+              src="/images/takai-installation.webp" 
+              alt="New Installer Training Program" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="absolute top-3 right-3">
+              <span class="bg-[#01407a] text-white px-2 py-1 rounded text-xs font-medium">
+                TRAINING
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+              <time datetime="2025-01-10">January 10, 2025</time>
+            </div>
+            <h3 class="text-xl font-bold text-[#01407a] mb-3 leading-tight">
+              Enhanced Installer Training Program Launched
+            </h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              TAKAI introduces comprehensive new training modules for certified installers, featuring advanced techniques and quality standards.
+            </p>
+            <a 
+              href="#" 
+              class="inline-flex items-center gap-2 text-[#C9A227] hover:text-[#C9A227]/80 font-medium transition-colors duration-200"
+            >
+              Learn More
+              <Icon name="tabler:arrow-right" class="w-4 h-4" />
+            </a>
+          </div>
+        </article>
+
+        <!-- News Article 2 -->
+        <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="relative">
+            <img 
+              src="/images/takai-luxury-car.webp" 
+              alt="Premium Plus Launch" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="absolute top-3 right-3">
+              <span class="bg-[#BF1E2E] text-white px-2 py-1 rounded text-xs font-medium">
+                PRODUCT
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+              <time datetime="2024-12-15">December 15, 2024</time>
+            </div>
+            <h3 class="text-xl font-bold text-[#01407a] mb-3 leading-tight">
+              TAKAI Premium Plus: Next-Generation Protection
+            </h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Introducing our most advanced paint protection film with enhanced self-healing technology and 15-year warranty coverage.
+            </p>
+            <a 
+              href="#" 
+              class="inline-flex items-center gap-2 text-[#C9A227] hover:text-[#C9A227]/80 font-medium transition-colors duration-200"
+            >
+              Learn More
+              <Icon name="tabler:arrow-right" class="w-4 h-4" />
+            </a>
+          </div>
+        </article>
+
+        <!-- News Article 3 -->
+        <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="relative">
+            <img 
+              src="/images/takai-protected-vehicle.webp" 
+              alt="Global Expansion" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="absolute top-3 right-3">
+              <span class="bg-[#C9A227] text-black px-2 py-1 rounded text-xs font-medium">
+                EXPANSION
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+              <time datetime="2024-11-20">November 20, 2024</time>
+            </div>
+            <h3 class="text-xl font-bold text-[#01407a] mb-3 leading-tight">
+              TAKAI Expands to European Markets
+            </h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Strategic partnerships established across Europe, bringing Japanese precision protection to luxury automotive markets.
+            </p>
+            <a 
+              href="#" 
+              class="inline-flex items-center gap-2 text-[#C9A227] hover:text-[#C9A227]/80 font-medium transition-colors duration-200"
+            >
+              Learn More
+              <Icon name="tabler:arrow-right" class="w-4 h-4" />
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press Resources Section -->
+  <section class="bg-white py-16 md:py-24 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">Press Resources</h2>
+        <p class="text-gray-700 text-lg max-w-2xl mx-auto">
+          Download high-resolution images, logos, and press materials for media coverage.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Resource 1 -->
+        <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+          <div class="text-center space-y-4">
+            <div class="w-12 h-12 bg-[#C9A227] rounded-lg flex items-center justify-center mx-auto">
+              <Icon name="tabler:photo" class="w-6 h-6 text-black" />
+            </div>
+            <h3 class="font-semibold text-[#01407a]">Product Images</h3>
+            <p class="text-sm text-gray-600">High-resolution product photography</p>
+            <a 
+              href="#" 
+              class="inline-flex items-center gap-2 text-[#C9A227] hover:text-[#C9A227]/80 text-sm font-medium"
+            >
+              Download
+              <Icon name="tabler:download" class="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Resource 2 -->
+        <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+          <div class="text-center space-y-4">
+            <div class="w-12 h-12 bg-[#C9A227] rounded-lg flex items-center justify-center mx-auto">
+              <Icon name="tabler:brand-adobe" class="w-6 h-6 text-black" />
+            </div>
+            <h3 class="font-semibold text-[#01407a]">Brand Assets</h3>
+            <p class="text-sm text-gray-600">Logos, brand guidelines, colors</p>
+            <a 
+              href="#" 
+              class="inline-flex items-center gap-2 text-[#C9A227] hover:text-[#C9A227]/80 text-sm font-medium"
+            >
+              Download
+              <Icon name="tabler:download" class="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Resource 3 -->
+        <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+          <div class="text-center space-y-4">
+            <div class="w-12 h-12 bg-[#C9A227] rounded-lg flex items-center justify-center mx-auto">
+              <Icon name="tabler:file-text" class="w-6 h-6 text-black" />
+            </div>
+            <h3 class="font-semibold text-[#01407a]">Press Releases</h3>
+            <p class="text-sm text-gray-600">Official announcements and statements</p>
+            <a 
+              href="#" 
+              class="inline-flex items-center gap-2 text-[#C9A227] hover:text-[#C9A227]/80 text-sm font-medium"
+            >
+              Download
+              <Icon name="tabler:download" class="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Resource 4 -->
+        <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+          <div class="text-center space-y-4">
+            <div class="w-12 h-12 bg-[#C9A227] rounded-lg flex items-center justify-center mx-auto">
+              <Icon name="tabler:users" class="w-6 h-6 text-black" />
+            </div>
+            <h3 class="font-semibold text-[#01407a]">Executive Bios</h3>
+            <p class="text-sm text-gray-600">Leadership team information</p>
+            <a 
+              href="#" 
+              class="inline-flex items-center gap-2 text-[#C9A227] hover:text-[#C9A227]/80 text-sm font-medium"
+            >
+              Download
+              <Icon name="tabler:download" class="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Contact Section -->
+  <section class="bg-gradient-to-br from-[#0A0A1A] via-[#1a1a2e] to-[#0A0A1A] text-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="space-y-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#C9A227] uppercase tracking-wider">
+          Media Inquiries
+        </h2>
+        
+        <p class="text-lg md:text-xl text-[#E5E7EB] leading-relaxed">
+          For press inquiries, interview requests, or additional information about TAKAI, 
+          please contact our media relations team.
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          <div class="space-y-2">
+            <h3 class="text-[#C9A227] font-semibold">Press Contact</h3>
+            <p class="text-[#E5E7EB]">media@takai.com</p>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-[#C9A227] font-semibold">Phone</h3>
+            <p class="text-[#E5E7EB]">+1 (555) 123-4567</p>
+          </div>
+        </div>
+        
+        <div class="pt-6">
+          <a 
+            href="/contact"
+            class="inline-flex items-center gap-3 bg-[#C9A227] hover:bg-[#C9A227]/90 text-black px-8 py-4 rounded-full font-semibold text-lg uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <Icon name="tabler:mail" class="w-5 h-5" />
+            Contact Media Team
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

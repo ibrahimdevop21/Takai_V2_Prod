@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAKAI Metadata Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #0A0A1A;
+            color: #E5E7EB;
+        }
+        .test-section {
+            background: #1a1a2e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #C9A227;
+        }
+        .meta-tag {
+            background: #2a2a3e;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        .success { border-left-color: #4ade80; }
+        .error { border-left-color: #ef4444; }
+        h1, h2 { color: #C9A227; }
+        .logo-preview {
+            max-width: 300px;
+            border: 1px solid #C9A227;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 TAKAI Metadata Test Dashboard</h1>
+    
+    <div class="test-section">
+        <h2>📋 Test Checklist</h2>
+        <div id="checklist">
+            <p>⏳ Loading tests...</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🖼️ Open Graph Image Preview</h2>
+        <p>Current OG Image:</p>
+        <img src="/takai-logo-white-1.png" alt="TAKAI Logo" class="logo-preview">
+        <div class="meta-tag">
+            Image URL: /takai-logo-white-1.png<br>
+            Dimensions: 1103 × 249 pixels
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔍 Detected Meta Tags</h2>
+        <div id="meta-tags">
+            <p>⏳ Scanning meta tags...</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🌐 External Testing Tools</h2>
+        <p>Use these tools to test your metadata once deployed:</p>
+        <ul>
+            <li><a href="https://developers.facebook.com/tools/debug/" target="_blank" style="color: #C9A227;">Facebook Sharing Debugger</a></li>
+            <li><a href="https://cards-dev.twitter.com/validator" target="_blank" style="color: #C9A227;">Twitter Card Validator</a></li>
+            <li><a href="https://www.linkedin.com/post-inspector/" target="_blank" style="color: #C9A227;">LinkedIn Post Inspector</a></li>
+            <li><a href="https://www.opengraph.xyz/" target="_blank" style="color: #C9A227;">OpenGraph.xyz Preview</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Test functions
+        function runMetadataTests() {
+            const tests = [];
+            const metaTags = [];
+            
+            // Get all meta tags
+            const allMetas = document.querySelectorAll('meta');
+            
+            // Check for TAKAI branding
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            const ogDescription = document.querySelector('meta[property="og:description"]');
+            const ogImage = document.querySelector('meta[property="og:image"]');
+            const ogSiteName = document.querySelector('meta[property="og:site_name"]');
+            const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+            
+            // Test 1: Check for TAKAI in title
+            if (ogTitle && ogTitle.content.includes('TAKAI')) {
+                tests.push('✅ Open Graph title contains TAKAI branding');
+            } else {
+                tests.push('❌ Open Graph title missing or incorrect');
+            }
+            
+            // Test 2: Check for no AstroWind references
+            let hasOldTemplate = false;
+            allMetas.forEach(meta => {
+                if (meta.content && (meta.content.includes('AstroWind') || meta.content.includes('Free template'))) {
+                    hasOldTemplate = true;
+                }
+            });
+            
+            if (!hasOldTemplate) {
+                tests.push('✅ No old template references found');
+            } else {
+                tests.push('❌ Old template references still present');
+            }
+            
+            // Test 3: Check for TAKAI logo
+            if (ogImage && ogImage.content.includes('takai-logo')) {
+                tests.push('✅ Open Graph image uses TAKAI logo');
+            } else {
+                tests.push('❌ Open Graph image not set correctly');
+            }
+            
+            // Test 4: Check site name
+            if (ogSiteName && ogSiteName.content.includes('TAKAI Films Japan')) {
+                tests.push('✅ Site name correctly set to TAKAI Films Japan');
+            } else {
+                tests.push('❌ Site name not set correctly');
+            }
+            
+            // Display results
+            document.getElementById('checklist').innerHTML = tests.map(test => `<p>${test}</p>`).join('');
+            
+            // Display meta tags
+            const relevantMetas = Array.from(allMetas).filter(meta => 
+                meta.getAttribute('property')?.startsWith('og:') || 
+                meta.getAttribute('name')?.startsWith('twitter:') ||
+                meta.getAttribute('name') === 'description'
+            );
+            
+            const metaHtml = relevantMetas.map(meta => {
+                const prop = meta.getAttribute('property') || meta.getAttribute('name');
+                const content = meta.getAttribute('content');
+                return `<div class="meta-tag">&lt;meta ${meta.getAttribute('property') ? 'property' : 'name'}="${prop}" content="${content}" /&gt;</div>`;
+            }).join('');
+            
+            document.getElementById('meta-tags').innerHTML = metaHtml || '<p>No relevant meta tags found</p>';
+        }
+        
+        // Run tests when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', runMetadataTests);
+        } else {
+            runMetadataTests();
+        }
+    </script>
+</body>
+</html>

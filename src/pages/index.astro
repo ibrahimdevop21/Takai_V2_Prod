@@ -1,22 +1,19 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { Icon } from 'astro-icon/components';
+import { PAGE_METADATA } from '~/utils/metadata';
 
 import Hero from '~/components/widgets/Hero.astro';
+import ExhibitionAnnouncement from '~/components/widgets/ExhibitionAnnouncement.astro';
 import Features from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
+import AccordionFAQ from '~/components/widgets/AccordionFAQ.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-
-const metadata = {
-  title: 'TAKAI - Invisible Armor for Your Most Precious Investment | Premium Paint Protection Film',
-  ignoreTitleTemplate: true,
-};
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={PAGE_METADATA.home}>
   <!-- Hero Widget ******************* -->
 
   <Hero
@@ -26,12 +23,13 @@ const metadata = {
         text: 'Find Installer',
         href: '/distributors',
         icon: 'tabler:map-pin',
-        class: 'bg-takai-gold hover:bg-takai-gold/90 text-black font-medium text-sm md:text-base px-5 py-2 md:px-6 md:py-3 rounded-full shadow-md transition-all duration-300 whitespace-nowrap',
+        class: 'group relative bg-gradient-to-r from-[#C9A227] to-[#D4B332] hover:from-[#D4B332] hover:to-[#C9A227] text-black font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap overflow-hidden',
       },
       { 
-        text: 'Products →', 
+        text: 'Explore Products', 
         href: '/products',
-        class: 'bg-takai-blue hover:bg-blue-900 text-white font-medium text-sm md:text-base px-5 py-2 md:px-6 md:py-3 rounded-full shadow-md transition-all duration-300 whitespace-nowrap'
+        icon: 'tabler:arrow-right',
+        class: 'group relative bg-transparent border-2 border-white/30 hover:border-[#C9A227] text-white hover:text-[#C9A227] font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full backdrop-blur-sm hover:backdrop-blur-md shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap'
       },
     ]}
     image={{
@@ -71,6 +69,9 @@ const metadata = {
     </Fragment>
   </Hero>
 
+  <!-- Exhibition Announcement ******* -->
+  
+  <ExhibitionAnnouncement />
 
   <!-- Features Widget *************** -->
 
@@ -324,7 +325,7 @@ const metadata = {
 
   <!-- FAQs Widget ******************* -->
 
-  <FAQs
+  <AccordionFAQ
     title="Frequently Asked Questions"
     subtitle="Common questions about TAKAI paint protection films and our installation process."
     tagline="FAQs"

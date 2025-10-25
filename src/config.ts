@@ -1,6 +1,6 @@
 export const SITE = {
-  name: 'AstroWind',
-  site: 'https://astrowind.vercel.app',
+  name: 'TAKAI Films Japan',
+  site: 'https://www.takaifilms.jp',
   base: '/',
   trailingSlash: false,
   googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
@@ -8,36 +8,37 @@ export const SITE = {
 
 export const METADATA = {
   title: {
-    default: 'AstroWind',
-    template: '%s — AstroWind',
+    default: 'TAKAI Films Japan – Invisible Armor for Your Most Precious Investment',
+    template: '%s | TAKAI Films Japan',
   },
-  description: '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+  description: 'Premium Paint Protection and Nano Ceramic Films from Nippon TAKAI Trading & Innovation Co., Ltd. Tokyo – Japanese Craftsmanship and Global Precision.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    site_name: 'AstroWind',
+    site_name: 'TAKAI Films Japan',
     images: [
       {
-        url: '~/assets/images/default.png',
-        width: 1200,
-        height: 628,
+        url: '/takai-logo-white-1.png',
+        width: 1103,
+        height: 249,
       },
     ],
     type: 'website',
+    title: 'TAKAI Films Japan – Invisible Armor for Your Most Precious Investment',
+    description: 'Premium Paint Protection and Nano Ceramic Films from Nippon TAKAI Trading & Innovation Co., Ltd. Tokyo – Japanese Craftsmanship and Global Precision.',
   },
   twitter: {
-    handle: '@arthelokyo',
-    site: '@arthelokyo',
+    handle: '@takaifilms',
+    site: '@takaifilms',
     cardType: 'summary_large_image',
+    title: 'TAKAI Films Japan – Invisible Armor for Your Most Precious Investment',
+    description: 'Premium Paint Protection & Nano Ceramic Films by TAKAI Japan.',
   },
 };
 
-export const I18N = {
-  language: 'en',
-  textDirection: 'ltr',
-};
+// I18N removed - not using internationalization
 
 export const APP_BLOG = {
   isEnabled: false, // Disabled since we removed blog functionality

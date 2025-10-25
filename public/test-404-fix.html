@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Fix Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #0A0A1A;
+            color: #E5E7EB;
+        }
+        .test-link {
+            display: inline-block;
+            background: #C9A227;
+            color: #0A0A1A;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            font-weight: bold;
+        }
+        .test-link:hover {
+            background: #C9A227;
+            opacity: 0.9;
+        }
+        h1 { color: #C9A227; }
+    </style>
+</head>
+<body>
+    <h1>🧪 404 Page & Home Link Test</h1>
+    
+    <h2>Test Steps:</h2>
+    <ol>
+        <li><strong>Test 404 Page:</strong> <a href="/non-existent-page" class="test-link">Click here to see 404 page</a></li>
+        <li><strong>Test Home Link:</strong> On the 404 page, click "Back to Home" button</li>
+        <li><strong>Expected Result:</strong> Should return to homepage (not another 404)</li>
+    </ol>
+    
+    <h2>Direct Links:</h2>
+    <a href="/" class="test-link">Home Page</a>
+    <a href="/products" class="test-link">Products Page</a>
+    <a href="/contact" class="test-link">Contact Page</a>
+    <a href="/this-page-does-not-exist" class="test-link">Test 404 Page</a>
+    
+    <h2>✅ What Should Happen:</h2>
+    <ul>
+        <li>✅ 404 page shows TAKAI branding (navy/gold colors)</li>
+        <li>✅ "Back to Home" button works and goes to homepage</li>
+        <li>✅ No more routing loops or errors</li>
+        <li>✅ All navigation links work properly</li>
+    </ul>
+</body>
+</html>

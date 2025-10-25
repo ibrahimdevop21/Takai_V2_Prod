@@ -1,0 +1,152 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { Icon } from 'astro-icon/components';
+import type { Faqs as Props } from '~/types';
+
+const {
+  title = '',
+  subtitle = '',
+  tagline = '',
+  items = [],
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-4xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes} />
+  
+  <div class="accordion-container space-y-4 mt-8">
+    {items.map((item, index) => (
+      <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+        <button 
+          class="accordion-header w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-[#01407a] focus:ring-opacity-50 rounded-lg"
+          data-accordion-target={`accordion-content-${index}`}
+          aria-expanded="false"
+          aria-controls={`accordion-content-${index}`}
+        >
+          <h3 class="text-lg font-semibold text-gray-900 pr-4">{item.title}</h3>
+          <div class="accordion-icon flex-shrink-0 transition-transform duration-200">
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-[#01407a]" />
+          </div>
+        </button>
+        
+        <div 
+          id={`accordion-content-${index}`}
+          class="accordion-content overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+          aria-labelledby={`accordion-header-${index}`}
+        >
+          <div class="px-6 pb-4 pt-0">
+            <div class="border-t border-gray-100 pt-4">
+              <p class="text-gray-700 leading-relaxed" set:html={item.description} />
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</WidgetWrapper>
+
+<style>
+  .accordion-item {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .accordion-header:hover {
+    background-color: #f8fafc;
+  }
+  
+  .accordion-content {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+  
+  .accordion-content.expanded {
+    opacity: 1;
+  }
+  
+  .accordion-icon {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .accordion-header[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+  }
+  
+  .accordion-header[aria-expanded="true"] {
+    background-color: #f1f5f9;
+  }
+</style>
+
+<script is:inline>
+  function initAccordion() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    accordionHeaders.forEach(header => {
+      // Remove any existing listeners to prevent duplicates
+      const newHeader = header.cloneNode(true);
+      header.parentNode.replaceChild(newHeader, header);
+    });
+    
+    // Add event listeners to the new headers
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-accordion-target');
+        const content = document.getElementById(targetId);
+        const icon = this.querySelector('.accordion-icon');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other accordion items
+        document.querySelectorAll('.accordion-header').forEach(otherHeader => {
+          if (otherHeader !== this) {
+            const otherTargetId = otherHeader.getAttribute('data-accordion-target');
+            const otherContent = document.getElementById(otherTargetId);
+            const otherIcon = otherHeader.querySelector('.accordion-icon');
+            
+            otherHeader.setAttribute('aria-expanded', 'false');
+            otherContent.classList.remove('expanded');
+            otherContent.style.maxHeight = '0px';
+          }
+        });
+        
+        if (isExpanded) {
+          // Close this item
+          this.setAttribute('aria-expanded', 'false');
+          content.classList.remove('expanded');
+          content.style.maxHeight = '0px';
+        } else {
+          // Open this item
+          this.setAttribute('aria-expanded', 'true');
+          content.classList.add('expanded');
+          
+          // Calculate and set the max-height
+          const scrollHeight = content.scrollHeight;
+          content.style.maxHeight = scrollHeight + 'px';
+          
+          // Smooth scroll to the opened item
+          setTimeout(() => {
+            this.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'nearest' 
+            });
+          }, 150);
+        }
+      });
+    });
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAccordion);
+  } else {
+    initAccordion();
+  }
+  
+  // Also initialize on window load for better Astro compatibility
+  window.addEventListener('load', () => {
+    setTimeout(initAccordion, 100);
+  });
+</script>

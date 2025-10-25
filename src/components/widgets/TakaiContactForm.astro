@@ -99,6 +99,7 @@ const {
               class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 bg-white"
             >
               <option value="">Select an option</option>
+              <option value="exhibition-inquiry">Exhibition Inquiry</option>
               <option value="product-authenticity">Product Authenticity Verification</option>
               <option value="product-info">Product Information</option>
               <option value="installation">Installation Services</option>
@@ -274,3 +275,31 @@ const {
     border-color: #01407a;
   }
 </style>
+
+<script is:inline>
+  // Handle URL parameters for pre-filling form - runs after hydration
+  function handleUrlParameters() {
+    // Wait for next tick to ensure DOM is fully hydrated
+    setTimeout(() => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const subject = urlParams.get('subject');
+      
+      if (subject) {
+        const inquiryTypeSelect = document.getElementById('inquiryType');
+        if (inquiryTypeSelect) {
+          // Map subject parameter to inquiry type
+          if (subject.toLowerCase().includes('exhibition')) {
+            inquiryTypeSelect.value = 'exhibition-inquiry';
+          }
+        }
+      }
+    }, 100);
+  }
+  
+  // Use a more reliable method to ensure DOM and hydration are complete
+  if (document.readyState === 'complete') {
+    handleUrlParameters();
+  } else {
+    window.addEventListener('load', handleUrlParameters);
+  }
+</script>

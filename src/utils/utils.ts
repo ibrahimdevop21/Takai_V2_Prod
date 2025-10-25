@@ -1,6 +1,4 @@
-import { I18N } from '~/config';
-
-export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.language, {
+export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat('en', {
   year: 'numeric',
   month: 'short',
   day: 'numeric',

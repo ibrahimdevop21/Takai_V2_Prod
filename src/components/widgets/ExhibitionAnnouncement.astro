@@ -1,0 +1,250 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  id?: string;
+  classes?: Record<string, string>;
+}
+
+const { id, classes = {} } = Astro.props;
+---
+
+<section 
+  class={`relative w-full bg-gradient-to-br from-[#0A0A1A] via-[#1a1a2e] via-[#0f1419] to-[#0A0A1A] border-t border-[#C9A227] py-8 md:py-12 ${classes.container || ''}`}
+  data-announcement
+  {...id ? { id } : {}}
+  style="background: linear-gradient(135deg, #0A0A1A 0%, #1a1a2e 25%, #0f1419 50%, #1a1a2e 75%, #0A0A1A 100%); background-size: 400% 400%; animation: liveGradient 8s ease-in-out infinite;"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-4 md:space-y-6">
+      <!-- Title -->
+      <div class="mb-4">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#C9A227] uppercase tracking-wider">
+          TAKAI at Japan Mobility Show 2025
+        </h2>
+      </div>
+      
+      <!-- Event Details -->
+      <div class="space-y-2 md:space-y-3">
+        <p class="text-[#E5E7EB] text-lg md:text-xl font-medium">
+          Visit us at <span class="text-[#C9A227] font-semibold">Tokyo Big Sight – West Hall 3, Booth W3003</span>
+        </p>
+        <p class="text-[#E5E7EB] text-base md:text-lg">
+          30 October – 9 November 2025
+        </p>
+      </div>
+      
+      <!-- Future Tour 2035 Image -->
+      <div class="my-8 md:my-12">
+        <div class="flex justify-center">
+          <a 
+            href="https://www.japan-mobility-show.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="group block transition-transform duration-300 hover:scale-105"
+            aria-label="Visit Japan Mobility Show 2025 official website"
+          >
+            <img 
+              src="/jap-show-25/ti_01.png" 
+              alt="TAKAI Future Tour 2035 at Japan Mobility Show 2025 - Click to visit official website" 
+              class="max-w-full md:max-w-2xl lg:max-w-3xl transition-all duration-300 cursor-pointer pulse-glow"
+              loading="lazy"
+            />
+          </a>
+        </div>
+      </div>
+      
+      <!-- Accent Line -->
+      <div class="flex items-center justify-center my-6">
+        <div class="h-px bg-gradient-to-r from-transparent via-[#C9A227] to-transparent w-32 md:w-48"></div>
+        <div class="w-2 h-2 bg-[#BF1E2E] rounded-full mx-4"></div>
+        <div class="h-px bg-gradient-to-r from-transparent via-[#C9A227] to-transparent w-32 md:w-48"></div>
+      </div>
+      
+      <!-- Call to Action -->
+      <div class="pt-2">
+        <a 
+          href="/news/japan-mobility-show-2025"
+          class="inline-flex items-center gap-2 bg-transparent border border-[#C9A227] text-[#C9A227] hover:bg-[#C9A227] hover:text-[#0A0A1A] px-6 py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300 uppercase tracking-wider"
+        >
+          Learn More
+          <Icon name="tabler:arrow-right" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // Enhanced animation with staggered circular images
+  function initAnnouncementAnimation() {
+    // Wait for next tick to ensure DOM is fully hydrated
+    setTimeout(() => {
+      const announcement = document.querySelector('[data-announcement]');
+      if (!announcement) return;
+      
+      // Set initial state via JavaScript to avoid hydration mismatch
+      announcement.style.opacity = '0';
+      announcement.style.transform = 'translateY(20px)';
+      announcement.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+      
+      // Set initial state for circular images
+      const imageGroups = announcement.querySelectorAll('.group');
+      imageGroups.forEach((group, index) => {
+        group.style.opacity = '0';
+        group.style.transform = 'translateY(30px) scale(0.8)';
+        group.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
+      });
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Animate main container
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+              
+              // Animate circular images with stagger
+              const images = entry.target.querySelectorAll('.group');
+              images.forEach((group, index) => {
+                setTimeout(() => {
+                  group.style.opacity = '1';
+                  group.style.transform = 'translateY(0) scale(1)';
+                }, 300 + (index * 100));
+              });
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      
+      observer.observe(announcement);
+    }, 100);
+  }
+  
+  // Use window load event to ensure complete hydration
+  if (document.readyState === 'complete') {
+    initAnnouncementAnimation();
+  } else {
+    window.addEventListener('load', initAnnouncementAnimation);
+  }
+</script>
+
+<style>
+  /* Live gradient animation */
+  @keyframes liveGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Enhanced glow effect for the section */
+  [data-announcement] {
+    position: relative;
+  }
+  
+  [data-announcement]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(201, 162, 39, 0.05) 0%, 
+      rgba(191, 30, 46, 0.03) 25%, 
+      rgba(26, 26, 46, 0.05) 50%, 
+      rgba(191, 30, 46, 0.03) 75%, 
+      rgba(201, 162, 39, 0.05) 100%
+    );
+    background-size: 400% 400%;
+    animation: liveGradient 12s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  [data-announcement] > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Heartbeat pulsing glow animation for clickable image */
+  .pulse-glow {
+    animation: heartbeatGlow 4.5s ease-in-out infinite;
+    border-radius: 8px;
+  }
+  
+  @keyframes heartbeatGlow {
+    0% {
+      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
+      transform: scale(1);
+    }
+    10% {
+      box-shadow: 0 0 15px rgba(201, 162, 39, 0.7), 0 0 25px rgba(201, 162, 39, 0.5), 0 0 35px rgba(201, 162, 39, 0.3);
+      transform: scale(1.02);
+    }
+    15% {
+      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
+      transform: scale(1);
+    }
+    25% {
+      box-shadow: 0 0 20px rgba(201, 162, 39, 0.8), 0 0 30px rgba(201, 162, 39, 0.6), 0 0 40px rgba(201, 162, 39, 0.4);
+      transform: scale(1.03);
+    }
+    35% {
+      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
+      transform: scale(1);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
+      transform: scale(1);
+    }
+  }
+  
+  /* Enhanced hover effect with faster heartbeat */
+  .group:hover .pulse-glow {
+    animation: heartbeatGlowFast 3s ease-in-out infinite;
+  }
+  
+  @keyframes heartbeatGlowFast {
+    0% {
+      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
+      transform: scale(1);
+    }
+    8% {
+      box-shadow: 0 0 20px rgba(201, 162, 39, 0.9), 0 0 35px rgba(201, 162, 39, 0.7), 0 0 50px rgba(201, 162, 39, 0.5);
+      transform: scale(1.03);
+    }
+    12% {
+      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
+      transform: scale(1);
+    }
+    20% {
+      box-shadow: 0 0 25px rgba(201, 162, 39, 1), 0 0 40px rgba(201, 162, 39, 0.8), 0 0 55px rgba(201, 162, 39, 0.6);
+      transform: scale(1.04);
+    }
+    28% {
+      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
+      transform: scale(1);
+    }
+    100% {
+      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
+      transform: scale(1);
+    }
+  }
+  
+  /* Remove initial opacity to prevent hydration mismatch */
+  /* Animation states will be set via JavaScript after hydration */
+</style>

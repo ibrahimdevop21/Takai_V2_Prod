@@ -5,21 +5,28 @@ import Features from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import { Icon } from 'astro-icon/components';
 
-const metadata = {
-  title: 'Distributors - TAKAI Paint Protection Films',
-  description: 'Find authorized TAKAI distributors and installers near you. Join our network of certified professionals.',
-};
+import { PAGE_METADATA } from '~/utils/metadata';
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={PAGE_METADATA.distributors}>
   <!-- Hero Section -->
   <Hero
     tagline="Find a Professional"
     title="TAKAI Distributors & Installers"
     subtitle="Locate certified TAKAI distributors and installers in your area for professional paint protection film installation."
     actions={[
-      { text: 'View Partners', href: '#certified-partners', variant: 'primary' },
-      { text: 'Become a Partner', href: '#become-partner', variant: 'secondary' },
+      {
+        text: 'View Partners',
+        href: '#certified-partners',
+        icon: 'tabler:users',
+        class: 'group relative bg-gradient-to-r from-[#C9A227] to-[#D4B332] hover:from-[#D4B332] hover:to-[#C9A227] text-black font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap overflow-hidden',
+      },
+      { 
+        text: 'Become a Partner', 
+        href: '#become-partner',
+        icon: 'tabler:user-plus',
+        class: 'group relative bg-transparent border-2 border-white/30 hover:border-[#C9A227] text-white hover:text-[#C9A227] font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full backdrop-blur-sm hover:backdrop-blur-md shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap'
+      },
     ]}
     image={{
       src: '/images/hero-car-5.webp',

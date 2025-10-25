@@ -7,21 +7,28 @@ import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { Icon } from 'astro-icon/components';
 
-const metadata = {
-  title: 'Technology - TAKAI Paint Protection Films',
-  description: 'Discover the advanced technology behind TAKAI paint protection films, featuring self-healing properties and superior durability.',
-};
+import { PAGE_METADATA } from '~/utils/metadata';
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={PAGE_METADATA.technology}>
   <!-- Hero Section -->
   <Hero
     tagline="Innovation Driven"
     title="Advanced Film Technology"
     subtitle="Cutting-edge materials science and engineering deliver unmatched paint protection performance."
     actions={[
-      { text: 'View Products', href: '/products', variant: 'primary' },
-      { text: 'Find Installer', href: '/distributors', variant: 'secondary' },
+      {
+        text: 'View Products',
+        href: '/products',
+        icon: 'tabler:package',
+        class: 'group relative bg-gradient-to-r from-[#C9A227] to-[#D4B332] hover:from-[#D4B332] hover:to-[#C9A227] text-black font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap overflow-hidden',
+      },
+      { 
+        text: 'Find Installer', 
+        href: '/distributors',
+        icon: 'tabler:map-pin',
+        class: 'group relative bg-transparent border-2 border-white/30 hover:border-[#C9A227] text-white hover:text-[#C9A227] font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full backdrop-blur-sm hover:backdrop-blur-md shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap'
+      },
     ]}
     image={{
       src: '/images/hero-car-4.webp',
