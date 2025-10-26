@@ -1,5 +1,5 @@
 /* TAKAI Global Styles - Light Theme Only */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/* Inter font will be loaded via preload in CommonMeta.astro for better performance */
 
 /* Prevent horizontal scrolling globally */
 html, body {

@@ -2,6 +2,8 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { Icon } from 'astro-icon/components';
 import { PAGE_METADATA } from '~/utils/metadata';
+import { getImage } from 'astro:assets';
+import takaiInstallationImage from '~/assets/takai-installation.webp';
 
 import Hero from '~/components/widgets/Hero.astro';
 import ExhibitionAnnouncement from '~/components/widgets/ExhibitionAnnouncement.astro';
@@ -11,27 +13,20 @@ import Content from '~/components/widgets/Content.astro';
 import AccordionFAQ from '~/components/widgets/AccordionFAQ.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+
+// Optimize the installation image
+const optimizedInstallationImage = await getImage({
+  src: takaiInstallationImage,
+  width: 348,
+  height: 280,
+  format: 'webp'
+});
 ---
 
 <Layout metadata={PAGE_METADATA.home}>
   <!-- Hero Widget ******************* -->
 
   <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Find Installer',
-        href: '/distributors',
-        icon: 'tabler:map-pin',
-        class: 'group relative bg-gradient-to-r from-[#C9A227] to-[#D4B332] hover:from-[#D4B332] hover:to-[#C9A227] text-black font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap overflow-hidden',
-      },
-      { 
-        text: 'Explore Products', 
-        href: '/products',
-        icon: 'tabler:arrow-right',
-        class: 'group relative bg-transparent border-2 border-white/30 hover:border-[#C9A227] text-white hover:text-[#C9A227] font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full backdrop-blur-sm hover:backdrop-blur-md shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap'
-      },
-    ]}
     image={{
       src: '/images/hero-car-1.webp',
       alt: 'Luxury sports car with pristine paint finish protected by TAKAI film',
@@ -48,23 +43,42 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
     </Fragment>
 
     <Fragment slot="content">
-      <div class="mt-8 flex flex-wrap justify-center gap-8 text-sm text-gray-300">
-        <div class="flex items-center gap-2">
-          <Icon name="tabler:refresh" class="w-4 h-4 text-[#C9A227] stroke-[1.5]" />
-          <span>Self-Healing Technology</span>
+      <!-- Features -->
+      <div class="flex flex-wrap justify-center gap-8 sm:gap-10 md:gap-12 text-sm sm:text-base text-gray-200 mb-12 sm:mb-16 mt-8 sm:mt-10 px-4">
+        <div class="flex items-center gap-3">
+          <Icon name="tabler:refresh" class="w-5 h-5 text-[#C9A227] stroke-[1.5] flex-shrink-0" />
+          <span class="font-medium">Self-Healing Technology</span>
         </div>
-        <div class="flex items-center gap-2">
-          <Icon name="tabler:shield-check" class="w-4 h-4 text-[#C9A227] stroke-[1.5]" />
-          <span>5-15 Years Warranty</span>
+        <div class="flex items-center gap-3">
+          <Icon name="tabler:shield-check" class="w-5 h-5 text-[#C9A227] stroke-[1.5] flex-shrink-0" />
+          <span class="font-medium">5-15 Years Warranty</span>
         </div>
-        <div class="flex items-center gap-2">
-          <Icon name="tabler:tools" class="w-4 h-4 text-[#C9A227] stroke-[1.5]" />
-          <span>Professional Installation</span>
+        <div class="flex items-center gap-3">
+          <Icon name="tabler:tools" class="w-5 h-5 text-[#C9A227] stroke-[1.5] flex-shrink-0" />
+          <span class="font-medium">Professional Installation</span>
         </div>
-        <div class="flex items-center gap-2">
-          <Icon name="tabler:users" class="w-4 h-4 text-[#C9A227] stroke-[1.5]" />
-          <span>Certified Network</span>
+        <div class="flex items-center gap-3">
+          <Icon name="tabler:users" class="w-5 h-5 text-[#C9A227] stroke-[1.5] flex-shrink-0" />
+          <span class="font-medium">Certified Network</span>
         </div>
+      </div>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 max-w-sm sm:max-w-none mx-auto">
+        <a 
+          href="/distributors"
+          class="w-full sm:w-auto group relative bg-gradient-to-r from-[#C9A227] to-[#D4B332] hover:from-[#D4B332] hover:to-[#C9A227] text-black font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap overflow-hidden inline-flex items-center justify-center gap-2"
+        >
+          <Icon name="tabler:map-pin" class="w-4 h-4" />
+          Find Installer
+        </a>
+        <a 
+          href="/products"
+          class="w-full sm:w-auto group relative bg-transparent border-2 border-white/30 hover:border-[#C9A227] text-white hover:text-[#C9A227] font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full backdrop-blur-sm hover:backdrop-blur-md shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap inline-flex items-center justify-center gap-2"
+        >
+          <Icon name="tabler:arrow-right" class="w-4 h-4" />
+          Explore Products
+        </a>
       </div>
     </Fragment>
   </Hero>
@@ -81,6 +95,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
     title="Why Choose TAKAI Paint Protection Film"
     subtitle="Industry-leading technology and superior materials engineered for the most demanding conditions and premium vehicles."
     columns={3}
+    isDark={false}
     classes={{
       title: 'text-[#01407a]',
       subtitle: 'text-gray-800 font-medium'
@@ -123,7 +138,11 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
         icon: 'tabler:certificate',
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white"></div>
+    </Fragment>
+  </Features>
 
   <!-- Content Widget **************** -->
 
@@ -159,10 +178,10 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
       }
     }}
     image={{
-      src: '/images/takai-installation.webp',
+      src: optimizedInstallationImage.src,
       alt: 'Paint protection film installation',
-      width: 800,
-      height: 600,
+      width: 348,
+      height: 280,
     }}
   >
     <Fragment slot="content">
@@ -287,6 +306,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
   <Steps
     title="Experience TAKAI Protection in Three Simple Steps"
+    isDark={false}
     classes={{
       title: 'text-[#01407a]'
     }}
@@ -320,7 +340,11 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
       width: 800,
       height: 600,
     }}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white"></div>
+    </Fragment>
+  </Steps>
 
 
   <!-- FAQs Widget ******************* -->
@@ -329,6 +353,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
     title="Frequently Asked Questions"
     subtitle="Common questions about TAKAI paint protection films and our installation process."
     tagline="FAQs"
+    isDark={false}
     classes={{ 
       container: 'max-w-6xl',
       title: 'text-[#01407a]',
@@ -367,18 +392,27 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
           "TAKAI films require minimal maintenance. Simply wash with regular car soap and water. The hydrophobic surface repels water and contaminants, making cleaning easier. Minor scratches self-heal with heat exposure, and the film maintains its clarity for years without special treatments.",
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white"></div>
+    </Fragment>
+  </AccordionFAQ>
 
   <!-- Stats Widget ****************** -->
 
   <Stats
+    isDark={false}
     stats={[
       { title: 'Vehicles Protected', amount: '1M+' },
       { title: 'Certified Installers', amount: '5K+' },
       { title: 'Countries Served', amount: '25+' },
       { title: 'Years Experience', amount: '40+' },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white"></div>
+    </Fragment>
+  </Stats>
 
   <!-- CallToAction Widget *********** -->
 

@@ -12,6 +12,7 @@ import { PAGE_METADATA } from '~/utils/metadata';
 <Layout metadata={PAGE_METADATA.company}>
   <!-- Hero Section -->
   <Hero
+    responsive={true}
     tagline="About TAKAI"
     title="Protecting What Matters Most"
     subtitle="Since our founding, TAKAI has been dedicated to developing the world's finest paint protection films through innovation, quality, and unwavering commitment to excellence."
@@ -280,74 +281,64 @@ import { PAGE_METADATA } from '~/utils/metadata';
         </div>
       </div>
 
-      <!-- Additional Standards Grid -->
-      <div class="bg-gradient-to-r from-takai-blue to-blue-800 rounded-2xl p-8 md:p-12">
-        <div class="text-center mb-8">
-          <h3 class="text-2xl md:text-3xl font-bold mb-4 text-white">Additional Standards & Certifications</h3>
-          <p class="text-white/90 max-w-2xl mx-auto">
-            Our commitment to excellence extends across multiple industry standards and certifications
-          </p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-white">
-          <div class="text-center">
-            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <Icon name="tabler:shield-check" class="w-6 h-6 text-white" />
-            </div>
-            <h4 class="font-semibold mb-1 text-white">ASTM Standards</h4>
-            <p class="text-sm text-white/80">Material testing compliance</p>
-          </div>
-          
-          <div class="text-center">
-            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <Icon name="tabler:world" class="w-6 h-6 text-white" />
-            </div>
-            <h4 class="font-semibold mb-1 text-white">Global Compliance</h4>
-            <p class="text-sm text-white/80">International regulations</p>
-          </div>
-          
-          <div class="text-center">
-            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <Icon name="tabler:recycle" class="w-6 h-6 text-white" />
-            </div>
-            <h4 class="font-semibold mb-1 text-white">RoHS Compliant</h4>
-            <p class="text-sm text-white/80">Hazardous substance free</p>
-          </div>
-          
-          <div class="text-center">
-            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <Icon name="tabler:award" class="w-6 h-6 text-white" />
-            </div>
-            <h4 class="font-semibold mb-1 text-white">Industry Awards</h4>
-            <p class="text-sm text-white/80">Excellence recognition</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- Customer Testimonials -->
   <Testimonials
     title="What Our Partners Say"
-    subtitle="Trusted by professionals worldwide"
+    tagline="Testimonials"
+    subtitle="Trusted by professionals worldwide for superior quality and exceptional service"
+    isDark={false}
     testimonials={[
       {
-        testimonial: `TAKAI films consistently deliver exceptional results. The clarity and self-healing properties are unmatched in the industry.`,
-        name: 'Professional Installer',
-        job: 'Certified TAKAI Dealer',
+        testimonial: `TAKAI films consistently deliver exceptional results that exceed our customers' expectations. The self-healing technology and optical clarity are truly unmatched in the industry. We've been using TAKAI for over 8 years and have never looked back.`,
+        name: 'Michael Chen',
+        job: 'Master Certified Installer',
+        company: 'Precision Auto Protection, Tokyo',
+        rating: 5,
       },
       {
-        testimonial: `The technical support and training provided by TAKAI has been invaluable to our business success.`,
-        name: 'Regional Distributor',
-        job: 'TAKAI Partner',
+        testimonial: `The technical support and comprehensive training program provided by TAKAI has been instrumental in our business growth. Their commitment to installer success is evident in every interaction.`,
+        name: 'Sarah Williams',
+        job: 'Regional Distribution Manager',
+        company: 'Premium Films Europe Ltd.',
+        rating: 5,
       },
       {
-        testimonial: `Our customers love the performance and appearance of TAKAI Premium Plus. It's our go-to product for high-end vehicles.`,
-        name: 'Installation Shop Owner',
-        job: 'TAKAI Certified Installer',
+        testimonial: `Our high-end clientele demands perfection, and TAKAI Premium Plus delivers every time. The durability and finish quality have made it our exclusive choice for luxury and exotic vehicles.`,
+        name: 'David Rodriguez',
+        job: 'Shop Owner & Lead Technician',
+        company: 'Elite Auto Couture, California',
+        rating: 5,
+      },
+      {
+        testimonial: `TAKAI's Japanese precision engineering shows in every installation. The pre-cut patterns are incredibly accurate, and the film's performance in harsh Australian conditions has been outstanding.`,
+        name: 'James Thompson',
+        job: 'Certified TAKAI Specialist',
+        company: 'Aussie Protection Films, Sydney',
+        rating: 5,
+      },
+      {
+        testimonial: `After 15 years in the industry, I can confidently say TAKAI offers the best combination of product quality, technical innovation, and business support. It's a true partnership.`,
+        name: 'Maria Gonzalez',
+        job: 'Master Trainer & Distributor',
+        company: 'TAKAI Latin America',
+        rating: 5,
+      },
+      {
+        testimonial: `The hydrophobic properties and stain resistance of TAKAI films have revolutionized our service offerings. Our customers are amazed by the long-term performance and appearance retention.`,
+        name: 'Robert Kim',
+        job: 'Technical Director',
+        company: 'Seoul Premium Auto Care',
+        rating: 5,
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white"></div>
+    </Fragment>
+  </Testimonials>
 
   <!-- Call to Action -->
   <CallToAction

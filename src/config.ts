@@ -8,34 +8,34 @@ export const SITE = {
 
 export const METADATA = {
   title: {
-    default: 'TAKAI Paint Protection Films – Premium Japanese Automotive Protection',
-    template: '%s | TAKAI Paint Protection Films',
+    default: 'TAKAI – Premium Japanese Protection Films',
+    template: '%s | TAKAI – Premium Japanese Protection Films',
   },
-  description: 'World-class paint protection films engineered in Japan. Self-healing technology, superior clarity, and professional installation for luxury vehicles worldwide.',
+  description: 'Japanese precision, clarity, and strength – redefining automotive protection films.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    site_name: 'TAKAI Paint Protection Films',
+    site_name: 'TAKAI – Premium Japanese Protection Films',
     images: [
       {
-        url: '/images/takai-og-image.webp',
+        url: '/og-cover.jpg', // This will be processed by getImage in Metadata.astro
         width: 1200,
         height: 630,
-        alt: 'TAKAI Paint Protection Films - Premium Japanese Automotive Protection',
+        alt: 'TAKAI – Premium Japanese Protection Films',
       },
     ],
     type: 'website',
-    title: 'TAKAI Paint Protection Films – Premium Japanese Automotive Protection',
-    description: 'World-class paint protection films engineered in Japan. Self-healing technology, superior clarity, and professional installation for luxury vehicles worldwide.',
+    title: 'TAKAI – Premium Japanese Protection Films',
+    description: 'Japanese precision, clarity, and strength – redefining automotive protection films.',
   },
   twitter: {
     handle: '@takaifilms',
     site: '@takaifilms',
     cardType: 'summary_large_image',
-    title: 'TAKAI Paint Protection Films – Premium Japanese Automotive Protection',
-    description: 'World-class paint protection films engineered in Japan. Self-healing technology and professional installation for luxury vehicles.',
+    title: 'TAKAI – Premium Japanese Protection Films',
+    description: 'Japanese precision, clarity, and strength – redefining automotive protection films.',
   },
 };
 

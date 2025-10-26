@@ -20,14 +20,14 @@ const metadata = createMetadata({
         <div class="text-center lg:text-left flex flex-col justify-center space-y-6">
           
           <!-- Main Title -->
-          <h1 class="text-4xl md:text-6xl lg:text-5xl xl:text-6xl font-bold text-[#C9A227] uppercase tracking-wider leading-tight">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#C9A227] uppercase tracking-wider leading-tight">
             TAKAI at Japan<br>
             <span class="text-white">Mobility Show</span><br>
             <span class="text-[#C9A227]">2025</span>
           </h1>
           
           <!-- Subtitle -->
-          <p class="text-xl md:text-2xl text-[#E5E7EB] font-light tracking-wide">
+          <p class="text-lg sm:text-xl md:text-2xl text-[#E5E7EB] font-light tracking-wide">
             Innovation Meets Precision
           </p>
         </div>
@@ -38,7 +38,7 @@ const metadata = createMetadata({
             <img 
               src="/jap-show-25/img_01.webp" 
               alt="TAKAI at Japan Mobility Show 2025" 
-              class="max-w-full w-full max-w-md lg:max-w-lg xl:max-w-xl transition-transform duration-300 group-hover:scale-105 pulse-glow-hero"
+              class="max-w-full w-full max-w-md lg:max-w-lg xl:max-w-xl transition-transform duration-300 group-hover:scale-105 hover-glow-hero"
               loading="eager"
             />
             <!-- Optional subtle glow effect -->
@@ -107,7 +107,7 @@ const metadata = createMetadata({
           <img 
             src="/jap-show-25/kv03_pc.webp" 
             alt="TAKAI Japan Mobility Show 2025 - Visit Booth W3003" 
-            class="max-w-full w-full max-w-xl lg:max-w-2xl xl:max-w-3xl transition-transform duration-300 hover:scale-105 pulse-glow-hero"
+            class="max-w-full w-full max-w-xl lg:max-w-2xl xl:max-w-3xl transition-transform duration-300 hover:scale-105 hover-glow-hero"
             loading="lazy"
           />
         </div>
@@ -296,69 +296,18 @@ const metadata = createMetadata({
     animation: fadeInUp 0.8s ease-out forwards;
   }
   
-  /* Heartbeat pulsing glow animation for hero image */
-  .pulse-glow-hero {
-    animation: heartbeatGlowHero 4.5s ease-in-out infinite;
+  /* Hover-only glow effect for hero images */
+  .hover-glow-hero {
     border-radius: 8px;
+    box-shadow: 0 0 5px rgba(201, 162, 39, 0.2), 0 0 10px rgba(201, 162, 39, 0.1), 0 0 15px rgba(201, 162, 39, 0.05);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
   
-  @keyframes heartbeatGlowHero {
-    0% {
-      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
-      transform: scale(1);
-    }
-    10% {
-      box-shadow: 0 0 15px rgba(201, 162, 39, 0.7), 0 0 25px rgba(201, 162, 39, 0.5), 0 0 35px rgba(201, 162, 39, 0.3);
-      transform: scale(1.02);
-    }
-    15% {
-      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
-      transform: scale(1);
-    }
-    25% {
-      box-shadow: 0 0 20px rgba(201, 162, 39, 0.8), 0 0 30px rgba(201, 162, 39, 0.6), 0 0 40px rgba(201, 162, 39, 0.4);
-      transform: scale(1.03);
-    }
-    35% {
-      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
-      transform: scale(1);
-    }
-    100% {
-      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
-      transform: scale(1);
-    }
-  }
-  
-  /* Enhanced hover effect with faster heartbeat */
-  .group:hover .pulse-glow-hero {
-    animation: heartbeatGlowHeroFast 3s ease-in-out infinite;
-  }
-  
-  @keyframes heartbeatGlowHeroFast {
-    0% {
-      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
-      transform: scale(1);
-    }
-    8% {
-      box-shadow: 0 0 20px rgba(201, 162, 39, 0.9), 0 0 35px rgba(201, 162, 39, 0.7), 0 0 50px rgba(201, 162, 39, 0.5);
-      transform: scale(1.03);
-    }
-    12% {
-      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
-      transform: scale(1);
-    }
-    20% {
-      box-shadow: 0 0 25px rgba(201, 162, 39, 1), 0 0 40px rgba(201, 162, 39, 0.8), 0 0 55px rgba(201, 162, 39, 0.6);
-      transform: scale(1.04);
-    }
-    28% {
-      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
-      transform: scale(1);
-    }
-    100% {
-      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
-      transform: scale(1);
-    }
+  /* Enhanced hover effect */
+  .hover-glow-hero:hover,
+  .group:hover .hover-glow-hero {
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.8), 0 0 30px rgba(201, 162, 39, 0.6), 0 0 40px rgba(201, 162, 39, 0.4);
+    transform: scale(1.02);
   }
   
   /* Remove initial opacity to prevent hydration mismatch */

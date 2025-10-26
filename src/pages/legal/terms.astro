@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Terms of Service - TAKAI Paint Protection Films',
@@ -10,192 +9,309 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Section -->
-  <Hero
-    tagline="Terms of Service"
-    title="Terms and Conditions"
-    subtitle="Please read these terms carefully before using our website or services. By accessing our site, you agree to be bound by these terms."
-    image={{
-      src: '/images/hero-car-1.webp',
-      alt: 'TAKAI protected vehicle representing our commitment to quality and service terms',
-      width: 1920,
-      height: 1080
-    }}
-  />
+  <!-- Terms of Service Content -->
+  <section class="pt-32 md:pt-40 pb-16 md:pb-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#01407a] mb-4">Terms of Service</h1>
+        <p class="text-lg text-[#C9A227] font-medium uppercase tracking-wider mb-6">Terms and Conditions</p>
+        <p class="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          Please read these terms carefully before using our website or services. By accessing our site, you agree to be bound by these terms.
+        </p>
+      </div>
+      
+      <!-- Last Updated -->
+      <div class="mb-12 p-6 bg-gradient-to-r from-[#01407a]/5 to-[#C9A227]/5 rounded-xl border border-[#C9A227]/20">
+        <div class="flex items-center gap-3 mb-2">
+          <Icon name="tabler:calendar" class="w-5 h-5 text-[#C9A227]" />
+          <span class="text-sm font-semibold text-[#01407a] uppercase tracking-wider">Last Updated</span>
+        </div>
+        <p class="text-gray-700">October 26, 2025</p>
+      </div>
 
-  <!-- Terms Content -->
-  <Content
-    title="Acceptance of Terms"
-    subtitle="Agreement to terms and conditions"
-    items={[
-      {
-        title: 'Binding Agreement',
-        description: 'By accessing or using this website, you agree to be bound by these Terms of Service and all applicable laws.',
-      },
-      {
-        title: 'Modifications',
-        description: 'We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting.',
-      },
-      {
-        title: 'Continued Use',
-        description: 'Your continued use of the website after changes constitutes acceptance of the modified terms.',
-      },
-    ]}
-  />
+      <!-- Introduction -->
+      <div class="prose prose-lg max-w-none mb-16">
+        <p class="text-xl text-gray-700 leading-relaxed mb-8">
+          Welcome to TAKAI Paint Protection Films. These Terms of Service ("Terms") govern your use of our website 
+          and services. By accessing or using our website, you agree to be bound by these Terms and all applicable laws and regulations.
+        </p>
+      </div>
 
-  <Content
-    isReversed
-    title="Use of Website"
-    subtitle="Permitted and prohibited uses"
-    items={[
-      {
-        title: 'Permitted Use',
-        description: 'You may use this website for lawful purposes related to learning about TAKAI products and services.',
-      },
-      {
-        title: 'Prohibited Activities',
-        description: 'You may not use this site for any unlawful purpose or in any way that could damage or impair the site.',
-      },
-      {
-        title: 'Content Restrictions',
-        description: 'You may not copy, reproduce, or distribute website content without written permission.',
-      },
-    ]}
-  />
+      <!-- Section 1: Acceptance of Terms -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">1</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Acceptance of Terms</h2>
+        </div>
+        
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-6">
+          <div class="flex items-center gap-3 mb-3">
+            <Icon name="tabler:file-check" class="w-6 h-6 text-blue-600" />
+            <h3 class="text-lg font-semibold text-blue-800">Binding Agreement</h3>
+          </div>
+          <p class="text-blue-700">
+            By accessing or using this website, you agree to be bound by these Terms of Service and all applicable laws and regulations.
+          </p>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 border border-gray-200 rounded-lg">
+            <Icon name="tabler:edit" class="w-6 h-6 text-[#C9A227] mt-1" />
+            <div>
+              <h4 class="font-semibold text-[#01407a] mb-2">Modifications</h4>
+              <p class="text-gray-700">We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on this website.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 p-4 border border-gray-200 rounded-lg">
+            <Icon name="tabler:refresh" class="w-6 h-6 text-[#C9A227] mt-1" />
+            <div>
+              <h4 class="font-semibold text-[#01407a] mb-2">Continued Use</h4>
+              <p class="text-gray-700">Your continued use of the website after changes constitutes acceptance of the modified terms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <Content
-    title="Product Information"
-    subtitle="Product specifications and warranties"
-    items={[
-      {
-        title: 'Accuracy',
-        description: 'We strive to provide accurate product information but cannot guarantee complete accuracy of all specifications.',
-      },
-      {
-        title: 'Product Availability',
-        description: 'Product availability and specifications are subject to change without notice.',
-      },
-      {
-        title: 'Professional Installation',
-        description: 'Product warranties are valid only when installed by certified TAKAI installers.',
-      },
-    ]}
-  />
+      <!-- Section 2: Use of Website -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">2</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Use of Website</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+            <div class="flex items-center gap-3 mb-4">
+              <Icon name="tabler:check" class="w-6 h-6 text-green-600" />
+              <h3 class="text-lg font-semibold text-green-800">Permitted Use</h3>
+            </div>
+            <ul class="text-green-700 space-y-2">
+              <li>• Learning about TAKAI products and services</li>
+              <li>• Contacting us for business inquiries</li>
+              <li>• Accessing product information and specifications</li>
+              <li>• Finding authorized distributors and installers</li>
+            </ul>
+          </div>
+          
+          <div class="bg-red-50 p-6 rounded-xl border border-red-200">
+            <div class="flex items-center gap-3 mb-4">
+              <Icon name="tabler:x" class="w-6 h-6 text-red-600" />
+              <h3 class="text-lg font-semibold text-red-800">Prohibited Activities</h3>
+            </div>
+            <ul class="text-red-700 space-y-2">
+              <li>• Unlawful or fraudulent activities</li>
+              <li>• Copying or distributing content without permission</li>
+              <li>• Attempting to damage or impair the website</li>
+              <li>• Unauthorized access to our systems</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-  <Content
-    isReversed
-    title="Intellectual Property"
-    subtitle="Trademarks and copyrights"
-    items={[
-      {
-        title: 'TAKAI Trademarks',
-        description: 'TAKAI and related marks are trademarks of TAKAI Paint Protection Films and are protected by law.',
-      },
-      {
-        title: 'Website Content',
-        description: 'All website content, including text, images, and graphics, is protected by copyright.',
-      },
-      {
-        title: 'License to Use',
-        description: 'We grant you a limited, non-exclusive license to access and use the website for personal use.',
-      },
-    ]}
-  />
+      <!-- Section 3: Product Information -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">3</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Product Information and Warranties</h2>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="border-l-4 border-[#C9A227] pl-6">
+            <h3 class="text-xl font-semibold text-[#01407a] mb-3">Information Accuracy</h3>
+            <p class="text-gray-700 leading-relaxed">
+              We strive to provide accurate product information, specifications, and pricing. However, we cannot guarantee 
+              complete accuracy of all information and reserve the right to correct errors or omissions.
+            </p>
+          </div>
+          
+          <div class="border-l-4 border-[#C9A227] pl-6">
+            <h3 class="text-xl font-semibold text-[#01407a] mb-3">Product Availability</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Product availability, specifications, and pricing are subject to change without notice. We reserve the right 
+              to discontinue products or modify specifications at any time.
+            </p>
+          </div>
+          
+          <div class="border-l-4 border-[#C9A227] pl-6">
+            <h3 class="text-xl font-semibold text-[#01407a] mb-3">Professional Installation Required</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Product warranties are valid only when installed by certified TAKAI installers following approved procedures. 
+              Improper installation may void warranty coverage.
+            </p>
+          </div>
+        </div>
+      </div>
 
-  <Content
-    title="Limitation of Liability"
-    subtitle="Legal disclaimers and limitations"
-    items={[
-      {
-        title: 'Disclaimer',
-        description: 'This website and its content are provided "as is" without warranties of any kind.',
-      },
-      {
-        title: 'Limitation',
-        description: 'TAKAI shall not be liable for any indirect, incidental, or consequential damages.',
-      },
-      {
-        title: 'Maximum Liability',
-        description: 'Our total liability shall not exceed the amount paid by you for TAKAI products, if any.',
-      },
-    ]}
-  />
+      <!-- Section 4: Intellectual Property -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">4</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Intellectual Property Rights</h2>
+        </div>
+        
+        <div class="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-200 rounded-xl p-6 mb-6">
+          <div class="flex items-center gap-3 mb-3">
+            <Icon name="tabler:shield" class="w-6 h-6 text-purple-600" />
+            <h3 class="text-lg font-semibold text-purple-800">Protected Content</h3>
+          </div>
+          <p class="text-purple-700">
+            All website content, including text, images, graphics, logos, and trademarks, is protected by intellectual property laws.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-6 border border-gray-200 rounded-xl">
+            <h4 class="font-semibold text-[#01407a] mb-3 flex items-center gap-2">
+              <Icon name="tabler:tag" class="w-5 h-5 text-[#C9A227]" />
+              TAKAI Trademarks
+            </h4>
+            <p class="text-gray-700">TAKAI and related marks are registered trademarks and are protected by law.</p>
+          </div>
+          
+          <div class="p-6 border border-gray-200 rounded-xl">
+            <h4 class="font-semibold text-[#01407a] mb-3 flex items-center gap-2">
+              <Icon name="tabler:file" class="w-5 h-5 text-[#C9A227]" />
+              Limited License
+            </h4>
+            <p class="text-gray-700">We grant you a limited, non-exclusive license to access and use the website for personal use.</p>
+          </div>
+        </div>
+      </div>
 
-  <Content
-    isReversed
-    title="Privacy and Data"
-    subtitle="Information collection and use"
-    items={[
-      {
-        title: 'Privacy Policy',
-        description: 'Our collection and use of personal information is governed by our Privacy Policy.',
-      },
-      {
-        title: 'Data Security',
-        description: 'We implement reasonable security measures to protect your personal information.',
-      },
-      {
-        title: 'Third-Party Links',
-        description: 'We are not responsible for the privacy practices of third-party websites linked from our site.',
-      },
-    ]}
-  />
+      <!-- Section 5: Limitation of Liability -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">5</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Limitation of Liability</h2>
+        </div>
+        
+        <div class="bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-xl p-6 mb-6">
+          <div class="flex items-center gap-3 mb-3">
+            <Icon name="tabler:alert-circle" class="w-6 h-6 text-orange-600" />
+            <h3 class="text-lg font-semibold text-orange-800">Important Legal Notice</h3>
+          </div>
+          <p class="text-orange-700">
+            This website and its content are provided "as is" without warranties of any kind, either express or implied.
+          </p>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="p-4 border border-gray-200 rounded-lg">
+            <h4 class="font-semibold text-[#01407a] mb-2">Disclaimer of Warranties</h4>
+            <p class="text-gray-700">We disclaim all warranties, including but not limited to merchantability, fitness for a particular purpose, and non-infringement.</p>
+          </div>
+          
+          <div class="p-4 border border-gray-200 rounded-lg">
+            <h4 class="font-semibold text-[#01407a] mb-2">Limitation of Damages</h4>
+            <p class="text-gray-700">TAKAI shall not be liable for any indirect, incidental, special, consequential, or punitive damages.</p>
+          </div>
+        </div>
+      </div>
 
-  <Content
-    title="Distributor and Installer Terms"
-    subtitle="Additional terms for business partners"
-    items={[
-      {
-        title: 'Certification Requirements',
-        description: 'Distributors and installers must meet and maintain certification standards.',
-      },
-      {
-        title: 'Territory Rights',
-        description: 'Territory rights and exclusivity are governed by separate distributor agreements.',
-      },
-      {
-        title: 'Quality Standards',
-        description: 'Partners must maintain quality standards and follow approved installation procedures.',
-      },
-    ]}
-  />
+      <!-- Section 6: Distributor Terms -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">6</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Distributor and Installer Terms</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <Icon name="tabler:certificate" class="w-8 h-8 text-[#C9A227] mx-auto mb-3" />
+            <h4 class="font-semibold text-[#01407a] mb-2">Certification</h4>
+            <p class="text-gray-700 text-sm">Must meet and maintain certification standards</p>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <Icon name="tabler:map-pin" class="w-8 h-8 text-[#C9A227] mx-auto mb-3" />
+            <h4 class="font-semibold text-[#01407a] mb-2">Territory Rights</h4>
+            <p class="text-gray-700 text-sm">Governed by separate distributor agreements</p>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <Icon name="tabler:award" class="w-8 h-8 text-[#C9A227] mx-auto mb-3" />
+            <h4 class="font-semibold text-[#01407a] mb-2">Quality Standards</h4>
+            <p class="text-gray-700 text-sm">Must follow approved installation procedures</p>
+          </div>
+        </div>
+      </div>
 
-  <Content
-    isReversed
-    title="Governing Law"
-    subtitle="Legal jurisdiction and dispute resolution"
-    items={[
-      {
-        title: 'Jurisdiction',
-        description: 'These terms are governed by the laws of the State of California, United States.',
-      },
-      {
-        title: 'Dispute Resolution',
-        description: 'Disputes will be resolved through binding arbitration in accordance with applicable rules.',
-      },
-      {
-        title: 'Severability',
-        description: 'If any provision of these terms is invalid, the remaining provisions shall remain in effect.',
-      },
-    ]}
-  />
+      <!-- Section 7: Governing Law -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">7</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Governing Law and Dispute Resolution</h2>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="border-l-4 border-[#C9A227] pl-6">
+            <h3 class="text-xl font-semibold text-[#01407a] mb-3">Jurisdiction</h3>
+            <p class="text-gray-700 leading-relaxed">
+              These terms are governed by the laws of Japan. Any disputes shall be subject to the exclusive jurisdiction 
+              of the courts of Tokyo, Japan.
+            </p>
+          </div>
+          
+          <div class="border-l-4 border-[#C9A227] pl-6">
+            <h3 class="text-xl font-semibold text-[#01407a] mb-3">Dispute Resolution</h3>
+            <p class="text-gray-700 leading-relaxed">
+              We encourage resolution of disputes through direct communication. If necessary, disputes may be resolved 
+              through binding arbitration in accordance with applicable rules.
+            </p>
+          </div>
+          
+          <div class="border-l-4 border-[#C9A227] pl-6">
+            <h3 class="text-xl font-semibold text-[#01407a] mb-3">Severability</h3>
+            <p class="text-gray-700 leading-relaxed">
+              If any provision of these terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.
+            </p>
+          </div>
+        </div>
+      </div>
 
-  <Content
-    title="Contact Information"
-    subtitle="Questions about these terms"
-    items={[
-      {
-        title: 'Legal Department',
-        description: 'Contact our legal department at legal@takai-ppf.com for questions about these terms.',
-      },
-      {
-        title: 'Business Address',
-        description: 'TAKAI Paint Protection Films, 123 Innovation Drive, Technology Park, CA 90210',
-      },
-      {
-        title: 'Effective Date',
-        description: 'These terms are effective as of the date last modified and posted on this website.',
-      },
-    ]}
-  />
+      <!-- Contact Section -->
+      <div class="bg-gradient-to-br from-[#01407a] to-blue-800 text-white rounded-2xl p-8">
+        <div class="text-center mb-8">
+          <Icon name="tabler:gavel" class="w-12 h-12 text-[#C9A227] mx-auto mb-4" />
+          <h2 class="text-2xl font-bold mb-4">Questions About These Terms?</h2>
+          <p class="text-blue-100 max-w-2xl mx-auto">
+            If you have any questions or concerns about these Terms of Service, please contact our legal department.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="text-center">
+            <h4 class="font-semibold text-[#C9A227] mb-2">Legal Department</h4>
+            <p class="text-blue-100">legal@takaifilms.jp</p>
+          </div>
+          
+          <div class="text-center">
+            <h4 class="font-semibold text-[#C9A227] mb-2">Business Address</h4>
+            <p class="text-blue-100 text-sm">
+              Nippon Takai Trading & Innovation Co., Ltd.<br>
+              3-1-6 Motoazabu, Minato-ku<br>
+              Tokyo 106-0046, Japan
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

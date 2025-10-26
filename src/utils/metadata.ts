@@ -1,9 +1,9 @@
 import type { MetaData } from '~/types';
 import { SITE, METADATA } from '~/config';
 
-// Simple metadata that bypasses image processing
-const SIMPLE_OG_IMAGE = {
-  url: '/images/takai-og-image.webp',
+// Default OG image - will be processed by Metadata.astro component
+const DEFAULT_OG_IMAGE = {
+  url: '/og-cover.jpg', // This gets processed by getImage in Metadata.astro
   width: 1200,
   height: 630,
 };
@@ -22,13 +22,13 @@ export function createMetadata(pageData: PageMetadata = {}): MetaData {
     title,
     description,
     canonical,
-    image = '/images/takai-og-image.webp',
+    image = '/og-cover.jpg',
     type = 'website',
     noindex = false
   } = pageData;
 
   const fullTitle = title 
-    ? `${title} | TAKAI Paint Protection Films`
+    ? `${title} | TAKAI – Premium Japanese Protection Films`
     : METADATA.title.default;
 
   const fullDescription = description || METADATA.description;
@@ -37,9 +37,9 @@ export function createMetadata(pageData: PageMetadata = {}): MetaData {
     ? `${SITE.site}${canonical}`
     : SITE.site;
 
-  // Use simple image object to avoid processing issues
-  const imageObj = image === '/images/takai-og-image.webp' 
-    ? SIMPLE_OG_IMAGE
+  // Use default image object - processing handled by Metadata.astro
+  const imageObj = image === '/og-cover.jpg' 
+    ? DEFAULT_OG_IMAGE
     : { url: image, width: 1200, height: 630 };
 
   return {

@@ -1,54 +1,6 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes, ImageMetadata } from 'astro/types';
 
-export interface Post {
-  /** A unique ID number that identifies a post. */
-  id: string;
-
-  /** A post’s unique slug – part of the post’s URL based on its name, i.e. a post called “My Sample Page” has a slug “my-sample-page”. */
-  slug: string;
-
-  /**  */
-  permalink: string;
-
-  /**  */
-  publishDate: Date;
-  /**  */
-  updateDate?: Date;
-
-  /**  */
-  title: string;
-  /** Optional summary of post content. */
-  excerpt?: string;
-  /**  */
-  image?: ImageMetadata | string;
-
-  /**  */
-  category?: Taxonomy;
-  /**  */
-  tags?: Taxonomy[];
-  /**  */
-  author?: string;
-
-  /**  */
-  metadata?: MetaData;
-
-  /**  */
-  draft?: boolean;
-
-  /**  */
-  Content?: AstroComponentFactory;
-  content?: string;
-
-  /**  */
-  readingTime?: number;
-}
-
-export interface Taxonomy {
-  slug: string;
-  title: string;
-}
-
 export interface MetaData {
   title?: string;
   ignoreTitleTemplate?: boolean;
@@ -160,6 +112,8 @@ export interface Testimonial {
   testimonial?: string;
   name?: string;
   job?: string;
+  company?: string;
+  rating?: number;
   image?: string | unknown;
 }
 
@@ -220,6 +174,7 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   actions?: string | CallToAction[];
   image?: string | unknown;
   images?: Array<Image>;
+  responsive?: boolean;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {

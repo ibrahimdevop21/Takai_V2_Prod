@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import logoImage from '~/assets/takai-logo-white-1.png';
 
 interface Link {
   text?: string;
@@ -33,11 +35,13 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
           <a class="inline-block" href="/">
-            <img
-              src="/takai-logo-white-1.png"
+            <Image
+              src={logoImage}
               alt="TAKAI"
               class="h-8 w-auto"
               loading="lazy"
+              width={142}
+              height={32}
             />
           </a>
         </div>

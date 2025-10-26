@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Privacy Policy - TAKAI Paint Protection Films',
@@ -10,153 +9,290 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Section -->
-  <Hero
-    tagline="Privacy Policy"
-    title="Your Privacy Matters"
-    subtitle="We are committed to protecting your privacy and personal information. This policy explains how we collect, use, and safeguard your data."
-    image={{
-      src: '/images/hero-car-2.webp',
-      alt: 'Premium vehicle with TAKAI protection - your privacy and data security matter to us',
-      width: 1920,
-      height: 1080
-    }}
-  />
-
   <!-- Privacy Policy Content -->
-  <Content
-    title="Information We Collect"
-    subtitle="Types of data we may collect"
-    items={[
-      {
-        title: 'Personal Information',
-        description: 'Name, email address, phone number, and company information when you contact us or request information.',
-      },
-      {
-        title: 'Technical Information',
-        description: 'IP address, browser type, device information, and website usage data through cookies and analytics.',
-      },
-      {
-        title: 'Business Information',
-        description: 'Information provided by distributors and installers for partnership and certification purposes.',
-      },
-    ]}
-  />
+  <section class="pt-32 md:pt-40 pb-16 md:pb-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#01407a] mb-4">Privacy Policy</h1>
+        <p class="text-lg text-[#C9A227] font-medium uppercase tracking-wider mb-6">Your Privacy Matters</p>
+        <p class="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          We are committed to protecting your privacy and personal information. This policy explains how we collect, use, and safeguard your data.
+        </p>
+      </div>
+      
+      <!-- Last Updated -->
+      <div class="mb-12 p-6 bg-gradient-to-r from-[#01407a]/5 to-[#C9A227]/5 rounded-xl border border-[#C9A227]/20">
+        <div class="flex items-center gap-3 mb-2">
+          <Icon name="tabler:calendar" class="w-5 h-5 text-[#C9A227]" />
+          <span class="text-sm font-semibold text-[#01407a] uppercase tracking-wider">Last Updated</span>
+        </div>
+        <p class="text-gray-700">October 26, 2025</p>
+      </div>
 
-  <Content
-    isReversed
-    title="How We Use Your Information"
-    subtitle="Purposes for data collection"
-    items={[
-      {
-        title: 'Customer Service',
-        description: 'To respond to inquiries, provide technical support, and communicate about our products and services.',
-      },
-      {
-        title: 'Business Operations',
-        description: 'To process applications, manage partnerships, and conduct business transactions.',
-      },
-      {
-        title: 'Website Improvement',
-        description: 'To analyze website usage, improve user experience, and optimize our digital presence.',
-      },
-    ]}
-  />
+      <!-- Introduction -->
+      <div class="prose prose-lg max-w-none mb-16">
+        <p class="text-xl text-gray-700 leading-relaxed mb-8">
+          At TAKAI Paint Protection Films, we respect your privacy and are committed to protecting your personal information. 
+          This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website 
+          or use our services.
+        </p>
+      </div>
 
-  <Content
-    title="Information Sharing"
-    subtitle="How we protect and share your data"
-    items={[
-      {
-        title: 'No Sale of Personal Data',
-        description: 'We do not sell, rent, or trade your personal information to third parties.',
-      },
-      {
-        title: 'Service Providers',
-        description: 'We may share information with trusted service providers who assist in our business operations.',
-      },
-      {
-        title: 'Legal Requirements',
-        description: 'We may disclose information when required by law or to protect our rights and safety.',
-      },
-    ]}
-  />
+      <!-- Section 1: Information We Collect -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">1</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Information We Collect</h2>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="border-l-4 border-[#C9A227] pl-6">
+            <h3 class="text-xl font-semibold text-[#01407a] mb-3">Personal Information</h3>
+            <p class="text-gray-700 leading-relaxed">
+              We may collect personal information such as your name, email address, phone number, company information, 
+              and mailing address when you contact us, request information, or apply for distributor partnerships.
+            </p>
+          </div>
+          
+          <div class="border-l-4 border-[#C9A227] pl-6">
+            <h3 class="text-xl font-semibold text-[#01407a] mb-3">Technical Information</h3>
+            <p class="text-gray-700 leading-relaxed">
+              We automatically collect certain technical information when you visit our website, including your IP address, 
+              browser type, device information, operating system, and website usage data through cookies and analytics tools.
+            </p>
+          </div>
+          
+          <div class="border-l-4 border-[#C9A227] pl-6">
+            <h3 class="text-xl font-semibold text-[#01407a] mb-3">Business Information</h3>
+            <p class="text-gray-700 leading-relaxed">
+              For distributors and installers, we collect business-related information including company details, 
+              certification status, territory information, and performance data for partnership management.
+            </p>
+          </div>
+        </div>
+      </div>
 
-  <Content
-    isReversed
-    title="Data Security"
-    subtitle="Protecting your information"
-    items={[
-      {
-        title: 'Security Measures',
-        description: 'We implement appropriate technical and organizational measures to protect your personal information.',
-      },
-      {
-        title: 'Access Controls',
-        description: 'Access to personal information is limited to authorized personnel who need it for business purposes.',
-      },
-      {
-        title: 'Data Retention',
-        description: 'We retain personal information only as long as necessary for the purposes outlined in this policy.',
-      },
-    ]}
-  />
+      <!-- Section 2: How We Use Your Information -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">2</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">How We Use Your Information</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <div class="flex items-center gap-3 mb-4">
+              <Icon name="tabler:headset" class="w-6 h-6 text-[#C9A227]" />
+              <h3 class="text-lg font-semibold text-[#01407a]">Customer Service</h3>
+            </div>
+            <p class="text-gray-700">To respond to inquiries, provide technical support, and communicate about our products and services.</p>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <div class="flex items-center gap-3 mb-4">
+              <Icon name="tabler:building" class="w-6 h-6 text-[#C9A227]" />
+              <h3 class="text-lg font-semibold text-[#01407a]">Business Operations</h3>
+            </div>
+            <p class="text-gray-700">To process applications, manage partnerships, conduct business transactions, and maintain our services.</p>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <div class="flex items-center gap-3 mb-4">
+              <Icon name="tabler:chart-line" class="w-6 h-6 text-[#C9A227]" />
+              <h3 class="text-lg font-semibold text-[#01407a]">Website Improvement</h3>
+            </div>
+            <p class="text-gray-700">To analyze website usage, improve user experience, and optimize our digital presence and services.</p>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <div class="flex items-center gap-3 mb-4">
+              <Icon name="tabler:shield-check" class="w-6 h-6 text-[#C9A227]" />
+              <h3 class="text-lg font-semibold text-[#01407a]">Legal Compliance</h3>
+            </div>
+            <p class="text-gray-700">To comply with legal obligations, protect our rights, and ensure the security of our services.</p>
+          </div>
+        </div>
+      </div>
 
-  <Content
-    title="Your Rights"
-    subtitle="Control over your personal information"
-    items={[
-      {
-        title: 'Access and Correction',
-        description: 'You have the right to access and correct your personal information in our records.',
-      },
-      {
-        title: 'Data Portability',
-        description: 'You may request a copy of your personal information in a structured, machine-readable format.',
-      },
-      {
-        title: 'Deletion',
-        description: 'You may request deletion of your personal information, subject to legal and business requirements.',
-      },
-    ]}
-  />
+      <!-- Section 3: Information Sharing -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">3</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Information Sharing and Disclosure</h2>
+        </div>
+        
+        <div class="bg-gradient-to-br from-red-50 to-orange-50 border border-red-200 rounded-xl p-6 mb-6">
+          <div class="flex items-center gap-3 mb-3">
+            <Icon name="tabler:shield-x" class="w-6 h-6 text-red-600" />
+            <h3 class="text-lg font-semibold text-red-800">We Do Not Sell Your Data</h3>
+          </div>
+          <p class="text-red-700">
+            TAKAI does not sell, rent, or trade your personal information to third parties for marketing purposes.
+          </p>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 border border-gray-200 rounded-lg">
+            <Icon name="tabler:users" class="w-6 h-6 text-[#C9A227] mt-1" />
+            <div>
+              <h4 class="font-semibold text-[#01407a] mb-2">Service Providers</h4>
+              <p class="text-gray-700">We may share information with trusted third-party service providers who assist in our business operations, such as website hosting, analytics, and customer support.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 p-4 border border-gray-200 rounded-lg">
+            <Icon name="tabler:gavel" class="w-6 h-6 text-[#C9A227] mt-1" />
+            <div>
+              <h4 class="font-semibold text-[#01407a] mb-2">Legal Requirements</h4>
+              <p class="text-gray-700">We may disclose information when required by law, court order, or to protect our rights, property, and safety, or that of others.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <Content
-    isReversed
-    title="Cookies and Tracking"
-    subtitle="Website analytics and functionality"
-    items={[
-      {
-        title: 'Essential Cookies',
-        description: 'Necessary for website functionality and security. These cannot be disabled.',
-      },
-      {
-        title: 'Analytics Cookies',
-        description: 'Help us understand how visitors use our website to improve user experience.',
-      },
-      {
-        title: 'Cookie Management',
-        description: 'You can control cookie preferences through your browser settings.',
-      },
-    ]}
-  />
+      <!-- Section 4: Data Security -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">4</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Data Security</h2>
+        </div>
+        
+        <div class="bg-gradient-to-br from-green-50 to-blue-50 border border-green-200 rounded-xl p-6 mb-6">
+          <p class="text-gray-700 leading-relaxed">
+            We implement appropriate technical and organizational security measures to protect your personal information 
+            against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over 
+            the internet or electronic storage is 100% secure.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="text-center p-4">
+            <Icon name="tabler:lock" class="w-8 h-8 text-[#C9A227] mx-auto mb-3" />
+            <h4 class="font-semibold text-[#01407a] mb-2">Encryption</h4>
+            <p class="text-sm text-gray-600">Data transmission is protected using SSL encryption</p>
+          </div>
+          
+          <div class="text-center p-4">
+            <Icon name="tabler:key" class="w-8 h-8 text-[#C9A227] mx-auto mb-3" />
+            <h4 class="font-semibold text-[#01407a] mb-2">Access Control</h4>
+            <p class="text-sm text-gray-600">Limited access to authorized personnel only</p>
+          </div>
+          
+          <div class="text-center p-4">
+            <Icon name="tabler:database" class="w-8 h-8 text-[#C9A227] mx-auto mb-3" />
+            <h4 class="font-semibold text-[#01407a] mb-2">Data Retention</h4>
+            <p class="text-sm text-gray-600">Information retained only as long as necessary</p>
+          </div>
+        </div>
+      </div>
 
-  <Content
-    title="Contact Information"
-    subtitle="Questions about this privacy policy"
-    items={[
-      {
-        title: 'Privacy Officer',
-        description: 'Contact our privacy officer at privacy@takai-ppf.com for questions or concerns.',
-      },
-      {
-        title: 'Mailing Address',
-        description: 'Nippon Takai Trading & Innovation Co., Ltd., 3-1-6 Motoazabu, Minato-ku, Tokyo 106-0046, Japan',
-      },
-      {
-        title: 'Policy Updates',
-        description: 'This policy may be updated periodically. Check this page for the latest version.',
-      },
-    ]}
-  />
+      <!-- Section 5: Your Rights -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">5</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Your Privacy Rights</h2>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
+            <Icon name="tabler:eye" class="w-6 h-6 text-[#C9A227] mt-1" />
+            <div>
+              <h4 class="font-semibold text-[#01407a] mb-2">Access and Correction</h4>
+              <p class="text-gray-700">You have the right to access, update, or correct your personal information in our records.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
+            <Icon name="tabler:download" class="w-6 h-6 text-[#C9A227] mt-1" />
+            <div>
+              <h4 class="font-semibold text-[#01407a] mb-2">Data Portability</h4>
+              <p class="text-gray-700">You may request a copy of your personal information in a structured, machine-readable format.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
+            <Icon name="tabler:trash" class="w-6 h-6 text-[#C9A227] mt-1" />
+            <div>
+              <h4 class="font-semibold text-[#01407a] mb-2">Deletion</h4>
+              <p class="text-gray-700">You may request deletion of your personal information, subject to legal and business requirements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6: Cookies -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-[#C9A227] rounded-lg flex items-center justify-center">
+            <span class="text-black font-bold text-sm">6</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#01407a]">Cookies and Tracking Technologies</h2>
+        </div>
+        
+        <div class="space-y-6">
+          <p class="text-gray-700 leading-relaxed">
+            We use cookies and similar tracking technologies to enhance your browsing experience, analyze website traffic, 
+            and understand user preferences. You can control cookie settings through your browser preferences.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="border border-gray-200 rounded-lg p-6">
+              <h4 class="font-semibold text-[#01407a] mb-3 flex items-center gap-2">
+                <Icon name="tabler:settings" class="w-5 h-5 text-[#C9A227]" />
+                Essential Cookies
+              </h4>
+              <p class="text-gray-700">Necessary for website functionality and security. These cannot be disabled.</p>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg p-6">
+              <h4 class="font-semibold text-[#01407a] mb-3 flex items-center gap-2">
+                <Icon name="tabler:chart-dots" class="w-5 h-5 text-[#C9A227]" />
+                Analytics Cookies
+              </h4>
+              <p class="text-gray-700">Help us understand how visitors use our website to improve user experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="bg-gradient-to-br from-[#01407a] to-blue-800 text-white rounded-2xl p-8">
+        <div class="text-center mb-8">
+          <Icon name="tabler:mail" class="w-12 h-12 text-[#C9A227] mx-auto mb-4" />
+          <h2 class="text-2xl font-bold mb-4">Questions About This Privacy Policy?</h2>
+          <p class="text-blue-100 max-w-2xl mx-auto">
+            If you have any questions or concerns about this Privacy Policy or our data practices, please contact us.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="text-center">
+            <h4 class="font-semibold text-[#C9A227] mb-2">Privacy Officer</h4>
+            <p class="text-blue-100">privacy@takaifilms.jp</p>
+          </div>
+          
+          <div class="text-center">
+            <h4 class="font-semibold text-[#C9A227] mb-2">Mailing Address</h4>
+            <p class="text-blue-100 text-sm">
+              Nippon Takai Trading & Innovation Co., Ltd.<br>
+              3-1-6 Motoazabu, Minato-ku<br>
+              Tokyo 106-0046, Japan
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

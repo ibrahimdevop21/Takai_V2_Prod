@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import TakaiContactForm from '~/components/widgets/TakaiContactForm.astro';
 import Content from '~/components/widgets/Content.astro';
 import { Icon } from 'astro-icon/components';
@@ -8,33 +7,9 @@ import { PAGE_METADATA } from '~/utils/metadata';
 ---
 
 <Layout metadata={PAGE_METADATA.contact}>
-  <!-- Hero Section -->
-  <Hero
-    tagline="Get in Touch"
-    title="Contact TAKAI"
-    subtitle="Whether you're looking for product information, technical support, or partnership opportunities, we're here to help."
-    actions={[
-      {
-        text: 'Find Distributor',
-        href: '/distributors',
-        icon: 'tabler:map-pin',
-        class: 'group relative bg-gradient-to-r from-[#C9A227] to-[#D4B332] hover:from-[#D4B332] hover:to-[#C9A227] text-black font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap overflow-hidden',
-      },
-      { 
-        text: 'Our Products', 
-        href: '/products',
-        icon: 'tabler:package',
-        class: 'group relative bg-transparent border-2 border-white/30 hover:border-[#C9A227] text-white hover:text-[#C9A227] font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full backdrop-blur-sm hover:backdrop-blur-md shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap'
-      },
-    ]}
-    image={{
-      src: '/images/hero-car-1.webp',
-      alt: 'Luxury sports car protected by TAKAI films - contact us for expert consultation',
-      width: 1920,
-      height: 1080
-    }}
-  />
-
+  <!-- Spacing from navbar -->
+  <div class="pt-16 md:pt-20"></div>
+  
   <!-- Modern TAKAI Contact Form -->
   <TakaiContactForm />
 
@@ -83,23 +58,4 @@ import { PAGE_METADATA } from '~/utils/metadata';
     </div>
   </div>
 
-  <!-- Additional Support -->
-  <Content
-    title="Additional Resources"
-    subtitle="Find answers and support"
-    items={[
-      {
-        title: 'Installation Training',
-        description: 'Comprehensive training programs for new and existing installers.',
-      },
-      {
-        title: 'Technical Documentation',
-        description: 'Access installation guides, product specifications, and best practices.',
-      },
-      {
-        title: 'Warranty Support',
-        description: 'Get assistance with warranty claims and product performance issues.',
-      },
-    ]}
-  />
 </Layout>

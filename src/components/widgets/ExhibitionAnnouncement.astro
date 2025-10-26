@@ -47,7 +47,7 @@ const { id, classes = {} } = Astro.props;
             <img 
               src="/jap-show-25/ti_01.png" 
               alt="TAKAI Future Tour 2035 at Japan Mobility Show 2025 - Click to visit official website" 
-              class="max-w-full md:max-w-2xl lg:max-w-3xl transition-all duration-300 cursor-pointer pulse-glow"
+              class="max-w-full md:max-w-2xl lg:max-w-3xl transition-all duration-300 cursor-pointer hover-glow"
               loading="lazy"
             />
           </a>
@@ -180,69 +180,17 @@ const { id, classes = {} } = Astro.props;
     z-index: 2;
   }
   
-  /* Heartbeat pulsing glow animation for clickable image */
-  .pulse-glow {
-    animation: heartbeatGlow 4.5s ease-in-out infinite;
+  /* Hover-only glow effect for clickable image */
+  .hover-glow {
     border-radius: 8px;
+    box-shadow: 0 0 5px rgba(201, 162, 39, 0.2), 0 0 10px rgba(201, 162, 39, 0.1), 0 0 15px rgba(201, 162, 39, 0.05);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
   
-  @keyframes heartbeatGlow {
-    0% {
-      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
-      transform: scale(1);
-    }
-    10% {
-      box-shadow: 0 0 15px rgba(201, 162, 39, 0.7), 0 0 25px rgba(201, 162, 39, 0.5), 0 0 35px rgba(201, 162, 39, 0.3);
-      transform: scale(1.02);
-    }
-    15% {
-      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
-      transform: scale(1);
-    }
-    25% {
-      box-shadow: 0 0 20px rgba(201, 162, 39, 0.8), 0 0 30px rgba(201, 162, 39, 0.6), 0 0 40px rgba(201, 162, 39, 0.4);
-      transform: scale(1.03);
-    }
-    35% {
-      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
-      transform: scale(1);
-    }
-    100% {
-      box-shadow: 0 0 5px rgba(201, 162, 39, 0.3), 0 0 10px rgba(201, 162, 39, 0.2), 0 0 15px rgba(201, 162, 39, 0.1);
-      transform: scale(1);
-    }
-  }
-  
-  /* Enhanced hover effect with faster heartbeat */
-  .group:hover .pulse-glow {
-    animation: heartbeatGlowFast 3s ease-in-out infinite;
-  }
-  
-  @keyframes heartbeatGlowFast {
-    0% {
-      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
-      transform: scale(1);
-    }
-    8% {
-      box-shadow: 0 0 20px rgba(201, 162, 39, 0.9), 0 0 35px rgba(201, 162, 39, 0.7), 0 0 50px rgba(201, 162, 39, 0.5);
-      transform: scale(1.03);
-    }
-    12% {
-      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
-      transform: scale(1);
-    }
-    20% {
-      box-shadow: 0 0 25px rgba(201, 162, 39, 1), 0 0 40px rgba(201, 162, 39, 0.8), 0 0 55px rgba(201, 162, 39, 0.6);
-      transform: scale(1.04);
-    }
-    28% {
-      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
-      transform: scale(1);
-    }
-    100% {
-      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 15px rgba(201, 162, 39, 0.3), 0 0 20px rgba(201, 162, 39, 0.2);
-      transform: scale(1);
-    }
+  /* Enhanced hover effect */
+  .group:hover .hover-glow {
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.8), 0 0 30px rgba(201, 162, 39, 0.6), 0 0 40px rgba(201, 162, 39, 0.4);
+    transform: scale(1.02);
   }
   
   /* Remove initial opacity to prevent hydration mismatch */

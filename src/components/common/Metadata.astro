@@ -1,14 +1,22 @@
 ---
 import merge from 'lodash.merge';
 import { AstroSeo } from '@astrolib/seo';
+import { getImage } from 'astro:assets';
 
 import type { Props as AstroSeoProps } from '@astrolib/seo';
 
 import { SITE, METADATA } from '~/config';
 import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
+import ogCoverImage from '~/assets/og-cover.jpg';
 
-// adaptOpenGraphImages removed - bypassed image processing to fix hydration issues
+// Process the default OG image using Astro's getImage
+const processedOgImage = await getImage({
+  src: ogCoverImage,
+  format: 'jpeg',
+  width: 1200,
+  height: 630,
+});
 
 export interface Props extends MetaData {
   dontUseTitleTemplate?: boolean;
@@ -24,6 +32,16 @@ const {
   twitter = {},
 } = Astro.props;
 
+// Process OpenGraph images - use processed image for default, or custom images if provided
+const processedOpenGraphImages = openGraph?.images?.length 
+  ? openGraph.images 
+  : [{
+      url: processedOgImage.src,
+      width: 1200,
+      height: 630,
+      alt: 'TAKAI – Premium Japanese Protection Films',
+    }];
+
 const seoProps: AstroSeoProps = merge(
   {
     title: '',
@@ -35,12 +53,12 @@ const seoProps: AstroSeoProps = merge(
     openGraph: {
       url: canonical,
       site_name: SITE?.name,
-      images: [],
+      images: processedOpenGraphImages,
       locale: 'en',
       type: 'website',
     },
     twitter: {
-      cardType: openGraph?.images?.length ? 'summary_large_image' : 'summary',
+      cardType: 'summary_large_image',
     },
   },
   {
@@ -49,8 +67,14 @@ const seoProps: AstroSeoProps = merge(
     noindex: typeof METADATA?.robots?.index !== 'undefined' ? !METADATA.robots.index : undefined,
     nofollow: typeof METADATA?.robots?.follow !== 'undefined' ? !METADATA.robots.follow : undefined,
     description: METADATA?.description,
-    openGraph: METADATA?.openGraph,
-    twitter: METADATA?.twitter,
+    openGraph: {
+      ...METADATA?.openGraph,
+      images: processedOpenGraphImages, // Always use processed images
+    },
+    twitter: {
+      ...METADATA?.twitter,
+      cardType: 'summary_large_image', // Always use large image card
+    },
   },
   {
     title: title,
@@ -59,8 +83,15 @@ const seoProps: AstroSeoProps = merge(
     noindex: typeof robots?.index !== 'undefined' ? !robots.index : undefined,
     nofollow: typeof robots?.follow !== 'undefined' ? !robots.follow : undefined,
     description: description,
-    openGraph: { url: canonical, ...openGraph },
-    twitter: twitter,
+    openGraph: { 
+      url: canonical, 
+      ...openGraph,
+      images: openGraph?.images?.length ? openGraph.images : processedOpenGraphImages,
+    },
+    twitter: {
+      ...twitter,
+      cardType: 'summary_large_image', // Ensure Twitter always uses large image
+    },
   }
 );
 ---

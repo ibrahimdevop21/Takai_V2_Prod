@@ -1,9 +1,14 @@
 ---
+import { Image } from 'astro:assets';
+import logoImage from '~/assets/takai-logo-white-1.png';
 ---
 
-<img
-  src="/takai-logo-white-1.png"
+<Image
+  src={logoImage}
   alt="TAKAI"
   class="h-6 md:h-8 w-auto"
   loading="eager"
+  width={142}
+  height={32}
+  fetchpriority="high"
 />

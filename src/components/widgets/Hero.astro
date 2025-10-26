@@ -15,6 +15,7 @@ const {
 
   id,
   bg = await Astro.slots.render('bg'),
+  responsive = false, // New prop to control responsive text sizing
 } = Astro.props;
 ---
 
@@ -60,39 +61,45 @@ const {
       {bg ? <Fragment set:html={bg} /> : null}
     </slot>
   </div>
-  <div class="relative z-20 text-center max-w-4xl mx-auto px-4 sm:px-6">
-    <div class="space-y-6">
-        {
-          tagline && (
-            <p
-              class="text-base text-white font-bold tracking-widest uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-              set:html={tagline}
-            />
-          )
-        }
+  <div class="relative z-20 text-center max-w-5xl mx-auto px-6 sm:px-8">
+    <div class="space-y-6 sm:space-y-8 md:space-y-10">
         {
           title && (
-            <h1
-              class="text-5xl md:text-7xl font-noto-serif-jp font-semibold leading-tight tracking-wider mb-6 bg-gradient-to-r from-takai-red to-takai-gold text-transparent bg-clip-text opacity-0 animate-fadeIn"
-              set:html={title}
-            />
+            <div class="space-y-3 sm:space-y-4">
+              <h1
+                class={`${responsive 
+                  ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl' 
+                  : 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
+                } font-noto-serif-jp font-black leading-tight tracking-wide bg-gradient-to-r from-[#C9A227] to-white text-transparent bg-clip-text opacity-0 animate-fadeIn ${responsive ? '' : 'whitespace-nowrap'}`}
+                style="font-weight: 900 !important;"
+                set:html={title}
+              />
+              {
+                tagline && (
+                  <p
+                    class="text-sm sm:text-base text-white/90 font-medium tracking-widest uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+                    set:html={tagline}
+                  />
+                )
+              }
+            </div>
           )
         }
         {
           subtitle && (
             <p
-              class="text-xl md:text-2xl text-white/80 mb-6 md:mb-8 tracking-wide opacity-0 animate-fadeIn-delay"
+              class="text-lg sm:text-xl md:text-2xl text-white/80 mb-8 sm:mb-10 md:mb-12 tracking-wide opacity-0 animate-fadeIn-delay"
               set:html={subtitle}
             />
           )
         }
           {
             actions && (
-              <div class="flex flex-row justify-center gap-3 sm:gap-4 opacity-0 animate-fadeIn-delay">
+              <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-4 opacity-0 animate-fadeIn-delay max-w-sm sm:max-w-none mx-auto">
                 {Array.isArray(actions) ? (
                   actions.map((action) => (
-                    <div class="flex flex-1 max-w-[140px] sm:max-w-none sm:flex-initial">
-                      <Button {...(action || {})} class={`w-full ${action.class || ''}`} />
+                    <div class="w-full sm:w-auto sm:flex-initial">
+                      <Button {...(action || {})} class={`w-full sm:w-auto ${action.class || ''}`} />
                     </div>
                   ))
                 ) : (
