@@ -79,7 +79,7 @@ export const APP_BLOG = {
 export const ANALYTICS = {
   vendors: {
     googleAnalytics: {
-      id: null,
+      id: 'G-HQCCL0T97K',
       partytown: false,
     },
   },
