@@ -74,7 +74,7 @@ export const PAGE_METADATA = {
   
   products: createMetadata({
     title: 'Products',
-    description: "Explore TAKAI's complete range of protection films - Paint Protection Films, UV Nano Ceramic Films, and Windshield Protection Films.",
+    description: 'TAKAI Films – Premium Japanese paint protection and nano-ceramic film technology with advanced TPU and infrared rejection.',
     canonical: '/products',
   }),
   
