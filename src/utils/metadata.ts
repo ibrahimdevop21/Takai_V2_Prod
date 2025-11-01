@@ -79,8 +79,8 @@ export const PAGE_METADATA = {
   }),
   
   contact: createMetadata({
-    title: 'Contact',
-    description: 'Get in touch with TAKAI for product information, technical support, or partnership opportunities.',
+    title: 'Contact TAKAI | Expert Support & Information',
+    description: 'Contact TAKAI for expert advice on premium Japanese paint protection films. Get quotes, technical support, or explore partnership opportunities. 24-hour response time guaranteed.',
     canonical: '/contact',
   }),
   

@@ -1,0 +1,80 @@
+---
+/**
+ * TAKAI Standard Button Component
+ * Consistent button styling across the entire website
+ * Uses rounded-lg (slightly rounded) for modern, professional look
+ */
+
+export interface Props {
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+  icon?: string;
+  iconPosition?: 'left' | 'right';
+  target?: string;
+  rel?: string;
+  disabled?: boolean;
+}
+
+const {
+  variant = 'primary',
+  size = 'md',
+  href,
+  type = 'button',
+  class: className = '',
+  icon,
+  iconPosition = 'right',
+  target,
+  rel,
+  disabled = false,
+} = Astro.props;
+
+// Base classes - always applied
+const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-300 whitespace-nowrap rounded-lg shadow-md';
+
+// Variant classes
+const variantClasses = {
+  primary: 'bg-takai-gold hover:bg-takai-gold/90 text-black',
+  secondary: 'bg-takai-blue hover:bg-blue-900 text-white',
+  outline: 'bg-transparent border-2 border-takai-gold text-takai-gold hover:bg-takai-gold hover:text-black',
+  ghost: 'bg-transparent text-takai-gold hover:bg-takai-gold/10',
+};
+
+// Size classes
+const sizeClasses = {
+  sm: 'text-sm px-4 py-2',
+  md: 'text-sm md:text-base px-5 py-2.5 md:px-6 md:py-3',
+  lg: 'text-base md:text-lg px-6 py-3 md:px-8 md:py-4',
+};
+
+// Combine all classes
+const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`;
+
+// Determine if it's a link or button
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag
+  class={buttonClasses}
+  href={href}
+  type={!href ? type : undefined}
+  target={target}
+  rel={rel}
+  disabled={disabled}
+>
+  {icon && iconPosition === 'left' && (
+    <span class="mr-2">
+      <slot name="icon-left" />
+    </span>
+  )}
+  
+  <slot />
+  
+  {icon && iconPosition === 'right' && (
+    <span class="ml-2">
+      <slot name="icon-right" />
+    </span>
+  )}
+</Tag>

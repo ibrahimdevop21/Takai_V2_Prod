@@ -67,14 +67,14 @@ const optimizedInstallationImage = await getImage({
       <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 max-w-sm sm:max-w-none mx-auto">
         <a 
           href="/distributors"
-          class="w-full sm:w-auto group relative bg-gradient-to-r from-[#C9A227] to-[#D4B332] hover:from-[#D4B332] hover:to-[#C9A227] text-black font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap overflow-hidden inline-flex items-center justify-center gap-2"
+          class="w-full sm:w-auto group relative bg-gradient-to-r from-[#C9A227] to-[#D4B332] hover:from-[#D4B332] hover:to-[#C9A227] text-black font-semibold text-sm md:text-base px-5 py-2.5 md:px-6 md:py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap overflow-hidden inline-flex items-center justify-center gap-2"
         >
           <Icon name="tabler:map-pin" class="w-4 h-4" />
           Find Installer
         </a>
         <a 
           href="/products"
-          class="w-full sm:w-auto group relative bg-transparent border-2 border-white/30 hover:border-[#C9A227] text-white hover:text-[#C9A227] font-semibold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full backdrop-blur-sm hover:backdrop-blur-md shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap inline-flex items-center justify-center gap-2"
+          class="w-full sm:w-auto group relative bg-transparent border-2 border-white/30 hover:border-[#C9A227] text-white hover:text-[#C9A227] font-semibold text-sm md:text-base px-5 py-2.5 md:px-6 md:py-3 rounded-lg backdrop-blur-sm hover:backdrop-blur-md shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap inline-flex items-center justify-center gap-2"
         >
           <Icon name="tabler:arrow-right" class="w-4 h-4" />
           Explore Products
@@ -149,10 +149,11 @@ const optimizedInstallationImage = await getImage({
   <Content
     isReversed
     tagline="Technology"
-    title="TAKAI Premium: Advanced Protection Technology"
+    title="Advanced Protection Technology"
     classes={{
       title: 'text-[#01407a]',
-      tagline: 'text-[#cfb063]'
+      tagline: 'text-[#C9A227]',
+      container: 'py-16 md:py-20'
     }}
     items={[
       {
@@ -185,8 +186,8 @@ const optimizedInstallationImage = await getImage({
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[#01407a] mb-4">Engineered for Excellence</h2>
-      <p class="text-gray-800 font-medium">
+      <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-[#01407a] mb-4 leading-tight">Engineered for Excellence</h3>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed">
         Advanced materials and precision manufacturing deliver uncompromising protection for your most valuable assets.
       </p>
     </Fragment>
@@ -201,10 +202,11 @@ const optimizedInstallationImage = await getImage({
   <Content
     isAfterContent
     tagline="Products"
-    title="TAKAI Product Range"
+    title="Complete Protection Solutions"
     classes={{
       title: 'text-[#01407a]',
-      tagline: 'text-[#cfb063]'
+      tagline: 'text-[#C9A227]',
+      container: 'py-16 md:py-20'
     }}
     items={[
       {
@@ -241,8 +243,8 @@ const optimizedInstallationImage = await getImage({
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[#01407a] mb-4">Complete Protection Solutions</h2>
-      <p class="text-gray-800 font-medium">
+      <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-[#01407a] mb-4 leading-tight">TAKAI Product Range</h3>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed">
         From premium passenger vehicles to commercial fleets, TAKAI offers comprehensive protection for every application.
       </p>
     </Fragment>
@@ -257,6 +259,13 @@ const optimizedInstallationImage = await getImage({
   <Content
     isReversed
     isAfterContent
+    title="Why Choose TAKAI"
+    tagline="Excellence"
+    classes={{
+      title: 'text-[#01407a]',
+      tagline: 'text-[#C9A227]',
+      container: 'py-16 md:py-20'
+    }}
     items={[
       {
         title: 'Uncompromising Protection',
@@ -292,8 +301,9 @@ const optimizedInstallationImage = await getImage({
     }}
   >
     <Fragment slot="content">
-      <p class="text-gray-800 font-medium text-lg">
-        Engineered for automotive excellence and lasting protection.
+      <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-[#01407a] mb-4 leading-tight">Engineered for Automotive Excellence</h3>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+        Experience the perfect blend of Japanese precision and cutting-edge protection technology.
       </p>
     </Fragment>
 

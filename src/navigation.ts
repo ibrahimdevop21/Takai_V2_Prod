@@ -29,7 +29,7 @@ export const headerData = {
       href: '/contact',
     },
   ],
-  actions: [{ text: 'Find Installer', href: '/distributors', variant: 'primary' as const }],
+  actions: [{ text: 'Find Distributor', href: '/distributors', variant: 'primary' as const }],
 };
 
 export const footerData = {

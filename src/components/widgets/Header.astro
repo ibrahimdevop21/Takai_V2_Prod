@@ -37,23 +37,31 @@ const {
 const currentPath = new URL(Astro.request.url).pathname;
 ---
 
+<!-- Skip to main content link for accessibility -->
+<a 
+  href="#main-content" 
+  class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:bg-takai-gold focus:text-black focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold focus:shadow-lg"
+>
+  Skip to main content
+</a>
+
 <header
   id="main-header"
   class="fixed w-full shadow-lg transition duration-300 ease-in-out z-50"
   aria-label="TAKAI Navigation"
 >
   <nav 
-    class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
+    class="max-w-7xl mx-auto flex items-center justify-between px-4 lg:px-6 py-2.5 lg:py-3"
     role="navigation"
     aria-label="Main navigation"
   >
     <!-- TAKAI Logo -->
-    <a href="/" class="flex items-center">
-      <Logo class="w-36 transition-transform duration-300" />
+    <a href="/" class="flex items-center flex-shrink-0">
+      <Logo class="w-28 lg:w-32 transition-transform duration-300" />
     </a>
 
     <!-- Centered Desktop Navigation Links -->
-    <ul class="hidden md:flex flex-1 justify-center gap-10 text-white/90 font-medium">
+    <ul class="hidden md:flex flex-1 justify-center gap-4 lg:gap-6 xl:gap-8 text-white/90 font-medium text-sm lg:text-base">
       {
         links.map(({ text, href }) => {
           const isActive = currentPath === href;
@@ -61,7 +69,7 @@ const currentPath = new URL(Astro.request.url).pathname;
             <li>
               <a 
                 href={href} 
-                class={`nav-link transition-colors duration-300 relative ${
+                class={`nav-link transition-colors duration-300 relative whitespace-nowrap ${
                   isActive 
                     ? 'text-white active' 
                     : 'text-white/90 hover:text-white'
@@ -75,12 +83,12 @@ const currentPath = new URL(Astro.request.url).pathname;
       }
     </ul>
 
-    <!-- Find Installer CTA Button -->
+    <!-- Find Distributor CTA Button -->
     <a
       href="/distributors"
-      class="hidden md:inline-flex bg-[#C9A227] text-[#010f2a] px-6 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md hover:bg-white hover:text-[#010f2a]"
+      class="hidden md:inline-flex items-center bg-takai-gold hover:bg-takai-gold/90 text-black font-medium text-sm lg:text-base px-4 py-2 lg:px-5 lg:py-2.5 rounded-lg shadow-md transition-all duration-300 whitespace-nowrap flex-shrink-0"
     >
-      Find Installer
+      Find Distributor
     </a>
 
     <!-- Elegant Mobile Menu Button -->
@@ -141,7 +149,7 @@ const currentPath = new URL(Astro.request.url).pathname;
       onclick="window.location.href='/distributors'"
       class="w-full bg-[#C9A227] text-[#0A0D14] py-3 px-6 rounded-lg font-bold text-lg hover:shadow-[0_0_15px_#C9A227/50] hover:scale-105 transition-all duration-300 uppercase tracking-wider border-2 border-[#C9A227]"
     >
-      Find Installer
+      Find Distributor
     </button>
   </div>
 </nav>

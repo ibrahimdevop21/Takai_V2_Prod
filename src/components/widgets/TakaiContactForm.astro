@@ -27,31 +27,36 @@ const {
           <p class="text-gray-600">Fill out the form below and we'll get back to you within 24 hours.</p>
         </div>
 
-        <form class="space-y-6">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+          <!-- Honeypot field for spam protection -->
+          <input type="text" name="_gotcha" style="display:none" />
+
           <!-- Name and Email Row -->
           <div class="grid md:grid-cols-2 gap-6">
             <div>
               <label for="firstName" class="block text-sm font-semibold text-[#01407a] mb-2">
-                First Name *
+                First Name <span class="text-red-600">*</span>
               </label>
               <input
                 type="text"
                 id="firstName"
                 name="firstName"
                 required
+                aria-required="true"
                 class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 placeholder-gray-500"
                 placeholder="John"
               />
             </div>
             <div>
               <label for="lastName" class="block text-sm font-semibold text-[#01407a] mb-2">
-                Last Name *
+                Last Name <span class="text-red-600">*</span>
               </label>
               <input
                 type="text"
                 id="lastName"
                 name="lastName"
                 required
+                aria-required="true"
                 class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 placeholder-gray-500"
                 placeholder="Doe"
               />
@@ -61,13 +66,14 @@ const {
           <!-- Email -->
           <div>
             <label for="email" class="block text-sm font-semibold text-[#01407a] mb-2">
-              Email Address *
+              Email Address <span class="text-red-600">*</span>
             </label>
             <input
               type="email"
               id="email"
               name="email"
               required
+              aria-required="true"
               class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 placeholder-gray-500"
               placeholder="john.doe@example.com"
             />
@@ -90,12 +96,13 @@ const {
           <!-- Inquiry Type -->
           <div>
             <label for="inquiryType" class="block text-sm font-semibold text-[#01407a] mb-2">
-              Inquiry Type *
+              Inquiry Type <span class="text-red-600">*</span>
             </label>
             <select
               id="inquiryType"
               name="inquiryType"
               required
+              aria-required="true"
               class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 bg-white"
             >
               <option value="">Select an option</option>
@@ -104,6 +111,7 @@ const {
               <option value="product-info">Product Information</option>
               <option value="installation">Installation Services</option>
               <option value="partnership">Partnership Opportunities</option>
+              <option value="media-press">Media/Press Inquiry</option>
               <option value="technical-support">Technical Support</option>
               <option value="warranty">Warranty Claims</option>
               <option value="other">Other</option>
@@ -113,16 +121,31 @@ const {
           <!-- Message -->
           <div>
             <label for="message" class="block text-sm font-semibold text-[#01407a] mb-2">
-              Message *
+              Message <span class="text-red-600">*</span>
             </label>
             <textarea
               id="message"
               name="message"
               rows="5"
               required
+              aria-required="true"
               class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#01407a] focus:ring-2 focus:ring-[#01407a]/20 transition-all duration-300 text-gray-900 placeholder-gray-500 resize-vertical"
               placeholder="Tell us about your project, questions, or how we can help you... For authenticity verification, please include your TAKAI film serial number and installation details."
             ></textarea>
+          </div>
+
+          <!-- Urgent Priority Checkbox -->
+          <div class="flex items-start space-x-3">
+            <input
+              type="checkbox"
+              id="urgent"
+              name="urgent"
+              value="yes"
+              class="mt-1 w-4 h-4 text-[#bf1e2e] border-2 border-gray-300 rounded focus:ring-[#bf1e2e] focus:ring-2"
+            />
+            <label for="urgent" class="text-sm text-gray-600 leading-relaxed">
+              <span class="font-semibold text-[#bf1e2e]">Mark as Urgent</span> - For warranty claims or time-sensitive technical issues requiring priority response.
+            </label>
           </div>
 
           <!-- Privacy Consent -->
@@ -132,21 +155,26 @@ const {
               id="privacy"
               name="privacy"
               required
+              aria-required="true"
               class="mt-1 w-4 h-4 text-[#01407a] border-2 border-gray-300 rounded focus:ring-[#01407a] focus:ring-2"
             />
             <label for="privacy" class="text-sm text-gray-600 leading-relaxed">
-              I agree to TAKAI's <a href="/legal/privacy" class="text-[#01407a] hover:text-[#bf1e2e] underline">Privacy Policy</a> and consent to being contacted regarding my inquiry.
+              I agree to TAKAI's <a href="/legal/privacy" class="text-[#01407a] hover:text-[#bf1e2e] underline">Privacy Policy</a> and consent to being contacted regarding my inquiry. <span class="text-red-600">*</span>
             </label>
           </div>
 
           <!-- Submit Button -->
           <button
             type="submit"
+            id="submit-button"
             class="w-full bg-gradient-to-r from-[#01407a] to-[#0a5a9e] hover:from-[#bf1e2e] hover:to-[#c9a227] text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
           >
             <Icon name="tabler:send" class="w-5 h-5" />
-            <span>Send Message</span>
+            <span id="button-text">Send Message</span>
           </button>
+
+          <!-- Success/Error Messages -->
+          <div id="form-message" class="hidden p-4 rounded-lg" role="alert"></div>
 
           <!-- Response Time -->
           <div class="text-center pt-4">
@@ -245,11 +273,11 @@ const {
             <h4 class="font-semibold">Priority Support</h4>
           </div>
           <p class="text-sm text-white/90 mb-4">
-            For warranty claims or urgent technical issues, mark your inquiry as "urgent" in the form above.
+            For warranty claims or urgent technical issues, check the "Mark as Urgent" box in the form to receive priority handling.
           </p>
           <div class="inline-flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-lg">
             <Icon name="tabler:mail-fast" class="w-4 h-4" />
-            <span class="font-medium">Priority Email Response</span>
+            <span class="font-medium">Priority Response: 4-6 hours</span>
           </div>
         </div>
 
@@ -277,29 +305,82 @@ const {
 </style>
 
 <script is:inline>
-  // Handle URL parameters for pre-filling form - runs after hydration
-  function handleUrlParameters() {
-    // Wait for next tick to ensure DOM is fully hydrated
+  // Handle URL parameters for pre-filling form and Formspree submission
+  function initContactForm() {
     setTimeout(() => {
+      // Handle URL parameters
       const urlParams = new URLSearchParams(window.location.search);
       const subject = urlParams.get('subject');
       
       if (subject) {
         const inquiryTypeSelect = document.getElementById('inquiryType');
         if (inquiryTypeSelect) {
-          // Map subject parameter to inquiry type
           if (subject.toLowerCase().includes('exhibition')) {
             inquiryTypeSelect.value = 'exhibition-inquiry';
           }
         }
       }
+
+      // Handle form submission with Formspree
+      const form = document.querySelector('form[action*="formspree.io"]');
+      const submitButton = document.getElementById('submit-button');
+      const buttonText = document.getElementById('button-text');
+      const formMessage = document.getElementById('form-message');
+
+      if (form && submitButton && buttonText && formMessage) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          // Show loading state
+          submitButton.disabled = true;
+          buttonText.textContent = 'Sending...';
+          submitButton.classList.add('opacity-75', 'cursor-not-allowed');
+          
+          try {
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+            
+            if (response.ok) {
+              // Success
+              formMessage.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
+              formMessage.className = 'p-4 rounded-lg bg-green-100 text-green-800 border border-green-300';
+              formMessage.classList.remove('hidden');
+              form.reset();
+              
+              // Scroll to message
+              formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              // Error
+              formMessage.textContent = 'Oops! There was a problem sending your message. Please try again or email us directly at info@takaifilms.jp';
+              formMessage.className = 'p-4 rounded-lg bg-red-100 text-red-800 border border-red-300';
+              formMessage.classList.remove('hidden');
+            }
+          } catch (error) {
+            // Network error
+            formMessage.textContent = 'Network error. Please check your connection and try again.';
+            formMessage.className = 'p-4 rounded-lg bg-red-100 text-red-800 border border-red-300';
+            formMessage.classList.remove('hidden');
+          } finally {
+            // Reset button
+            submitButton.disabled = false;
+            buttonText.textContent = 'Send Message';
+            submitButton.classList.remove('opacity-75', 'cursor-not-allowed');
+          }
+        });
+      }
     }, 100);
   }
   
-  // Use a more reliable method to ensure DOM and hydration are complete
+  // Initialize after DOM is ready
   if (document.readyState === 'complete') {
-    handleUrlParameters();
+    initContactForm();
   } else {
-    window.addEventListener('load', handleUrlParameters);
+    window.addEventListener('load', initContactForm);
   }
 </script>
