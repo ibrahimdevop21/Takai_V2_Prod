@@ -201,7 +201,7 @@ Submitted on: ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo', dat
 
     // Send email using Resend
     const resendClient = getResendClient();
-    const data = await resendClient.emails.send({
+    const { data, error } = await resendClient.emails.send({
       from: FROM_EMAIL,
       to: TO_EMAIL,
       subject: subject,
@@ -215,12 +215,27 @@ Submitted on: ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo', dat
       ]
     });
 
+    // Check for errors from Resend
+    if (error) {
+      console.error('Resend API error:', error);
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          error: 'Failed to send email. Please try again or contact us directly at info@takaifilms.jp' 
+        }),
+        { 
+          status: 500,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      );
+    }
+
     // Return success response
     return new Response(
       JSON.stringify({ 
         success: true, 
         message: 'Email sent successfully',
-        id: data.id 
+        id: data?.id 
       }),
       { 
         status: 200,
