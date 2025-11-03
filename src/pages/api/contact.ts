@@ -1,12 +1,23 @@
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
-// Initialize Resend with API key from environment variables
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
-
 // Email configuration
 const FROM_EMAIL = import.meta.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
 const TO_EMAIL = import.meta.env.RESEND_TO_EMAIL || 'info@takaifilms.jp';
+
+// Initialize Resend only if API key is available (lazy initialization)
+let resend: Resend | null = null;
+
+function getResendClient(): Resend {
+  if (!resend) {
+    const apiKey = import.meta.env.RESEND_API_KEY;
+    if (!apiKey) {
+      throw new Error('RESEND_API_KEY is not configured');
+    }
+    resend = new Resend(apiKey);
+  }
+  return resend;
+}
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -189,7 +200,8 @@ Submitted on: ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo', dat
     `.trim();
 
     // Send email using Resend
-    const data = await resend.emails.send({
+    const resendClient = getResendClient();
+    const data = await resendClient.emails.send({
       from: FROM_EMAIL,
       to: TO_EMAIL,
       subject: subject,
