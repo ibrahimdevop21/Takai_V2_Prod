@@ -1,0 +1,33 @@
+---
+import AuthorizedMap from './AuthorizedMap.jsx';
+---
+
+<section class="py-12 bg-[#0a0a0a] text-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-4">
+        Authorized Distributors & Installers
+      </h2>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+        Find official Takai distributors and certified installers in your region. 
+        Our global network ensures quality service and authentic products worldwide.
+      </p>
+    </div>
+    
+    <!-- React Map Component with client directive -->
+    <div class="mt-8 bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 shadow-2xl overflow-hidden">
+      <div class="w-full overflow-hidden rounded-xl">
+        <AuthorizedMap client:only="react" />
+      </div>
+    </div>
+    
+    <div class="mt-8 text-center">
+      <p class="text-gray-400 text-sm">
+        Can't find a distributor in your area? 
+        <a href="/contact" class="text-[#bf1e2e] hover:text-[#ff2a3a] transition-colors">
+          Contact us directly
+        </a> for assistance.
+      </p>
+    </div>
+  </div>
+</section>

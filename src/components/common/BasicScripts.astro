@@ -3,6 +3,11 @@ import { UI } from '~/config';
 ---
 
 <script is:inline define:vars={{ defaultTheme: UI.theme }}>
+  // Check if we're in the browser environment
+  if (typeof window === 'undefined') {
+    return;
+  }
+
   if (window.basic_script) {
     return;
   }

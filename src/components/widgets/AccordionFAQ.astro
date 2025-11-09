@@ -83,6 +83,9 @@ const {
 
 <script is:inline>
   function initAccordion() {
+    // Check if we're in the browser environment
+    if (typeof window === 'undefined') return;
+    
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     
     accordionHeaders.forEach(header => {

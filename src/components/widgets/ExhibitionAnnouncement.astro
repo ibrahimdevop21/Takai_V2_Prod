@@ -78,6 +78,9 @@ const { id, classes = {} } = Astro.props;
 <script is:inline>
   // Enhanced animation with staggered circular images
   function initAnnouncementAnimation() {
+    // Check if we're in the browser environment
+    if (typeof window === 'undefined') return;
+    
     // Wait for next tick to ensure DOM is fully hydrated
     setTimeout(() => {
       const announcement = document.querySelector('[data-announcement]');

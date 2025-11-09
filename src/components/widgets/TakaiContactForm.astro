@@ -307,6 +307,9 @@ const {
 <script is:inline>
   // Handle URL parameters for pre-filling form and Resend API submission
   function initContactForm() {
+    // Check if we're in the browser environment
+    if (typeof window === 'undefined') return;
+    
     setTimeout(() => {
       // Handle URL parameters
       const urlParams = new URLSearchParams(window.location.search);

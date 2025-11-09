@@ -317,6 +317,9 @@ const metadata = createMetadata({
 <script is:inline>
   // Scroll animations - runs after hydration
   function initScrollAnimations() {
+    // Check if we're in the browser environment
+    if (typeof window === 'undefined') return;
+    
     // Wait for next tick to ensure DOM is fully hydrated
     setTimeout(() => {
       const sections = document.querySelectorAll('section');

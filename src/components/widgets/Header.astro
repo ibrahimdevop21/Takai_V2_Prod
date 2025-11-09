@@ -290,6 +290,9 @@ const currentPath = new URL(Astro.request.url).pathname;
 
 <script is:inline>
   (function() {
+    // Check if we're in the browser environment
+    if (typeof window === 'undefined') return;
+    
     // Prevent multiple initializations
     if (window.takaiLuxuryNav) return;
     window.takaiLuxuryNav = true;
