@@ -1,23 +1,28 @@
 ---
-import favIcon from '~/assets/favicons/favicon.png';
-import favIconSvg from '~/assets/favicons/favicon.svg';
-import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
+// Using TAKAI-T logo based favicons from public folder
 ---
 
 <!-- Standard favicon -->
-<link rel="shortcut icon" href={favIcon.src} />
-<link rel="icon" type="image/x-icon" href={favIcon.src} />
-<link rel="icon" type="image/png" sizes="32x32" href={favIcon.src} />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
 
 <!-- Modern SVG favicon -->
-<link rel="icon" type="image/svg+xml" href={favIconSvg.src} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
 <!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-<!-- Safari mask icon -->
-<link rel="mask-icon" href={favIconSvg.src} color="#C9A227" />
+<!-- Android Chrome Icons -->
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
 
-<!-- Theme color for mobile browsers -->
-<meta name="theme-color" content="#0A0A1A" />
-<meta name="msapplication-TileColor" content="#0A0A1A" />
+<!-- Web App Manifest -->
+<link rel="manifest" href="/site.webmanifest" />
+
+<!-- Theme colors for mobile browsers -->
+<meta name="theme-color" content="#01407a" />
+<meta name="msapplication-TileColor" content="#01407a" />
+<meta name="msapplication-config" content="/browserconfig.xml" />

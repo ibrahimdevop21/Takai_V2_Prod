@@ -16,6 +16,7 @@ const processedOgImage = await getImage({
   format: 'jpeg',
   width: 1200,
   height: 630,
+  quality: 90,
 });
 
 export interface Props extends MetaData {
@@ -97,3 +98,22 @@ const seoProps: AstroSeoProps = merge(
 ---
 
 <AstroSeo {...seoProps} />
+
+<!-- Additional meta tags for better social media sharing -->
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:updated_time" content={new Date().toISOString()} />
+
+<!-- Twitter specific meta tags -->
+<meta name="twitter:image:src" content={processedOgImage.src} />
+<meta name="twitter:image:width" content="1200" />
+<meta name="twitter:image:height" content="630" />
+
+<!-- WhatsApp and other messaging apps -->
+<meta property="og:image:secure_url" content={processedOgImage.src} />
+<meta property="og:locale" content="en_US" />
+
+<!-- Cache busting for social media crawlers -->
+<meta property="fb:app_id" content="your-facebook-app-id" />
+<meta name="robots" content="index, follow, max-image-preview:large" />

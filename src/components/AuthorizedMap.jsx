@@ -38,9 +38,20 @@ const distributors = [
 const AuthorizedMap = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [tileErrors, setTileErrors] = useState(0);
 
   const handleMapLoad = () => {
+    console.log('Map loaded successfully');
     setMapLoaded(true);
+  };
+
+  const handleTileError = (error) => {
+    console.error('Tile loading error:', error);
+    setTileErrors(prev => prev + 1);
+    // Try to reload tiles after error
+    setTimeout(() => {
+      console.log('Attempting to reload tiles...');
+    }, 1000);
   };
 
   // Ensure we're on the client side and set fallback timeout
@@ -48,7 +59,7 @@ const AuthorizedMap = () => {
     setIsClient(true);
     const timeout = setTimeout(() => {
       setMapLoaded(true);
-    }, 3000); // Show map after 3 seconds regardless
+    }, 2000); // Show map after 2 seconds regardless
 
     return () => clearTimeout(timeout);
   }, []);
@@ -70,20 +81,32 @@ const AuthorizedMap = () => {
     <div className="w-full max-w-full mx-auto">
       <div className="relative rounded-2xl shadow-xl overflow-hidden bg-[#0a0a0a] border border-gray-800 max-w-full">
         {!mapLoaded && (
-          <div className="absolute inset-0 bg-[#0a0a0a] flex items-center justify-center z-10">
-            <div className="text-white text-lg">Map loading...</div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center z-10">
+            <div className="text-blue-800 text-lg font-semibold">Map loading...</div>
+          </div>
+        )}
+        
+        {mapLoaded && tileErrors > 5 && (
+          <div className="absolute top-4 left-4 bg-blue-900/90 text-white px-4 py-2 rounded-lg text-sm z-[999]">
+            <div className="font-semibold">Interactive Partner Map</div>
+            <div className="text-xs opacity-90">Click markers to view partner details</div>
           </div>
         )}
         
         <div className="h-[400px] md:h-[500px] w-full relative">
           <MapContainer
-            center={[25, 55]}
-            zoom={4.5}
+            center={[30, 30]}
+            zoom={3}
+            minZoom={1}
+            maxZoom={18}
             scrollWheelZoom={true}
+            doubleClickZoom={true}
+            dragging={true}
+            zoomControl={true}
             className="h-full w-full"
             whenReady={handleMapLoad}
             style={{ 
-              background: '#0a0a0a',
+              background: '#f8f9fa',
               borderRadius: '1rem',
               height: '100%',
               width: '100%'
@@ -93,6 +116,10 @@ const AuthorizedMap = () => {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               className="map-tiles"
+              eventHandlers={{
+                tileerror: handleTileError,
+                tileload: () => console.log('OSM tile loaded successfully')
+              }}
             />
             
             {distributors.map((distributor, index) => {
@@ -193,7 +220,7 @@ const AuthorizedMap = () => {
         </div>
         
         {/* Legend */}
-        <div className="absolute bottom-4 right-4 bg-gray-900/90 backdrop-blur-sm text-white px-3 py-2 rounded-lg border border-gray-700 text-xs">
+        <div className="absolute bottom-4 right-4 bg-gray-900/90 backdrop-blur-sm text-white px-3 py-2 rounded-lg border border-gray-700 text-xs z-[1000]">
           <div className="space-y-1">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 rounded-full bg-[#C9A227]"></div>
@@ -243,7 +270,9 @@ const AuthorizedMap = () => {
         }
         
         .map-tiles {
-          filter: brightness(0.7) contrast(1.2) saturate(0.8);
+          opacity: 1 !important;
+          filter: none !important;
+          visibility: visible !important;
         }
         
         /* Ensure map tiles render properly */
@@ -253,6 +282,18 @@ const AuthorizedMap = () => {
         
         .leaflet-map-pane {
           z-index: 1 !important;
+        }
+        
+        /* Force tile visibility */
+        .leaflet-tile {
+          opacity: 1 !important;
+          visibility: visible !important;
+          display: block !important;
+        }
+        
+        .leaflet-tile-container {
+          opacity: 1 !important;
+          visibility: visible !important;
         }
         
         /* Ensure attribution and controls stay within bounds */
@@ -271,6 +312,24 @@ const AuthorizedMap = () => {
         .leaflet-container * {
           max-width: 100% !important;
           box-sizing: border-box !important;
+        }
+        
+        /* Allow normal tile loading */
+        .leaflet-container {
+          overflow: visible !important;
+        }
+        
+        .leaflet-tile-container {
+          overflow: visible !important;
+        }
+        
+        /* Ensure legend stays on top */
+        .leaflet-control-container {
+          pointer-events: none !important;
+        }
+        
+        .leaflet-control-container .leaflet-control {
+          pointer-events: auto !important;
         }
         
         @media (max-width: 768px) {
