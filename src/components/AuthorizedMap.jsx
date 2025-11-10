@@ -23,7 +23,16 @@ const distributors = [
   { name: "AutoShield Peru", country: "Peru", lat: -12.0464, lng: -77.0428, type: "Certified Installer" },
   { name: "Premium Protection", country: "Chile", lat: -33.4489, lng: -70.6693, type: "Certified Installer" },
   { name: "Elite Car Care", country: "Argentina", lat: -34.6118, lng: -58.3960, type: "Certified Installer" },
-  { name: "VenezuelaPPF", country: "Venezuela", lat: 10.4806, lng: -66.9036, type: "Certified Installer" }
+  { name: "VenezuelaPPF", country: "Venezuela", lat: 10.4806, lng: -66.9036, type: "Certified Installer" },
+  
+  // SupaKoto Egypt Locations - Certified Installers
+  { name: "SupaKoto - Fifth Settlement", country: "Egypt", location: "Shell Out Station, in front of Air Force Hospital", lat: 30.0131, lng: 31.4914, type: "Certified Installer" },
+  { name: "SupaKoto - Zahraa Maadi", country: "Egypt", location: "Inside Skoda Showroom", lat: 29.9597, lng: 31.2584, type: "Certified Installer" },
+  { name: "SupaKoto - Sheikh Zayed", country: "Egypt", location: "Dahshour Road, beside Auto Samir Rayan", lat: 30.0776, lng: 30.9776, type: "Certified Installer" },
+  { name: "SupaKoto - New Damietta", country: "Egypt", location: "In front of Faculty of Applied Arts, next to Hady Mall", lat: 31.4165, lng: 31.8133, type: "Certified Installer" },
+  
+  // SupaKoto Dubai Location - Certified Installer
+  { name: "SupaKoto - Al Quoz", country: "UAE", location: "Al Quoz 4 – Industrial Area", lat: 25.1372, lng: 55.2307, type: "Certified Installer" }
 ];
 
 const AuthorizedMap = () => {
@@ -167,6 +176,11 @@ const AuthorizedMap = () => {
                     <p className="text-gray-300 text-sm">
                       📍 {distributor.country}
                     </p>
+                    {distributor.location && (
+                      <p className="text-gray-300 text-xs mt-1">
+                        📍 {distributor.location}
+                      </p>
+                    )}
                     <div className="mt-2 text-xs text-gray-400">
                       {distributor.type}
                     </div>
