@@ -3,12 +3,7 @@
 // Inter font is now preloaded and loaded asynchronously
 ---
 
-<!-- Deferred CSS loading for non-critical styles -->
-<link rel="preload" href="/src/assets/styles/tailwind.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/src/assets/styles/tailwind.css"></noscript>
-
-<link rel="preload" href="/src/assets/styles/base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/src/assets/styles/base.css"></noscript>
+<!-- CSS now loaded synchronously in Layout.astro for production stability -->
 
 <!-- Japanese fonts loaded asynchronously for better performance -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
