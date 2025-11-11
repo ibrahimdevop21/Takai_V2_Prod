@@ -1,13 +1,9 @@
 ---
-// Font loading moved to CommonMeta.astro for better performance
-// Inter font is now preloaded and loaded asynchronously
+// Standard font loading
 ---
 
-<!-- CSS now loaded synchronously in Layout.astro for production stability -->
-
-<!-- Japanese fonts loaded asynchronously for better performance -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Serif+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style is:inline>
   :root {

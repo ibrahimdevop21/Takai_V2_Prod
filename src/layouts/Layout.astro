@@ -1,5 +1,5 @@
 ---
-// Restore critical CSS imports for production stability
+// Standard CSS imports
 import '~/assets/styles/tailwind.css';
 import '~/assets/styles/base.css';
 
@@ -7,9 +7,7 @@ import '~/assets/styles/base.css';
 
 import CommonMeta from '~/components/common/CommonMeta.astro';
 import Favicons from '~/components/Favicons.astro';
-import CriticalCSS from '~/components/CriticalCSS.astro';
 import CustomStyles from '~/components/CustomStyles.astro';
-import PerformanceOptimizer from '~/components/PerformanceOptimizer.astro';
 import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
 import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
@@ -35,32 +33,14 @@ const textDirection = 'ltr';
   <head>
     <CommonMeta />
     <Favicons />
-    <CriticalCSS />
     <CustomStyles />
-    <PerformanceOptimizer />
     <ApplyColorMode />
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
 
-    <!-- Optimized View Transitions to reduce forced reflows -->
-    <ClientRouter fallback="none" />
-    
-    <script is:inline>
-      // Optimize view transitions to prevent forced reflows
-      if ('startViewTransition' in document) {
-        // Reduce layout thrashing during transitions
-        document.addEventListener('astro:before-preparation', () => {
-          // Prevent layout calculations during transition preparation
-          document.documentElement.style.contain = 'layout style paint';
-        });
-        
-        document.addEventListener('astro:after-swap', () => {
-          // Restore normal layout behavior after transition
-          document.documentElement.style.contain = '';
-        });
-      }
-    </script>
+    <!-- Simple View Transitions -->
+    <ClientRouter />
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
