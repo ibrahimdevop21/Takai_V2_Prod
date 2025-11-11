@@ -1,0 +1,138 @@
+---
+// Critical CSS for above-the-fold content
+---
+
+<style is:inline>
+  /* Critical styles for immediate rendering */
+  html, body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Prevent layout shift */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Critical hero section styles */
+  .hero-section {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #01407a 0%, #012b55 100%);
+  }
+
+  /* Critical header styles */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(214, 214, 214, 0.3);
+  }
+
+  /* Critical navigation styles */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* Critical button styles */
+  .btn-primary {
+    background: linear-gradient(to right, #C9A227, #D4B332);
+    color: #000;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(201, 162, 39, 0.3);
+  }
+
+  /* Critical text styles */
+  h1, h2, h3 {
+    color: #012b55;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  p {
+    color: #0e0e0e;
+    margin: 0 0 1rem 0;
+  }
+
+  /* Critical layout utilities */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Responsive utilities */
+  @media (max-width: 768px) {
+    .md\\:hidden {
+      display: none;
+    }
+    
+    nav {
+      padding: 0.75rem 1rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  /* Prevent FOUC */
+  body {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>
