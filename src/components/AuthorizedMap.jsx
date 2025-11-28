@@ -16,7 +16,7 @@ const distributors = [
   { name: "TAKAI Colombia", country: "Colombia", lat: 4.7110, lng: -74.0721, type: "Authorized Distributor Hub" },
   
   // Europe
-  { name: "TAKAI Croatia", country: "Croatia", lat: 45.1000, lng: 15.2000, type: "Certified Partner" },
+  { name: "TAKAI Croatia", country: "Croatia", location: "Industrijska cesta 18/1, 10360, Sesvete, Croatia", lat: 45.848904935880135, lng: 16.120602909566887, type: "Certified Partner" },
   
   // South America - Certified Installers
   { name: "ProTech Films", country: "Brazil", lat: -23.5505, lng: -46.6333, type: "Certified Installer" },
@@ -26,13 +26,13 @@ const distributors = [
   { name: "VenezuelaPPF", country: "Venezuela", lat: 10.4806, lng: -66.9036, type: "Certified Installer" },
   
   // SupaKoto Egypt Locations - Certified Installers
-  { name: "SupaKoto - Fifth Settlement", country: "Egypt", location: "Shell Out Station, in front of Air Force Hospital", lat: 30.0131, lng: 31.4914, type: "Certified Installer" },
-  { name: "SupaKoto - Zahraa Maadi", country: "Egypt", location: "Inside Skoda Showroom", lat: 29.9597, lng: 31.2584, type: "Certified Installer" },
-  { name: "SupaKoto - Sheikh Zayed", country: "Egypt", location: "Dahshour Road, beside Auto Samir Rayan", lat: 30.0776, lng: 30.9776, type: "Certified Installer" },
+  { name: "SupaKoto - Fifth Settlement", country: "Egypt", location: "2C9J+GRQ, New Cairo 1, Cairo Governorate 4730124", lat: 30.019068696895555, lng: 31.432515466943872, type: "Certified Installer" },
+  { name: "SupaKoto - Zahraa Maadi", country: "Egypt", location: "Inside Skoda Maadi Center, 199 Wadi Degla Street, Zahraa Al Maadi, Cairo Governorate 11742", lat: 29.95992415645408, lng: 31.320339244181607, type: "Certified Installer" },
+  { name: "SupaKoto - Sheikh Zayed", country: "Egypt", location: "2XCH+73P, First Al Sheikh Zayed, Giza Governorate 3245070", lat: 30.020406404478994, lng: 30.97791000634769, type: "Certified Installer" },
   { name: "SupaKoto - New Damietta", country: "Egypt", location: "In front of Faculty of Applied Arts, next to Hady Mall", lat: 31.4165, lng: 31.8133, type: "Certified Installer" },
   
   // SupaKoto Dubai Location - Certified Installer
-  { name: "SupaKoto - Al Quoz", country: "UAE", location: "Al Quoz 4 – Industrial Area", lat: 25.1372, lng: 55.2307, type: "Certified Installer" }
+  { name: "SupaKoto - Al Quoz", country: "UAE", location: "Warehouse 48 15B St - Al Quoz - Al Quoz Industrial Area 4 - Dubai", lat: 25.117547972050215, lng: 55.23623130185425, type: "Certified Installer" }
 ];
 
 const AuthorizedMap = () => {
@@ -200,12 +200,13 @@ const AuthorizedMap = () => {
                     <h3 className="font-semibold text-lg mb-1" style={{ color: markerStyle.fillColor }}>
                       {distributor.name}
                     </h3>
-                    <p className="text-gray-300 text-sm">
-                      📍 {distributor.country}
-                    </p>
-                    {distributor.location && (
+                    {distributor.location ? (
                       <p className="text-gray-300 text-xs mt-1">
                         📍 {distributor.location}
+                      </p>
+                    ) : (
+                      <p className="text-gray-300 text-sm">
+                        📍 {distributor.country}
                       </p>
                     )}
                     <div className="mt-2 text-xs text-gray-400">

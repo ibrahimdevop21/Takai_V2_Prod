@@ -141,6 +141,48 @@ TAKAI products include serial number verification to ensure authenticity. Use th
 - 🇭🇷 Croatia - European Market
 - 🇳🇿 New Zealand - Pacific Region
 
+## 📁 **Assets & Images**
+
+All images used throughout the TAKAI website must be placed in the `public/images` directory with the exact filenames below.
+
+### **Hero Carousel Images (Main Priority)**
+These 5 images are used in the home page hero carousel:
+
+1. `hero-car-1.jpg` – Luxury sports car  
+2. `hero-car-2.jpg` – Premium luxury sedan  
+3. `hero-car-3.jpg` – High-performance vehicle  
+4. `hero-car-4.jpg` – Luxury SUV  
+5. `hero-car-5.jpg` – Electric luxury vehicle
+
+> Recommended: 1920x1080 resolution, optimized JPG for web.
+
+### **Content Section Images**
+
+6. `takai-installation.jpg` – Installation process  
+7. `takai-luxury-car.jpg` – Luxury sports car  
+8. `takai-protected-vehicle.jpg` – Protected vehicle  
+9. `takai-process-steps.jpg` – Process steps / illustration
+
+> Recommended: ~800x600 JPG for content images.
+
+### **Product Images**
+
+10. `takai-premium-film.jpg` – TAKAI Premium product  
+11. `takai-premium-plus-film.jpg` – TAKAI Premium Plus product  
+12. `takai-solar-control.jpg` – Solar Control Films  
+13. `takai-safety-films.jpg` – Safety Window Films
+
+### **Image Preparation Instructions**
+- Download/source each image (or suitable licensed alternatives).  
+- Resize/optimize for web:
+  - Hero images: ~1920x1080  
+  - Content/product images: ~800x600  
+- Save as **JPG** with the exact filenames listed above.  
+- Ensure all images are properly licensed for **commercial use**.  
+- All paths in the code base assume `/images/<filename>.jpg`.
+
+The website will show broken images until these assets are present in `public/images` with the correct filenames.
+
 ---
 
 **Built with Japanese precision. Engineered for excellence.**
