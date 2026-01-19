@@ -45,110 +45,198 @@ import { PAGE_METADATA } from '~/utils/metadata';
         </p>
       </div>
 
-      <!-- PPF Specifications Table -->
-      <div class="mb-12 overflow-x-auto">
-        <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden text-sm">
-          <thead class="bg-gradient-to-r from-[#01407a] to-blue-800 text-white">
-            <tr>
-              <th class="px-3 py-3 text-left font-semibold">Product</th>
-              <th class="px-3 py-3 text-center font-semibold">Total Thickness</th>
-              <th class="px-3 py-3 text-center font-semibold">TPU Film</th>
-              <th class="px-3 py-3 text-center font-semibold">Gloss</th>
-              <th class="px-3 py-3 text-center font-semibold">Self-Healing Coating</th>
-              <th class="px-3 py-3 text-center font-semibold">Adhesive Layer</th>
-              <th class="px-3 py-3 text-center font-semibold">Elongation at Break</th>
-              <th class="px-3 py-3 text-center font-semibold">Tensile Strength</th>
-              <th class="px-3 py-3 text-center font-semibold">Anti-Yellowing</th>
-              <th class="px-3 py-3 text-center font-semibold">Hydrophobic Property</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-200">
-            <tr class="hover:bg-gray-50">
-              <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI 5</td>
-              <td class="px-3 py-3 text-center">6.5MIL/170μm</td>
-              <td class="px-3 py-3 text-center">6MIL</td>
-              <td class="px-3 py-3 text-center">92</td>
-              <td class="px-3 py-3 text-center">15μm</td>
-              <td class="px-3 py-3 text-center">25μm</td>
-              <td class="px-3 py-3 text-center">&gt;350%</td>
-              <td class="px-3 py-3 text-center">30Mpa</td>
-              <td class="px-3 py-3 text-center">ΔE&lt;1</td>
-              <td class="px-3 py-3 text-center">R9-R10</td>
-            </tr>
-            <tr class="hover:bg-gray-50">
-              <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI MATT</td>
-              <td class="px-3 py-3 text-center">7.6MIL/190μm</td>
-              <td class="px-3 py-3 text-center">6MIL</td>
-              <td class="px-3 py-3 text-center">no gloss</td>
-              <td class="px-3 py-3 text-center">15μm</td>
-              <td class="px-3 py-3 text-center">25μm</td>
-              <td class="px-3 py-3 text-center">&gt;400%</td>
-              <td class="px-3 py-3 text-center">35Mpa</td>
-              <td class="px-3 py-3 text-center">ΔE&lt;1</td>
-              <td class="px-3 py-3 text-center">R9-R10</td>
-            </tr>
-            <tr class="hover:bg-gray-50">
-              <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI MATT PLUS</td>
-              <td class="px-3 py-3 text-center">9.6MIL/240μm</td>
-              <td class="px-3 py-3 text-center">8MIL</td>
-              <td class="px-3 py-3 text-center">no gloss</td>
-              <td class="px-3 py-3 text-center">15μm</td>
-              <td class="px-3 py-3 text-center">25μm</td>
-              <td class="px-3 py-3 text-center">&gt;400%</td>
-              <td class="px-3 py-3 text-center">38Mpa</td>
-              <td class="px-3 py-3 text-center">ΔE&lt;1</td>
-              <td class="px-3 py-3 text-center">R9-R10</td>
-            </tr>
-            <tr class="hover:bg-gray-50">
-              <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI Colours</td>
-              <td class="px-3 py-3 text-center">9.6MIL/240μm</td>
-              <td class="px-3 py-3 text-center">8MIL</td>
-              <td class="px-3 py-3 text-center">93.8</td>
-              <td class="px-3 py-3 text-center">15μm</td>
-              <td class="px-3 py-3 text-center">25μm</td>
-              <td class="px-3 py-3 text-center">&gt;400%</td>
-              <td class="px-3 py-3 text-center">35Mpa</td>
-              <td class="px-3 py-3 text-center">ΔE&lt;1</td>
-              <td class="px-3 py-3 text-center">R9-R10</td>
-            </tr>
-            <tr class="hover:bg-gray-50">
-              <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI ULTIMATE GLOSS</td>
-              <td class="px-3 py-3 text-center">9.6MIL/240μm</td>
-              <td class="px-3 py-3 text-center">8MIL</td>
-              <td class="px-3 py-3 text-center">93.8</td>
-              <td class="px-3 py-3 text-center">15μm</td>
-              <td class="px-3 py-3 text-center">25μm</td>
-              <td class="px-3 py-3 text-center">&gt;400%</td>
-              <td class="px-3 py-3 text-center">38Mpa</td>
-              <td class="px-3 py-3 text-center">ΔE&lt;1</td>
-              <td class="px-3 py-3 text-center">R9-R10</td>
-            </tr>
-            <tr class="hover:bg-gray-50 bg-gradient-to-r from-yellow-50 to-orange-50">
-              <td class="px-3 py-3 font-bold text-[#bf1e2e]">TAKAI STEELPLUS</td>
-              <td class="px-3 py-3 text-center font-semibold">9.6MIL/240μm</td>
-              <td class="px-3 py-3 text-center font-semibold">8MIL</td>
-              <td class="px-3 py-3 text-center font-semibold">94.5</td>
-              <td class="px-3 py-3 text-center font-semibold">15μm</td>
-              <td class="px-3 py-3 text-center font-semibold">25μm</td>
-              <td class="px-3 py-3 text-center font-semibold">&gt;400%</td>
-              <td class="px-3 py-3 text-center font-semibold">38Mpa</td>
-              <td class="px-3 py-3 text-center font-semibold">ΔE&lt;1</td>
-              <td class="px-3 py-3 text-center font-semibold">R9-R10</td>
-            </tr>
-            <tr class="hover:bg-gray-50 bg-gradient-to-r from-green-50 to-blue-50">
-              <td class="px-3 py-3 font-bold text-[#01407a]">TAKAI PREMIUM PLUS</td>
-              <td class="px-3 py-3 text-center font-semibold">9.6MIL/240μm</td>
-              <td class="px-3 py-3 text-center font-semibold">8MIL</td>
-              <td class="px-3 py-3 text-center font-semibold">95.4</td>
-              <td class="px-3 py-3 text-center font-semibold">15μm</td>
-              <td class="px-3 py-3 text-center font-semibold">25μm</td>
-              <td class="px-3 py-3 text-center font-semibold">&gt;450%</td>
-              <td class="px-3 py-3 text-center font-semibold">40Mpa</td>
-              <td class="px-3 py-3 text-center font-semibold">ΔE&lt;1</td>
-              <td class="px-3 py-3 text-center font-semibold">R9-R10</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- TABLE 1: Markets Above the Equator -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold text-[#01407a] mb-6 text-center">TAKAI Line Products – Markets Above the Equator</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden text-sm">
+            <thead class="bg-gradient-to-r from-[#01407a] to-blue-800 text-white">
+              <tr>
+                <th class="px-3 py-3 text-left font-semibold">Product</th>
+                <th class="px-3 py-3 text-center font-semibold">Total Thickness</th>
+                <th class="px-3 py-3 text-center font-semibold">TPU Film</th>
+                <th class="px-3 py-3 text-center font-semibold">Gloss</th>
+                <th class="px-3 py-3 text-center font-semibold">Self-Healing Coating</th>
+                <th class="px-3 py-3 text-center font-semibold">Adhesive Layer</th>
+                <th class="px-3 py-3 text-center font-semibold">Elongation at Break</th>
+                <th class="px-3 py-3 text-center font-semibold">Tensile Strength</th>
+                <th class="px-3 py-3 text-center font-semibold">Anti-Yellowing</th>
+                <th class="px-3 py-3 text-center font-semibold">Hydrophobic Property</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI 5</td>
+                <td class="px-3 py-3 text-center">170 μm</td>
+                <td class="px-3 py-3 text-center">130 μm</td>
+                <td class="px-3 py-3 text-center">92</td>
+                <td class="px-3 py-3 text-center">15 μm</td>
+                <td class="px-3 py-3 text-center">25 μm</td>
+                <td class="px-3 py-3 text-center">≥ 350%</td>
+                <td class="px-3 py-3 text-center">30 MPa</td>
+                <td class="px-3 py-3 text-center">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center">R9–R10</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI MATT</td>
+                <td class="px-3 py-3 text-center">190 μm</td>
+                <td class="px-3 py-3 text-center">150 μm</td>
+                <td class="px-3 py-3 text-center">no gloss</td>
+                <td class="px-3 py-3 text-center">15 μm</td>
+                <td class="px-3 py-3 text-center">25 μm</td>
+                <td class="px-3 py-3 text-center">≥ 400%</td>
+                <td class="px-3 py-3 text-center">35 MPa</td>
+                <td class="px-3 py-3 text-center">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center">R9–R10</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI MATT PLUS</td>
+                <td class="px-3 py-3 text-center">240 μm</td>
+                <td class="px-3 py-3 text-center">200 μm</td>
+                <td class="px-3 py-3 text-center">no gloss</td>
+                <td class="px-3 py-3 text-center">15 μm</td>
+                <td class="px-3 py-3 text-center">25 μm</td>
+                <td class="px-3 py-3 text-center">≥ 400%</td>
+                <td class="px-3 py-3 text-center">38 MPa</td>
+                <td class="px-3 py-3 text-center">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center">R9–R10</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI Colours</td>
+                <td class="px-3 py-3 text-center">240 μm</td>
+                <td class="px-3 py-3 text-center">200 μm</td>
+                <td class="px-3 py-3 text-center">93.8</td>
+                <td class="px-3 py-3 text-center">15 μm</td>
+                <td class="px-3 py-3 text-center">25 μm</td>
+                <td class="px-3 py-3 text-center">≥ 400%</td>
+                <td class="px-3 py-3 text-center">35 MPa</td>
+                <td class="px-3 py-3 text-center">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center">R9–R10</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI ULTIMATE GLOSS</td>
+                <td class="px-3 py-3 text-center">240 μm</td>
+                <td class="px-3 py-3 text-center">200 μm</td>
+                <td class="px-3 py-3 text-center">93.8</td>
+                <td class="px-3 py-3 text-center">15 μm</td>
+                <td class="px-3 py-3 text-center">25 μm</td>
+                <td class="px-3 py-3 text-center">≥ 400%</td>
+                <td class="px-3 py-3 text-center">38 MPa</td>
+                <td class="px-3 py-3 text-center">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center">R9–R10</td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-gradient-to-r from-yellow-50 to-orange-50">
+                <td class="px-3 py-3 font-bold text-[#bf1e2e]">TAKAI STEELPLUS</td>
+                <td class="px-3 py-3 text-center font-semibold">240 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">200 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">94.5</td>
+                <td class="px-3 py-3 text-center font-semibold">15 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">25 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">≥ 400%</td>
+                <td class="px-3 py-3 text-center font-semibold">38 MPa</td>
+                <td class="px-3 py-3 text-center font-semibold">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center font-semibold">R9–R10</td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-gradient-to-r from-green-50 to-blue-50">
+                <td class="px-3 py-3 font-bold text-[#01407a]">TAKAI PREMIUM PLUS</td>
+                <td class="px-3 py-3 text-center font-semibold">240 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">200 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">95.4</td>
+                <td class="px-3 py-3 text-center font-semibold">15 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">25 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">≥ 450%</td>
+                <td class="px-3 py-3 text-center font-semibold">40 MPa</td>
+                <td class="px-3 py-3 text-center font-semibold">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center font-semibold">R9–R10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TABLE 2: Africa & South America -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold text-[#01407a] mb-6 text-center">TAKAI Line Products – Africa & South America</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden text-sm">
+            <thead class="bg-gradient-to-r from-[#01407a] to-blue-800 text-white">
+              <tr>
+                <th class="px-3 py-3 text-left font-semibold">Product</th>
+                <th class="px-3 py-3 text-center font-semibold">Total Thickness</th>
+                <th class="px-3 py-3 text-center font-semibold">TPU Film</th>
+                <th class="px-3 py-3 text-center font-semibold">Gloss</th>
+                <th class="px-3 py-3 text-center font-semibold">Self-Healing Coating</th>
+                <th class="px-3 py-3 text-center font-semibold">Adhesive Layer</th>
+                <th class="px-3 py-3 text-center font-semibold">Elongation at Break</th>
+                <th class="px-3 py-3 text-center font-semibold">Tensile Strength</th>
+                <th class="px-3 py-3 text-center font-semibold">Anti-Yellowing</th>
+                <th class="px-3 py-3 text-center font-semibold">Hydrophobic Property</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI 5</td>
+                <td class="px-3 py-3 text-center">170 μm</td>
+                <td class="px-3 py-3 text-center">130 μm</td>
+                <td class="px-3 py-3 text-center">92</td>
+                <td class="px-3 py-3 text-center">15 μm</td>
+                <td class="px-3 py-3 text-center">25 μm</td>
+                <td class="px-3 py-3 text-center">≥ 350%</td>
+                <td class="px-3 py-3 text-center">30 MPa</td>
+                <td class="px-3 py-3 text-center">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center">R9–R10</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI GOLD</td>
+                <td class="px-3 py-3 text-center">210 μm</td>
+                <td class="px-3 py-3 text-center">180 μm</td>
+                <td class="px-3 py-3 text-center">92.4</td>
+                <td class="px-3 py-3 text-center">15 μm</td>
+                <td class="px-3 py-3 text-center">25 μm</td>
+                <td class="px-3 py-3 text-center">≥ 400%</td>
+                <td class="px-3 py-3 text-center">32 MPa</td>
+                <td class="px-3 py-3 text-center">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center">R9–R10</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-3 font-semibold text-[#01407a]">TAKAI GOLD PLUS</td>
+                <td class="px-3 py-3 text-center">250 μm</td>
+                <td class="px-3 py-3 text-center">220 μm</td>
+                <td class="px-3 py-3 text-center">93.8</td>
+                <td class="px-3 py-3 text-center">15 μm</td>
+                <td class="px-3 py-3 text-center">25 μm</td>
+                <td class="px-3 py-3 text-center">≥ 400%</td>
+                <td class="px-3 py-3 text-center">35 MPa</td>
+                <td class="px-3 py-3 text-center">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center">R9–R10</td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-gradient-to-r from-yellow-50 to-orange-50">
+                <td class="px-3 py-3 font-bold text-[#bf1e2e]">TAKAI STEEL</td>
+                <td class="px-3 py-3 text-center font-semibold">270 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">240 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">95.2</td>
+                <td class="px-3 py-3 text-center font-semibold">15 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">25 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">≥ 400%</td>
+                <td class="px-3 py-3 text-center font-semibold">40 MPa</td>
+                <td class="px-3 py-3 text-center font-semibold">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center font-semibold">R9–R10</td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-gradient-to-r from-green-50 to-blue-50">
+                <td class="px-3 py-3 font-bold text-[#01407a]">TAKAI STEEL PLUS</td>
+                <td class="px-3 py-3 text-center font-semibold">270 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">240 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">96.2</td>
+                <td class="px-3 py-3 text-center font-semibold">15 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">25 μm</td>
+                <td class="px-3 py-3 text-center font-semibold">≥ 350%</td>
+                <td class="px-3 py-3 text-center font-semibold">45 MPa</td>
+                <td class="px-3 py-3 text-center font-semibold">ΔE &lt; 1</td>
+                <td class="px-3 py-3 text-center font-semibold">R9–R10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <!-- PPF Key Features -->

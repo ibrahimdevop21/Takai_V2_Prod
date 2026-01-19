@@ -93,6 +93,8 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
                   class="text-gray-300 hover:bg-takai-gold/20 hover:text-takai-gold focus:outline-none focus:ring-4 focus:ring-takai-gold/20 rounded-lg text-sm p-2.5 inline-flex items-center transition duration-150 ease-in-out"
                   aria-label={ariaLabel}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {icon && <Icon name={icon} class="w-5 h-5" />}
                   <Fragment set:html={text} />

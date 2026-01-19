@@ -12,6 +12,7 @@ const {
   actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
   images = [], // Array of images for carousel
+  video, // Video source for background
 
   id,
   bg = await Astro.slots.render('bg'),
@@ -20,11 +21,21 @@ const {
 ---
 
 <section class="relative h-screen not-prose bg-gradient-to-br from-takai-blue via-takai-blue to-blue-900 text-white overflow-hidden flex items-center justify-center" {...id ? { id } : {}}>
-  <!-- Background Image Carousel -->
+  <!-- Background Video or Image -->
   {
-    (images.length > 0 || image) && (
+    (video || images.length > 0 || image) && (
       <div class="absolute inset-0 z-0">
-        {images.length > 0 ? (
+        {video ? (
+          <video
+            class="w-full h-full object-cover"
+            autoplay
+            muted
+            loop
+            playsinline
+          >
+            <source src={video} type="video/webm" />
+          </video>
+        ) : images.length > 0 ? (
           <div class="hero-carousel absolute inset-0 w-full h-full">
             {images.map((img: any, index: number) => (
               <img
@@ -49,9 +60,6 @@ const {
             />
           )
         )}
-        <!-- Dark overlay for text readability -->
-        <div class="absolute inset-0 bg-gradient-to-br from-takai-blue/70 via-takai-blue/50 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
       </div>
     )
   }

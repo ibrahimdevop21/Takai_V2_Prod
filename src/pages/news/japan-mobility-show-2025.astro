@@ -28,21 +28,45 @@ const metadata = createMetadata({
           
           <!-- Subtitle -->
           <p class="text-lg sm:text-xl md:text-2xl text-[#E5E7EB] font-light tracking-wide">
-            Innovation Meets Precision
+            A Showcase of Innovation and Precision
           </p>
         </div>
         
-        <!-- Image Content -->
+        <!-- Video Content -->
         <div class="flex justify-center lg:justify-end">
-          <div class="relative group">
-            <img 
-              src="/jap-show-25/img_01.webp" 
-              alt="TAKAI at Japan Mobility Show 2025" 
-              class="max-w-full w-full max-w-md lg:max-w-lg xl:max-w-xl transition-transform duration-300 group-hover:scale-105 hover-glow-hero"
-              loading="eager"
-            />
+          <div class="relative group w-full max-w-xl lg:max-w-2xl">
+            <video 
+              id="hero-video"
+              src="/videos/takai-mob-show.webm"
+              class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-glow-hero rounded-lg"
+              autoplay
+              muted
+              loop
+              playsinline
+            >
+            </video>
+            <!-- Mute/Unmute Button -->
+            <button
+              id="mute-toggle"
+              class="absolute bottom-4 right-4 bg-[#C9A227] hover:bg-[#C9A227]/90 text-[#0A0A1A] p-3 rounded-full shadow-lg transition-all duration-300 z-10"
+              aria-label="Toggle mute"
+            >
+              <!-- Muted Icon (volume-3 / muted) -->
+              <svg id="muted-icon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" />
+                <path d="M16 10l4 4m0 -4l-4 4" />
+              </svg>
+              <!-- Unmuted Icon (volume) -->
+              <svg id="unmuted-icon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M15 8a5 5 0 0 1 0 8" />
+                <path d="M17.7 5a9 9 0 0 1 0 14" />
+                <path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" />
+              </svg>
+            </button>
             <!-- Optional subtle glow effect -->
-            <div class="absolute inset-0 bg-gradient-to-br from-[#C9A227]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#C9A227]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
           </div>
         </div>
       </div>
@@ -56,7 +80,7 @@ const metadata = createMetadata({
         <!-- Event Information -->
         <div class="space-y-8">
           <h2 class="text-3xl md:text-4xl font-bold text-[#C9A227] uppercase tracking-wider">
-            Event Details
+            Event Highlights
           </h2>
           
           <div class="space-y-6">
@@ -121,21 +145,22 @@ const metadata = createMetadata({
       <div class="text-center space-y-12">
         <div class="space-y-6">
           <h2 class="text-3xl md:text-4xl font-bold text-[#C9A227] uppercase tracking-wider">
-            Innovation & Precision
+            Our Showcase
           </h2>
           <div class="h-px bg-gradient-to-r from-transparent via-[#C9A227] to-transparent w-32 mx-auto"></div>
         </div>
         
         <div class="max-w-4xl mx-auto">
           <p class="text-lg md:text-xl text-[#E5E7EB] leading-relaxed mb-8">
-            TAKAI represents the pinnacle of Japanese automotive protection technology. Our mission is to deliver 
-            invisible armor that preserves the pristine beauty of your most precious investments while maintaining 
-            the highest standards of optical clarity and durability.
+            TAKAI represented the pinnacle of Japanese automotive protection technology at Japan Mobility Show 2025. 
+            We demonstrated our commitment to delivering invisible armor that preserves the pristine beauty of the world's 
+            most precious vehicles while maintaining the highest standards of optical clarity and durability.
           </p>
           
           <p class="text-lg text-[#E5E7EB] leading-relaxed">
-            At Japan Mobility Show 2025, we showcase our commitment to innovation through precision engineering, 
-            advanced materials science, and the unwavering pursuit of perfection that defines Japanese craftsmanship.
+            At our booth in West Hall 3, we showcased our latest innovations in precision engineering, 
+            advanced materials science, and the unwavering pursuit of perfection that defines Japanese craftsmanship. 
+            Visitors experienced firsthand the superior quality and performance that sets TAKAI apart in the automotive protection industry.
           </p>
         </div>
       </div>
@@ -148,7 +173,7 @@ const metadata = createMetadata({
       <div class="text-center space-y-12">
         <div class="space-y-6">
           <h2 class="text-3xl md:text-4xl font-bold text-[#C9A227] uppercase tracking-wider">
-            Featured Products
+            Products We Showcased
           </h2>
           <div class="h-px bg-gradient-to-r from-transparent via-[#C9A227] to-transparent w-32 mx-auto"></div>
         </div>
@@ -166,9 +191,9 @@ const metadata = createMetadata({
               </h3>
               
               <p class="text-[#E5E7EB] leading-relaxed">
-                Our flagship paint protection film featuring advanced self-healing technology, 
+                We presented our flagship paint protection film featuring advanced self-healing technology, 
                 superior hydrophobic coating, and industry-leading 15-year warranty coverage. 
-                Engineered for luxury and high-performance vehicles.
+                Attendees witnessed live demonstrations of its exceptional performance on luxury and high-performance vehicles.
               </p>
               
               <div class="space-y-2">
@@ -200,9 +225,9 @@ const metadata = createMetadata({
               </h3>
               
               <p class="text-[#E5E7EB] leading-relaxed">
-                Revolutionary nano-ceramic technology providing exceptional UV protection, 
-                heat rejection, and optical clarity. Perfect for windows and sensitive 
-                surfaces requiring advanced thermal management.
+                We demonstrated our revolutionary nano-ceramic technology providing exceptional UV protection, 
+                heat rejection, and optical clarity. Visitors experienced firsthand how this technology protects windows and sensitive 
+                surfaces while delivering advanced thermal management.
               </p>
               
               <div class="space-y-2">
@@ -231,12 +256,12 @@ const metadata = createMetadata({
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="space-y-8">
         <h2 class="text-3xl md:text-4xl font-bold text-[#C9A227] uppercase tracking-wider">
-          Book Your Meeting
+          Experience TAKAI Protection
         </h2>
         
         <p class="text-lg md:text-xl text-[#E5E7EB] leading-relaxed">
-          Schedule a private consultation with TAKAI representatives at the Japan Mobility Show. 
-          Discover how our premium protection solutions can safeguard your most valuable investments.
+          Interested in the premium protection solutions we showcased at Japan Mobility Show 2025? 
+          Contact us today to discover how TAKAI can safeguard your most valuable investments.
         </p>
         
         <!-- Gold Divider -->
@@ -248,15 +273,15 @@ const metadata = createMetadata({
         
         <div class="space-y-4">
           <a 
-            href="/contact?subject=Exhibition%20Inquiry"
+            href="/contact"
             class="inline-flex items-center gap-3 bg-[#C9A227] hover:bg-[#C9A227]/90 text-[#0A0A1A] px-6 py-3 rounded-lg font-semibold text-lg uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            <Icon name="tabler:calendar" class="w-5 h-5" />
-            Book Meeting
+            <Icon name="tabler:phone" class="w-5 h-5" />
+            Contact Us
           </a>
           
           <p class="text-sm text-[#E5E7EB]/70">
-            Contact form will be pre-filled with "Exhibition Inquiry"
+            Get in touch to learn more about TAKAI products
           </p>
         </div>
       </div>
@@ -315,6 +340,29 @@ const metadata = createMetadata({
 </style>
 
 <script is:inline>
+  // Video mute/unmute toggle
+  function initVideoControls() {
+    const video = document.getElementById('hero-video');
+    const muteToggle = document.getElementById('mute-toggle');
+    const mutedIcon = document.getElementById('muted-icon');
+    const unmutedIcon = document.getElementById('unmuted-icon');
+    
+    if (video && muteToggle && mutedIcon && unmutedIcon) {
+      muteToggle.addEventListener('click', () => {
+        video.muted = !video.muted;
+        
+        // Toggle icon visibility based on mute state
+        if (video.muted) {
+          mutedIcon.classList.remove('hidden');
+          unmutedIcon.classList.add('hidden');
+        } else {
+          mutedIcon.classList.add('hidden');
+          unmutedIcon.classList.remove('hidden');
+        }
+      });
+    }
+  }
+  
   // Scroll animations - runs after hydration
   function initScrollAnimations() {
     // Check if we're in the browser environment
@@ -349,10 +397,16 @@ const metadata = createMetadata({
     }, 100);
   }
   
+  // Initialize all functionality
+  function init() {
+    initVideoControls();
+    initScrollAnimations();
+  }
+  
   // Use window load event to ensure complete hydration
   if (document.readyState === 'complete') {
-    initScrollAnimations();
+    init();
   } else {
-    window.addEventListener('load', initScrollAnimations);
+    window.addEventListener('load', init);
   }
 </script>
