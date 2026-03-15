@@ -2,28 +2,44 @@ import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
 // Email configuration
-const FROM_EMAIL = import.meta.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+const configuredFromEmail = import.meta.env.RESEND_FROM_EMAIL;
+const FROM_EMAIL =
+  configuredFromEmail && configuredFromEmail.toLowerCase().endsWith('@takaifilms.jp')
+    ? configuredFromEmail
+    : 'customercare@takaifilms.jp';
 const TO_EMAIL = import.meta.env.RESEND_TO_EMAIL || 'info@takaifilms.jp';
 
-// Initialize Resend only if API key is available (lazy initialization)
-let resend: Resend | null = null;
-
-function getResendClient(): Resend {
-  if (!resend) {
-    const apiKey = import.meta.env.RESEND_API_KEY;
-    if (!apiKey) {
-      throw new Error('RESEND_API_KEY is not configured');
-    }
-    resend = new Resend(apiKey);
-  }
-  return resend;
+// Initialize Resend
+const apiKey = import.meta.env.RESEND_API_KEY;
+if (!apiKey) {
+  console.error('CRITICAL: RESEND_API_KEY is missing from environment variables');
 }
+if (!configuredFromEmail) {
+  console.warn('RESEND_FROM_EMAIL is missing; falling back to customercare@takaifilms.jp');
+} else if (!configuredFromEmail.toLowerCase().endsWith('@takaifilms.jp')) {
+  console.warn('RESEND_FROM_EMAIL must use @takaifilms.jp; falling back to customercare@takaifilms.jp');
+}
+if (!import.meta.env.RESEND_TO_EMAIL) {
+  console.warn('RESEND_TO_EMAIL is missing; falling back to info@takaifilms.jp');
+}
+const resend = apiKey ? new Resend(apiKey) : null;
 
 export const POST: APIRoute = async ({ request }) => {
+  console.log('--- Contact API Request Received ---');
+
+  if (!resend) {
+    console.error('API Error: Resend client not initialized due to missing API key');
+    return new Response(JSON.stringify({ success: false, error: 'Server configuration error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
   try {
     // Parse form data
     const formData = await request.formData();
-    
+    console.log('Form data parsed successfully');
+
     const firstName = formData.get('firstName')?.toString() || '';
     const lastName = formData.get('lastName')?.toString() || '';
     const email = formData.get('email')?.toString() || '';
@@ -31,17 +47,21 @@ export const POST: APIRoute = async ({ request }) => {
     const inquiryType = formData.get('inquiryType')?.toString() || '';
     const message = formData.get('message')?.toString() || '';
     const urgent = formData.get('urgent')?.toString() === 'yes' ? 'YES' : 'NO';
-    
+
+    console.log(`Submission from: ${firstName} ${lastName} (${email})`);
+    console.log(`Inquiry Type: ${inquiryType}, Urgent: ${urgent}`);
+
     // Validate required fields
     if (!firstName || !lastName || !email || !inquiryType || !message) {
+      console.warn('Validation failed: Missing required fields');
       return new Response(
-        JSON.stringify({ 
-          success: false, 
-          error: 'Missing required fields' 
+        JSON.stringify({
+          success: false,
+          error: 'Missing required fields',
         }),
-        { 
+        {
           status: 400,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' },
         }
       );
     }
@@ -51,21 +71,25 @@ export const POST: APIRoute = async ({ request }) => {
       'exhibition-inquiry': 'Exhibition Inquiry',
       'product-authenticity': 'Product Authenticity Verification',
       'product-info': 'Product Information',
-      'installation': 'Installation Services',
-      'partnership': 'Partnership Opportunities',
+      installation: 'Installation Services',
+      partnership: 'Partnership Opportunities',
       'media-press': 'Media/Press Inquiry',
       'technical-support': 'Technical Support',
-      'warranty': 'Warranty Claims',
-      'other': 'Other'
+      warranty: 'Warranty Claims',
+      other: 'Other',
     };
 
     const inquiryLabel = inquiryTypeLabels[inquiryType] || inquiryType;
     const fullName = `${firstName} ${lastName}`;
-    
+
     // Create email subject with urgency indicator
-    const subject = urgent === 'YES' 
-      ? `🚨 URGENT: ${inquiryLabel} - ${fullName}`
-      : `TAKAI Contact Form: ${inquiryLabel} - ${fullName}`;
+    const subject =
+      urgent === 'YES'
+        ? `🚨 URGENT: ${inquiryLabel} - ${fullName}`
+        : `TAKAI Contact Form: ${inquiryLabel} - ${fullName}`;
+
+    console.log('Preparing to send email via Resend...');
+    console.log(`From: ${FROM_EMAIL}, To: ${TO_EMAIL}`);
 
     // Create HTML email content
     const htmlContent = `
@@ -199,9 +223,13 @@ This email was sent from the TAKAI website contact form.
 Submitted on: ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo', dateStyle: 'full', timeStyle: 'long' })}
     `.trim();
 
+    console.log('Preparing to send email via Resend...');
+    console.log(`From: ${FROM_EMAIL}, To: ${TO_EMAIL}`);
+
     // Send email using Resend
-    const resendClient = getResendClient();
-    const { data, error } = await resendClient.emails.send({
+    console.log('Resend client check:', !!resend);
+
+    const { data, error } = await resend!.emails.send({
       from: FROM_EMAIL,
       to: TO_EMAIL,
       subject: subject,
@@ -211,49 +239,49 @@ Submitted on: ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo', dat
       tags: [
         { name: 'type', value: inquiryType },
         { name: 'urgent', value: urgent.toLowerCase() },
-        { name: 'source', value: 'website-contact-form' }
-      ]
+        { name: 'source', value: 'website-contact-form' },
+      ],
     });
 
     // Check for errors from Resend
     if (error) {
-      console.error('Resend API error:', error);
+      console.error('--- RESEND API ERROR ---');
+      console.error('Error details:', JSON.stringify(error, null, 2));
       return new Response(
-        JSON.stringify({ 
-          success: false, 
-          error: 'Failed to send email. Please try again or contact us directly at info@takaifilms.jp' 
+        JSON.stringify({
+          success: false,
+          error: 'Failed to send email. Please try again or contact us directly at info@takaifilms.jp',
         }),
-        { 
+        {
           status: 500,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' },
         }
       );
     }
 
     // Return success response
     return new Response(
-      JSON.stringify({ 
-        success: true, 
+      JSON.stringify({
+        success: true,
         message: 'Email sent successfully',
-        id: data?.id 
+        id: data?.id,
       }),
-      { 
+      {
         status: 200,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
       }
     );
-
   } catch (error) {
     console.error('Error sending email:', error);
-    
+
     return new Response(
-      JSON.stringify({ 
-        success: false, 
-        error: 'Failed to send email. Please try again or contact us directly at info@takaifilms.jp' 
+      JSON.stringify({
+        success: false,
+        error: 'Failed to send email. Please try again or contact us directly at info@takaifilms.jp',
       }),
-      { 
+      {
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
       }
     );
   }

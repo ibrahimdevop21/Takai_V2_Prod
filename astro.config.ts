@@ -10,7 +10,7 @@ import partytown from '@astrojs/partytown';
 import react from '@astrojs/react';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 import type { AstroIntegration } from 'astro';
 
 
