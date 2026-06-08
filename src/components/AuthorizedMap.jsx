@@ -31,7 +31,10 @@ const distributors = [
   { name: "SupaKoto - New Damietta", country: "Egypt", location: "In front of Faculty of Applied Arts, next to Hady Mall", lat: 31.4165, lng: 31.8133, type: "Certified Installer" },
   
   // SupaKoto Dubai Location - Certified Installer
-  { name: "SupaKoto - Al Quoz", country: "UAE", location: "Warehouse 48 15B St - Al Quoz - Al Quoz Industrial Area 4 - Dubai", lat: 25.117547972050215, lng: 55.23623130185425, type: "Certified Installer" }
+  { name: "SupaKoto - Al Quoz", country: "UAE", location: "Warehouse 48 15B St - Al Quoz - Al Quoz Industrial Area 4 - Dubai", lat: 25.117547972050215, lng: 55.23623130185425, type: "Certified Installer" },
+
+  // UAE Sharjah - Certified Installer
+  { name: "Monza Auto Care LLC", country: "UAE", location: "Sharjah, UAE", lat: 25.3463, lng: 55.4209, type: "Certified Installer" }
 ];
 
 const AuthorizedMap = () => {
