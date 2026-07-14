@@ -7,7 +7,7 @@ const distributors = [
   // Middle East & Asia
   { name: "Nano Technic", country: "Singapore", lat: 1.3521, lng: 103.8198, type: "Authorized Distributor Hub" },
   { name: "Blackout Protection and Service Company", country: "Qatar", lat: 25.2854, lng: 51.5310, type: "Certified Partner" },
-  { name: "Smart Shield", country: "Bahrain", lat: 26.0667, lng: 50.5577, type: "Certified Partner" },
+  { name: "Naqa Qurtuba", country: "Libya", lat: 32.8872, lng: 13.1913, type: "Certified Partner" },
   { name: "SupaKoto", country: "Egypt", lat: 30.0444, lng: 31.2357, type: "Authorized Distributor Hub" },
   { name: "SupaKoto", country: "UAE", lat: 25.2048, lng: 55.2708, type: "Authorized Distributor Hub" },
   
