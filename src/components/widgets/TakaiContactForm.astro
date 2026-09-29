@@ -3,15 +3,14 @@
 import { Icon } from 'astro-icon/components';
 
 const {
-  title = "Get in Touch with TAKAI",
-  subtitle = "Ready to protect your investment? Our experts are here to help you find the perfect solution.",
-  id = "takai-contact-form"
+  title = 'Get in Touch with TAKAI',
+  subtitle = 'Ready to protect your investment? Our experts are here to help you find the perfect solution.',
+  id = 'takai-contact-form',
 } = Astro.props;
 ---
 
 <section id={id} class="py-20 bg-gradient-to-br from-gray-50 to-white">
   <div class="max-w-6xl mx-auto px-6">
-    
     <!-- Header -->
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold text-[#01407a] mb-4">{title}</h2>
@@ -19,7 +18,6 @@ const {
     </div>
 
     <div class="grid lg:grid-cols-2 gap-16 items-start">
-      
       <!-- Contact Form -->
       <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 lg:p-10">
         <div class="mb-8">
@@ -81,9 +79,7 @@ const {
 
           <!-- Company -->
           <div>
-            <label for="company" class="block text-sm font-semibold text-[#01407a] mb-2">
-              Company (Optional)
-            </label>
+            <label for="company" class="block text-sm font-semibold text-[#01407a] mb-2"> Company (Optional) </label>
             <input
               type="text"
               id="company"
@@ -144,7 +140,8 @@ const {
               class="mt-1 w-4 h-4 text-[#bf1e2e] border-2 border-gray-300 rounded focus:ring-[#bf1e2e] focus:ring-2"
             />
             <label for="urgent" class="text-sm text-gray-600 leading-relaxed">
-              <span class="font-semibold text-[#bf1e2e]">Mark as Urgent</span> - For warranty claims or time-sensitive technical issues requiring priority response.
+              <span class="font-semibold text-[#bf1e2e]">Mark as Urgent</span> - For warranty claims or time-sensitive technical
+              issues requiring priority response.
             </label>
           </div>
 
@@ -159,7 +156,9 @@ const {
               class="mt-1 w-4 h-4 text-[#01407a] border-2 border-gray-300 rounded focus:ring-[#01407a] focus:ring-2"
             />
             <label for="privacy" class="text-sm text-gray-600 leading-relaxed">
-              I agree to TAKAI's <a href="/legal/privacy" class="text-[#01407a] hover:text-[#bf1e2e] underline">Privacy Policy</a> and consent to being contacted regarding my inquiry. <span class="text-red-600">*</span>
+              I agree to TAKAI's <a href="/legal/privacy" class="text-[#01407a] hover:text-[#bf1e2e] underline"
+                >Privacy Policy</a
+              > and consent to being contacted regarding my inquiry. <span class="text-red-600">*</span>
             </label>
           </div>
 
@@ -188,14 +187,13 @@ const {
 
       <!-- Contact Information & Benefits -->
       <div class="space-y-8">
-        
         <!-- Direct Contact -->
         <div class="bg-gradient-to-br from-[#01407a] to-[#0a5a9e] rounded-2xl p-8 text-white">
           <h3 class="text-xl font-semibold mb-6 flex items-center space-x-2 text-white">
             <Icon name="tabler:mail" class="w-6 h-6 text-[#c9a227]" />
             <span>Get in Touch</span>
           </h3>
-          
+
           <div class="space-y-4">
             <div class="flex items-center space-x-3">
               <Icon name="tabler:mail" class="w-5 h-5 text-[#c9a227] flex-shrink-0" />
@@ -204,7 +202,7 @@ const {
                 <p class="text-white/90">info@takaifilms.jp</p>
               </div>
             </div>
-            
+
             <div class="flex items-center space-x-3">
               <Icon name="tabler:clock" class="w-5 h-5 text-[#c9a227] flex-shrink-0" />
               <div>
@@ -212,14 +210,14 @@ const {
                 <p class="text-white/90">Within 24 hours</p>
               </div>
             </div>
-            
+
             <div class="flex items-start space-x-3">
               <Icon name="tabler:map-pin" class="w-5 h-5 text-[#c9a227] flex-shrink-0 mt-1" />
               <div>
                 <p class="font-medium text-white">Head Office</p>
                 <p class="text-white/90 text-sm leading-relaxed">
-                  Nippon Takai Trading & Innovation Co., Ltd.<br>
-                  3-1-6 Motoazabu, Minato-ku<br>
+                  Nippon Takai Trading & Innovation Co., Ltd.<br />
+                  3-1-6 Motoazabu, Minato-ku<br />
                   Tokyo 106-0046, Japan
                 </p>
               </div>
@@ -230,7 +228,7 @@ const {
         <!-- Why Choose TAKAI -->
         <div class="bg-white rounded-2xl border border-gray-200 p-8">
           <h3 class="text-xl font-semibold text-[#01407a] mb-6">Why Choose TAKAI?</h3>
-          
+
           <div class="space-y-4">
             <div class="flex items-start space-x-3">
               <Icon name="tabler:shield-check" class="w-5 h-5 text-[#c9a227] mt-1 flex-shrink-0" />
@@ -239,7 +237,7 @@ const {
                 <p class="text-sm text-gray-600">Japanese-engineered films with superior protection</p>
               </div>
             </div>
-            
+
             <div class="flex items-start space-x-3">
               <Icon name="tabler:users" class="w-5 h-5 text-[#c9a227] mt-1 flex-shrink-0" />
               <div>
@@ -247,7 +245,7 @@ const {
                 <p class="text-sm text-gray-600">Certified installers and technical expertise</p>
               </div>
             </div>
-            
+
             <div class="flex items-start space-x-3">
               <Icon name="tabler:award" class="w-5 h-5 text-[#c9a227] mt-1 flex-shrink-0" />
               <div>
@@ -255,7 +253,7 @@ const {
                 <p class="text-sm text-gray-600">Long-term protection and peace of mind</p>
               </div>
             </div>
-            
+
             <div class="flex items-start space-x-3">
               <Icon name="tabler:world" class="w-5 h-5 text-[#c9a227] mt-1 flex-shrink-0" />
               <div>
@@ -273,14 +271,14 @@ const {
             <h4 class="font-semibold">Priority Support</h4>
           </div>
           <p class="text-sm text-white/90 mb-4">
-            For warranty claims or urgent technical issues, check the "Mark as Urgent" box in the form to receive priority handling.
+            For warranty claims or urgent technical issues, check the "Mark as Urgent" box in the form to receive
+            priority handling.
           </p>
           <div class="inline-flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-lg">
             <Icon name="tabler:mail-fast" class="w-4 h-4" />
             <span class="font-medium">Priority Response: 4-6 hours</span>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -288,17 +286,21 @@ const {
 
 <style>
   /* Custom focus styles for better accessibility */
-  input:focus, textarea:focus, select:focus {
+  input:focus,
+  textarea:focus,
+  select:focus {
     outline: none;
   }
-  
+
   /* Smooth transitions for form elements */
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   /* Custom checkbox styling */
-  input[type="checkbox"]:checked {
+  input[type='checkbox']:checked {
     background-color: #01407a;
     border-color: #01407a;
   }
@@ -309,11 +311,11 @@ const {
   function initContactForm() {
     // Check if we're in the browser environment
     if (typeof window === 'undefined') return;
-    
+
     // Handle URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const subject = urlParams.get('subject');
-    
+
     if (subject) {
       const inquiryTypeSelect = document.getElementById('inquiryType');
       if (inquiryTypeSelect && inquiryTypeSelect instanceof HTMLSelectElement) {
@@ -329,44 +331,39 @@ const {
     const buttonText = document.getElementById('button-text');
     const formMessage = document.getElementById('form-message');
 
-    if (
-      form instanceof HTMLFormElement &&
-      submitButton instanceof HTMLButtonElement &&
-      buttonText &&
-      formMessage
-    ) {
+    if (form instanceof HTMLFormElement && submitButton instanceof HTMLButtonElement && buttonText && formMessage) {
       if (form.dataset.contactBound === 'true') return;
       form.dataset.contactBound = 'true';
 
-      form.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          
-          // Show loading state
-          submitButton.disabled = true;
-          buttonText.textContent = 'Sending...';
-          submitButton.classList.add('opacity-75', 'cursor-not-allowed');
-          formMessage.classList.add('hidden');
-          
-          try {
-            const formData = new FormData(form);
-            console.log('Form data collected, sending to /api/contact...');
-            
-            // Send to our API endpoint
-            const response = await fetch('/api/contact', {
-              method: 'POST',
-              body: formData
-            });
-            
-            console.log('Response status:', response.status);
-            const result = await response.json();
-            console.log('API Result:', result);
-            
-            if (response.ok && result.success) {
-              // Success
-              const isUrgent = formData.get('urgent') === 'yes';
-              const responseTime = isUrgent ? '4-6 hours' : '24 hours';
-              
-              formMessage.innerHTML = `
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Show loading state
+        submitButton.disabled = true;
+        buttonText.textContent = 'Sending...';
+        submitButton.classList.add('opacity-75', 'cursor-not-allowed');
+        formMessage.classList.add('hidden');
+
+        try {
+          const formData = new FormData(form);
+          console.log('Form data collected, sending to /api/contact...');
+
+          // Send to our API endpoint
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            body: formData,
+          });
+
+          console.log('Response status:', response.status);
+          const result = await response.json();
+          console.log('API Result:', result);
+
+          if (response.ok && result.success) {
+            // Success
+            const isUrgent = formData.get('urgent') === 'yes';
+            const responseTime = isUrgent ? '4-6 hours' : '24 hours';
+
+            formMessage.innerHTML = `
                 <div class="flex items-start space-x-3">
                   <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -378,21 +375,21 @@ const {
                   </div>
                 </div>
               `;
-              formMessage.className = 'p-4 rounded-lg bg-green-50 border-2 border-green-200';
-              formMessage.classList.remove('hidden');
-              form.reset();
-              
-              // Scroll to message
-              formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              
-              // Hide message after 10 seconds
-              setTimeout(() => {
-                formMessage.classList.add('hidden');
-              }, 10000);
-            } else {
-              // Error from API
-              const errorMsg = result.error || 'There was a problem sending your message.';
-              formMessage.innerHTML = `
+            formMessage.className = 'p-4 rounded-lg bg-green-50 border-2 border-green-200';
+            formMessage.classList.remove('hidden');
+            form.reset();
+
+            // Scroll to message
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Hide message after 10 seconds
+            setTimeout(() => {
+              formMessage.classList.add('hidden');
+            }, 10000);
+          } else {
+            // Error from API
+            const errorMsg = result.error || 'There was a problem sending your message.';
+            formMessage.innerHTML = `
                 <div class="flex items-start space-x-3">
                   <svg class="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -404,13 +401,13 @@ const {
                   </div>
                 </div>
               `;
-              formMessage.className = 'p-4 rounded-lg bg-red-50 border-2 border-red-200';
-              formMessage.classList.remove('hidden');
-            }
-          } catch (error) {
-            // Network error
-            console.error('Form submission error:', error);
-            formMessage.innerHTML = `
+            formMessage.className = 'p-4 rounded-lg bg-red-50 border-2 border-red-200';
+            formMessage.classList.remove('hidden');
+          }
+        } catch (error) {
+          // Network error
+          console.error('Form submission error:', error);
+          formMessage.innerHTML = `
               <div class="flex items-start space-x-3">
                 <svg class="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -422,18 +419,18 @@ const {
                 </div>
               </div>
             `;
-            formMessage.className = 'p-4 rounded-lg bg-red-50 border-2 border-red-200';
-            formMessage.classList.remove('hidden');
-          } finally {
-            // Reset button
-            submitButton.disabled = false;
-            buttonText.textContent = 'Send Message';
-            submitButton.classList.remove('opacity-75', 'cursor-not-allowed');
-          }
+          formMessage.className = 'p-4 rounded-lg bg-red-50 border-2 border-red-200';
+          formMessage.classList.remove('hidden');
+        } finally {
+          // Reset button
+          submitButton.disabled = false;
+          buttonText.textContent = 'Send Message';
+          submitButton.classList.remove('opacity-75', 'cursor-not-allowed');
+        }
       });
     }
   }
-  
+
   // Initialize with multiple lifecycle hooks to handle browser cache restores
   if (document.readyState !== 'loading') {
     initContactForm();
