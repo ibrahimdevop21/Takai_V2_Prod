@@ -33,6 +33,16 @@ const distributors = [
     type: 'Certified Partner',
   },
 
+  // UAE Al Ain - Certified Partner (city-level coordinates until exact address is confirmed)
+  {
+    name: 'Nuvor Auto Care',
+    country: 'UAE',
+    location: 'Al Ain, UAE',
+    lat: 24.2075,
+    lng: 55.7447,
+    type: 'Certified Partner',
+  },
+
   // South America - Certified Installers
   { name: 'ProTech Films', country: 'Brazil', lat: -23.5505, lng: -46.6333, type: 'Certified Installer' },
   { name: 'AutoShield Peru', country: 'Peru', lat: -12.0464, lng: -77.0428, type: 'Certified Installer' },
