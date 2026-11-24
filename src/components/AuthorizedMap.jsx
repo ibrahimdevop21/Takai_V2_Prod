@@ -27,19 +27,9 @@ const distributors = [
   {
     name: 'Nuvor Auto Care',
     country: 'UAE',
-    location: 'CF88+RR Abu Dhabi, UAE',
+    location: 'CF88+RR Abu Dhabi, UAE · Serving Abu Dhabi & Al Ain',
     lat: 24.417044399999998,
     lng: 54.4670773,
-    type: 'Certified Partner',
-  },
-
-  // UAE Al Ain - Certified Partner (city-level coordinates until exact address is confirmed)
-  {
-    name: 'Nuvor Auto Care',
-    country: 'UAE',
-    location: 'Al Ain, UAE',
-    lat: 24.2075,
-    lng: 55.7447,
     type: 'Certified Partner',
   },
 
