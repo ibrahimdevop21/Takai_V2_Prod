@@ -5,35 +5,94 @@ import 'leaflet/dist/leaflet.css';
 // Distributor data
 const distributors = [
   // Middle East & Asia
-  { name: "Nano Technic", country: "Singapore", lat: 1.3521, lng: 103.8198, type: "Authorized Distributor Hub" },
-  { name: "Naqa Qurtuba", country: "Libya", lat: 32.8872, lng: 13.1913, type: "Certified Partner" },
-  { name: "SupaKoto", country: "Egypt", lat: 30.0444, lng: 31.2357, type: "Authorized Distributor Hub" },
-  { name: "SupaKoto", country: "UAE", lat: 25.2048, lng: 55.2708, type: "Authorized Distributor Hub" },
-  
+  { name: 'Nano Technic', country: 'Singapore', lat: 1.3521, lng: 103.8198, type: 'Authorized Distributor Hub' },
+  { name: 'Naqa Qurtuba', country: 'Libya', lat: 32.8872, lng: 13.1913, type: 'Certified Partner' },
+  { name: 'SupaKoto', country: 'Egypt', lat: 30.0444, lng: 31.2357, type: 'Authorized Distributor Hub' },
+  { name: 'SupaKoto', country: 'UAE', lat: 25.2048, lng: 55.2708, type: 'Authorized Distributor Hub' },
+
   // South America - Hub
-  { name: "TAKAI Colombia", country: "Colombia", lat: 4.7110, lng: -74.0721, type: "Authorized Distributor Hub" },
-  
+  { name: 'TAKAI Colombia', country: 'Colombia', lat: 4.711, lng: -74.0721, type: 'Authorized Distributor Hub' },
+
   // Europe
-  { name: "TAKAI Croatia", country: "Croatia", location: "Industrijska cesta 18/1, 10360, Sesvete, Croatia", lat: 45.848904935880135, lng: 16.120602909566887, type: "Certified Partner" },
-  
+  {
+    name: 'TAKAI Croatia',
+    country: 'Croatia',
+    location: 'Industrijska cesta 18/1, 10360, Sesvete, Croatia',
+    lat: 45.848904935880135,
+    lng: 16.120602909566887,
+    type: 'Certified Partner',
+  },
+
+  // UAE Abu Dhabi - Certified Partner
+  {
+    name: 'Nuvor Auto Care',
+    country: 'UAE',
+    location: 'CF88+RR Abu Dhabi, UAE',
+    lat: 24.417044399999998,
+    lng: 54.4670773,
+    type: 'Certified Partner',
+  },
+
   // South America - Certified Installers
-  { name: "ProTech Films", country: "Brazil", lat: -23.5505, lng: -46.6333, type: "Certified Installer" },
-  { name: "AutoShield Peru", country: "Peru", lat: -12.0464, lng: -77.0428, type: "Certified Installer" },
-  { name: "Premium Protection", country: "Chile", lat: -33.4489, lng: -70.6693, type: "Certified Installer" },
-  { name: "Elite Car Care", country: "Argentina", lat: -34.6118, lng: -58.3960, type: "Certified Installer" },
-  { name: "VenezuelaPPF", country: "Venezuela", lat: 10.4806, lng: -66.9036, type: "Certified Installer" },
-  
+  { name: 'ProTech Films', country: 'Brazil', lat: -23.5505, lng: -46.6333, type: 'Certified Installer' },
+  { name: 'AutoShield Peru', country: 'Peru', lat: -12.0464, lng: -77.0428, type: 'Certified Installer' },
+  { name: 'Premium Protection', country: 'Chile', lat: -33.4489, lng: -70.6693, type: 'Certified Installer' },
+  { name: 'Elite Car Care', country: 'Argentina', lat: -34.6118, lng: -58.396, type: 'Certified Installer' },
+  { name: 'VenezuelaPPF', country: 'Venezuela', lat: 10.4806, lng: -66.9036, type: 'Certified Installer' },
+
   // SupaKoto Egypt Locations - Certified Installers
-  { name: "SupaKoto - Fifth Settlement", country: "Egypt", location: "2C9J+GRQ, New Cairo 1, Cairo Governorate 4730124", lat: 30.019068696895555, lng: 31.432515466943872, type: "Certified Installer" },
-  { name: "SupaKoto - Zahraa Maadi", country: "Egypt", location: "Inside Skoda Maadi Center, 199 Wadi Degla Street, Zahraa Al Maadi, Cairo Governorate 11742", lat: 29.95992415645408, lng: 31.320339244181607, type: "Certified Installer" },
-  { name: "SupaKoto - Sheikh Zayed", country: "Egypt", location: "2XCH+73P, First Al Sheikh Zayed, Giza Governorate 3245070", lat: 30.020406404478994, lng: 30.97791000634769, type: "Certified Installer" },
-  { name: "SupaKoto - New Damietta", country: "Egypt", location: "In front of Faculty of Applied Arts, next to Hady Mall", lat: 31.4165, lng: 31.8133, type: "Certified Installer" },
-  
+  {
+    name: 'SupaKoto - Fifth Settlement',
+    country: 'Egypt',
+    location: '2C9J+GRQ, New Cairo 1, Cairo Governorate 4730124',
+    lat: 30.019068696895555,
+    lng: 31.432515466943872,
+    type: 'Certified Installer',
+  },
+  {
+    name: 'SupaKoto - Zahraa Maadi',
+    country: 'Egypt',
+    location: 'Inside Skoda Maadi Center, 199 Wadi Degla Street, Zahraa Al Maadi, Cairo Governorate 11742',
+    lat: 29.95992415645408,
+    lng: 31.320339244181607,
+    type: 'Certified Installer',
+  },
+  {
+    name: 'SupaKoto - Sheikh Zayed',
+    country: 'Egypt',
+    location: '2XCH+73P, First Al Sheikh Zayed, Giza Governorate 3245070',
+    lat: 30.020406404478994,
+    lng: 30.97791000634769,
+    type: 'Certified Installer',
+  },
+  {
+    name: 'SupaKoto - New Damietta',
+    country: 'Egypt',
+    location: 'In front of Faculty of Applied Arts, next to Hady Mall',
+    lat: 31.4165,
+    lng: 31.8133,
+    type: 'Certified Installer',
+  },
+
   // SupaKoto Dubai Location - Certified Installer
-  { name: "SupaKoto - Al Quoz", country: "UAE", location: "Warehouse 48 15B St - Al Quoz - Al Quoz Industrial Area 4 - Dubai", lat: 25.117547972050215, lng: 55.23623130185425, type: "Certified Installer" },
+  {
+    name: 'SupaKoto - Al Quoz',
+    country: 'UAE',
+    location: 'Warehouse 48 15B St - Al Quoz - Al Quoz Industrial Area 4 - Dubai',
+    lat: 25.117547972050215,
+    lng: 55.23623130185425,
+    type: 'Certified Installer',
+  },
 
   // UAE Sharjah - Certified Installer
-  { name: "Monza Auto Care LLC", country: "UAE", location: "Sharjah, UAE", lat: 25.3463, lng: 55.4209, type: "Certified Installer" }
+  {
+    name: 'Monza Auto Care LLC',
+    country: 'UAE',
+    location: 'Sharjah, UAE',
+    lat: 25.3463,
+    lng: 55.4209,
+    type: 'Certified Installer',
+  },
 ];
 
 const AuthorizedMap = () => {
@@ -48,7 +107,7 @@ const AuthorizedMap = () => {
 
   const handleTileError = (error) => {
     console.error('Tile loading error:', error);
-    setTileErrors(prev => prev + 1);
+    setTileErrors((prev) => prev + 1);
     // Try to reload tiles after error
     setTimeout(() => {
       console.log('Attempting to reload tiles...');
@@ -86,14 +145,14 @@ const AuthorizedMap = () => {
             <div className="text-blue-800 text-lg font-semibold">Map loading...</div>
           </div>
         )}
-        
+
         {mapLoaded && tileErrors > 5 && (
           <div className="absolute top-4 left-4 bg-blue-900/90 text-white px-4 py-2 rounded-lg text-sm z-[999]">
             <div className="font-semibold">Interactive Partner Map</div>
             <div className="text-xs opacity-90">Click markers to view partner details</div>
           </div>
         )}
-        
+
         <div className="h-[400px] md:h-[500px] w-full relative">
           <MapContainer
             center={[30, 30]}
@@ -106,11 +165,11 @@ const AuthorizedMap = () => {
             zoomControl={true}
             className="h-full w-full"
             whenReady={handleMapLoad}
-            style={{ 
+            style={{
               background: '#f8f9fa',
               borderRadius: '1rem',
               height: '100%',
-              width: '100%'
+              width: '100%',
             }}
           >
             <TileLayer
@@ -119,10 +178,10 @@ const AuthorizedMap = () => {
               className="map-tiles"
               eventHandlers={{
                 tileerror: handleTileError,
-                tileload: () => console.log('OSM tile loaded successfully')
+                tileload: () => console.log('OSM tile loaded successfully'),
               }}
             />
-            
+
             {distributors.map((distributor, index) => {
               // Different colors and sizes based on partner type
               const getMarkerStyle = (type) => {
@@ -132,28 +191,28 @@ const AuthorizedMap = () => {
                       fillColor: '#C9A227', // Gold for hubs
                       color: '#C9A227',
                       radius: 12,
-                      weight: 3
+                      weight: 3,
                     };
                   case 'Certified Partner':
                     return {
                       fillColor: '#3B82F6', // Blue for certified partners
                       color: '#3B82F6',
                       radius: 8,
-                      weight: 2
+                      weight: 2,
                     };
                   case 'Certified Installer':
                     return {
                       fillColor: '#6B7280', // Grey for installers
                       color: '#6B7280',
                       radius: 6,
-                      weight: 2
+                      weight: 2,
                     };
                   default:
                     return {
                       fillColor: '#6B7280',
                       color: '#6B7280',
                       radius: 8,
-                      weight: 2
+                      weight: 2,
                     };
                 }
               };
@@ -170,7 +229,7 @@ const AuthorizedMap = () => {
                     color: markerStyle.color,
                     weight: markerStyle.weight,
                     opacity: 1,
-                    fillOpacity: 0.8
+                    fillOpacity: 0.8,
                   }}
                   eventHandlers={{
                     mouseover: (e) => {
@@ -178,7 +237,7 @@ const AuthorizedMap = () => {
                         fillColor: markerStyle.fillColor,
                         color: markerStyle.color,
                         radius: markerStyle.radius + 2,
-                        fillOpacity: 1
+                        fillOpacity: 1,
                       });
                     },
                     mouseout: (e) => {
@@ -186,41 +245,30 @@ const AuthorizedMap = () => {
                         fillColor: markerStyle.fillColor,
                         color: markerStyle.color,
                         radius: markerStyle.radius,
-                        fillOpacity: 0.8
+                        fillOpacity: 0.8,
                       });
-                    }
+                    },
                   }}
-              >
-                <Popup
-                  className="custom-popup"
-                  closeButton={true}
-                  autoClose={false}
-                  closeOnEscapeKey={true}
                 >
-                  <div className="bg-gray-900 text-white p-3 rounded-lg border border-gray-700 min-w-[200px]">
-                    <h3 className="font-semibold text-lg mb-1" style={{ color: markerStyle.fillColor }}>
-                      {distributor.name}
-                    </h3>
-                    {distributor.location ? (
-                      <p className="text-gray-300 text-xs mt-1">
-                        📍 {distributor.location}
-                      </p>
-                    ) : (
-                      <p className="text-gray-300 text-sm">
-                        📍 {distributor.country}
-                      </p>
-                    )}
-                    <div className="mt-2 text-xs text-gray-400">
-                      {distributor.type}
+                  <Popup className="custom-popup" closeButton={true} autoClose={false} closeOnEscapeKey={true}>
+                    <div className="bg-gray-900 text-white p-3 rounded-lg border border-gray-700 min-w-[200px]">
+                      <h3 className="font-semibold text-lg mb-1" style={{ color: markerStyle.fillColor }}>
+                        {distributor.name}
+                      </h3>
+                      {distributor.location ? (
+                        <p className="text-gray-300 text-xs mt-1">📍 {distributor.location}</p>
+                      ) : (
+                        <p className="text-gray-300 text-sm">📍 {distributor.country}</p>
+                      )}
+                      <div className="mt-2 text-xs text-gray-400">{distributor.type}</div>
                     </div>
-                  </div>
-                </Popup>
-              </CircleMarker>
-            );
+                  </Popup>
+                </CircleMarker>
+              );
             })}
           </MapContainer>
         </div>
-        
+
         {/* Legend */}
         <div className="absolute bottom-4 right-4 bg-gray-900/90 backdrop-blur-sm text-white px-3 py-2 rounded-lg border border-gray-700 text-xs z-[1000]">
           <div className="space-y-1">
@@ -239,7 +287,7 @@ const AuthorizedMap = () => {
           </div>
         </div>
       </div>
-      
+
       <style jsx>{`
         .leaflet-container {
           border-radius: 1rem !important;
@@ -248,56 +296,56 @@ const AuthorizedMap = () => {
           height: 100% !important;
           width: 100% !important;
         }
-        
+
         .leaflet-control-container {
           position: relative !important;
         }
-        
+
         .custom-popup .leaflet-popup-content-wrapper {
           background: transparent !important;
           box-shadow: none !important;
           border-radius: 0 !important;
           padding: 0 !important;
         }
-        
+
         .custom-popup .leaflet-popup-content {
           margin: 0 !important;
           padding: 0 !important;
           background: transparent !important;
         }
-        
+
         .custom-popup .leaflet-popup-tip {
           background: #1f2937 !important;
           border: 1px solid #374151 !important;
         }
-        
+
         .map-tiles {
           opacity: 1 !important;
           filter: none !important;
           visibility: visible !important;
         }
-        
+
         /* Ensure map tiles render properly */
         .leaflet-tile-pane {
           z-index: 1 !important;
         }
-        
+
         .leaflet-map-pane {
           z-index: 1 !important;
         }
-        
+
         /* Force tile visibility */
         .leaflet-tile {
           opacity: 1 !important;
           visibility: visible !important;
           display: block !important;
         }
-        
+
         .leaflet-tile-container {
           opacity: 1 !important;
           visibility: visible !important;
         }
-        
+
         /* Ensure attribution and controls stay within bounds */
         .leaflet-control-attribution {
           max-width: calc(100% - 20px) !important;
@@ -305,40 +353,40 @@ const AuthorizedMap = () => {
           text-overflow: ellipsis !important;
           white-space: nowrap !important;
         }
-        
+
         .leaflet-control-zoom {
           margin: 10px !important;
         }
-        
+
         /* Prevent any element from extending beyond container */
         .leaflet-container * {
           max-width: 100% !important;
           box-sizing: border-box !important;
         }
-        
+
         /* Allow normal tile loading */
         .leaflet-container {
           overflow: visible !important;
         }
-        
+
         .leaflet-tile-container {
           overflow: visible !important;
         }
-        
+
         /* Ensure legend stays on top */
         .leaflet-control-container {
           pointer-events: none !important;
         }
-        
+
         .leaflet-control-container .leaflet-control {
           pointer-events: auto !important;
         }
-        
+
         @media (max-width: 768px) {
           .custom-popup .leaflet-popup-content-wrapper {
             max-width: 250px !important;
           }
-          
+
           .leaflet-container {
             border-radius: 0.75rem !important;
           }
